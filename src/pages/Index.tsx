@@ -42,8 +42,7 @@ const Index = () => {
               AI Evaluation in the Development Sector
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
-              A living playbook for implementing a four-level evaluation frameworks for AI tools 
-              in the development sector.
+              A living playbook for evaluating AI products in the development sector, created by the Agency Fund.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
