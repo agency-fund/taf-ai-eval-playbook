@@ -90,6 +90,15 @@ const Introduction = () => {
               <li><strong>Level 4 – Impact evaluation:</strong> Does the product improve development outcomes?</li>
             </ul>
           </div>
+          
+          <div className="my-8">
+            <img 
+              src="/lovable-uploads/7ea13bea-2ef5-479d-9017-9c9c99076558.png" 
+              alt="Four-level evaluation framework diagram showing levels from model evaluation to impact evaluation with stakeholders and implications"
+              className="w-full h-auto rounded-lg shadow-card"
+            />
+          </div>
+          
           <p>
             While these four levels of evaluation are interconnected and iterative, they often follow a natural progression. A model is first built and benchmarked (Level 1), then tested for usability and engagement (Level 2). If the tool sees consistent use, we need to understand how it affects users' thoughts, feelings, and short-term behaviors (Level 3), before assessing whether it drives long-term improvements in development outcomes (Level 4). In the tech sector, evaluation of AI tools typically stops at Levels 1 and 2, where user engagement is often a predictor of product success. But in the development sector, our bar is higher. We're not just asking whether people use a tool – we're asking whether it improves their lives in meaningful, measurable, and cost-effective ways.
           </p>
