@@ -8,19 +8,19 @@ const Index = () => {
     {
       icon: Target,
       title: "Four-Level Framework",
-      description: "Comprehensive evaluation framework covering Model, Product, User, and Impact levels",
+      description: "Introducing a comprehensive evaluation framework covering Model, Product, User, and Impact Evaluation",
       link: "/framework"
     },
     {
       icon: RefreshCw,
       title: "Repeatable Motions",
-      description: "Integrate evaluation seamlessly into your product development cycles",
+      description: "Building end-to-end instrumentation that moves beyond static best practices toward repeatable motions that are tested, iterated, and embedded in real AI development cycles",
       link: "/motions"
     },
     {
       icon: Users,
-      title: "Cross-functional Teams",
-      description: "Best practices for roles and collaboration in AI evaluation",
+      title: "Cross-Functional Teams",
+      description: "Outlining the typical roles at each level, how they collaborate, the tools that support them, and ways to align team goals with evaluation outcomes",
       link: "/roles"
     },
     {
@@ -42,8 +42,8 @@ const Index = () => {
               AI Evaluation in the Development Sector
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
-              A living playbook for implementing effective evaluation frameworks for AI tools 
-              in development and social good contexts.
+              A living playbook for implementing a four-level evaluation frameworks for AI tools 
+              in the development sector.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">

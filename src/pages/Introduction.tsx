@@ -2,6 +2,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lightbulb, Target, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import React from "react";
+
+type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+  href: string;
+  children: React.ReactNode;
+};
+
+export const ExternalLink: React.FC<ExternalLinkProps> = ({ href, children, className = "", ...props }) => (
+  <a
+    href={href}
+    className={`text-blue-600 hover:text-blue-800 transition-colors underline ${className}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    {...props}
+  >
+    {children}
+  </a>
+);
 
 const Introduction = () => {
   const principles = [
@@ -42,7 +60,7 @@ const Introduction = () => {
       <div className="mb-12">
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
           <p>
-            In 2025, The Agency Fund (TAF) launched an AI for Global Development (AI4GD) accelerator in collaboration with our partners at OpenAI and the Center for Global Development (CGD). With an investment of $5 million, the accelerator represents an effort to not only identify successful use cases for the development sector, but also learn how to appropriately evaluate AI-assisted social services.
+            In 2025, <ExternalLink href="https://www.agency.fund/">The Agency Fund</ExternalLink> (TAF) launched an <ExternalLink href="https://agencyfund.notion.site/ai-for-global-development">AI for Global Development (AI4GD) accelerator</ExternalLink> in collaboration with our partners at <ExternalLink href="https://openai.com/">OpenAI</ExternalLink> and <ExternalLink href="https://www.cgdev.org/">Center for Global Development (CGD)</ExternalLink>. With an investment of $5 million, the accelerator represents an effort to not only identify successful use cases for the development sector, but also learn how to appropriately evaluate AI-assisted social services.
           </p>
           <p>
             Through the accelerator, we have supported eight organizations building GenAI products and services across three critical sectors: education (e.g., learning support for students, parents, and teachers), health (e.g., personalized medical advice), and agriculture (e.g., agriculture and business advice). As part of the process, we have engaged with funders, policymakers, and AI practitioners as well to understand how to scale new tools responsibly.
@@ -53,7 +71,7 @@ const Introduction = () => {
       <div className="mb-12">
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
           <p>
-            One thing has become clear: while there is broad consensus on the importance of evaluating AI in the social sector, there has been little agreement on what this actually means. Different organizations have adopted very different evaluation approaches. Funders and academics have mixed opinions on what constitutes a "good" evaluation in this emerging space. In the absence of clear standards, many social service providers have defaulted to familiar benchmarks like randomized controlled trials (RCTs) to assess impact on development outcomes, even when such methods are not appropriate or even feasible.
+            One thing has become clear: <strong>while there is broad consensus on the importance of evaluating AI in the social sector, there has been little agreement on what this actually means.</strong> Different organizations have adopted very different evaluation approaches. Funders and academics have mixed opinions on what constitutes a "good" evaluation in this emerging space. In the absence of clear standards, many social service providers have defaulted to familiar benchmarks like randomized controlled trials (RCTs) to assess impact on development outcomes, even when such methods are not appropriate or even feasible.
           </p>
         </div>
       </div>
@@ -62,7 +80,7 @@ const Introduction = () => {
         <h2 className="text-2xl font-bold mb-6">The Four-Level Framework</h2>
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
           <p>
-            To bring clarity and structure to the evaluation of AI services in the development sector for both the funders and the implementers, we introduced a four-level framework. We first shared the framework at the AI4GD accelerator launch in Bangalore in March 2025. We later wrote about it in a blog post co-authored with the Center for Global Development (CGD) and J-PAL. This framework lays out four core questions to guide AI evaluation in development contexts:
+            To bring clarity and structure to the evaluation of AI services in the development sector for both the funders and the implementers, we introduced a four-level framework. We first shared the framework at the AI4GD accelerator launch in Bangalore in March 2025. We later wrote about it in a <ExternalLink href="https://theagencyfund.substack.com/p/an-ai-evaluation-framework-for-the">blog post</ExternalLink> co-authored with the Center for Global Development (CGD) and J-PAL. This framework lays out four core questions to guide AI evaluation in development contexts:
           </p>
           <div className="bg-playbook-gray-light rounded-lg p-6 my-8">
             <ul className="space-y-3 text-foreground">
@@ -85,13 +103,13 @@ const Introduction = () => {
             Importantly, there are three cautionary principles to applying this framework:
           </p>
           <p>
-            <strong>First,</strong> each level maps to distinct skillsets and stakeholders. AI engineers tend to focus on model behavior (Level 1); product managers and data scientists on engagement patterns (Level 2); psychologists and behavioral researchers on cognitive, emotional, and behavioral mechanisms (Level 3); and economists and policymakers on developmental impact (Level 4). But this division can become a barrier in real-world collaborations. Building better AI for development requires all actors to see beyond their slice of the process. For instance, this could mean resisting the urge to stop at a strong model benchmark, or to leap straight from a demo to an RCT, without understanding what lies in between. We include a later section on building repeatable evaluation motions across cross-functional teams, and will continue adding more practical guidelines to this living book over time.
+            <strong>First, each level maps to distinct skillsets and stakeholders</strong> . AI engineers tend to focus on model behavior (Level 1); product managers and data scientists on engagement patterns (Level 2); psychologists and behavioral researchers on cognitive, emotional, and behavioral mechanisms (Level 3); and economists and policymakers on developmental impact (Level 4). But this division can become a barrier in real-world collaborations. Building better AI for development requires all actors to see beyond their slice of the process. For instance, this could mean resisting the urge to stop at a strong model benchmark, or to leap straight from a demo to an RCT, without understanding what lies in between. We include a later section on building repeatable evaluation motions across cross-functional teams, and will continue adding more practical guidelines to this living book over time.
           </p>
           <p>
-            <strong>Second,</strong> the complexity, cost, and risk increase at each level, but so does the potential for deep, sustained impact. The real challenge is deciding what level of evaluation is appropriate at each stage of product maturity. There's no one-size-fits-all answer. The goal is not to always aim for any particular level, but to make informed tradeoffs about what constitutes "enough" evaluation, given the context. We will develop a guideline for balancing these tradeoffs in future iterations of the playbook.
+            <strong>Second, the complexity, cost, and risk increase at each level, but so does the potential for deep, sustained impact</strong>. The real challenge is deciding what level of evaluation is appropriate at each stage of product maturity. There's no one-size-fits-all answer. The goal is not to always aim for any particular level, but to make informed tradeoffs about what constitutes "enough" evaluation, given the context. We will develop a guideline for balancing these tradeoffs in future iterations of the playbook.
           </p>
           <p>
-            <strong>Third,</strong> this framework is meant to guide evaluation, not dictate product development cycles. While Levels 1–3 of evaluation are especially valuable for informing product development, they are necessary but not sufficient. Good product development also depends on other critical activities, such as UX research, participatory design, and content strategy. These workstreams shape how a product functions and feels, and they often run in parallel to or even ahead of formal evaluation. For instance, pre-evaluation user research, both qualitative and quantitative, is often essential before any product or model is built. These activities help teams identify target use cases, understand user pain points, define evaluation criteria, and design effective prompts, databases, or knowledge bases. In other words, many foundational product choices are informed by, but not dictated by, the evaluation process. These upstream insights are especially important in low-data or low-resource settings where assumptions can be costly. This playbook focuses specifically on how to do evaluation well: what to measure, how to measure it, and how to generate evidence with rigor and speed. It is not a full product development guide. To support the broader development cycle, we are creating a complementary suite of playbooks on user research, product design, and experimentation. These resources will help teams translate evaluation insights into design decisions, test ideas before building, and iterate with purpose. Together, these playbooks will offer a full set of repeatable motions that connect evidence to action.
+            <strong>Third, this framework is meant to guide evaluation, not dictate product development cycles</strong>. While Levels 1–3 of evaluation are especially valuable for informing product development, they are <strong>necessary but not sufficient</strong>. Good product development also depends on other critical activities, such as UX research, participatory design, and content strategy. These workstreams shape how a product functions and feels, and they often run in parallel to or even ahead of formal evaluation. For instance, <strong>pre-evaluation user research</strong>, both qualitative and quantitative, is often essential before any product or model is built. These activities help teams identify target use cases, understand user pain points, define evaluation criteria, and design effective prompts, databases, or knowledge bases. In other words, many foundational product choices are informed by, but not dictated by, the evaluation process. These upstream insights are especially important in low-data or low-resource settings where assumptions can be costly. This playbook focuses specifically on <strong>how to do evaluation well</strong>: what to measure, how to measure it, and how to generate evidence with rigor and speed. It is <strong>not</strong> a full product development guide. To support the broader development cycle, we are creating a <strong>complementary suite of playbooks</strong> on user research, product design, and experimentation. These resources will help teams translate evaluation insights into design decisions, test ideas before building, and iterate with purpose. Together, these playbooks will offer a full set of repeatable motions that connect evidence to action.
           </p>
         </div>
       </div>
@@ -100,16 +118,16 @@ const Introduction = () => {
         <h2 className="text-2xl font-bold mb-6">Conclusion</h2>
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
           <p>
-            In conclusion, this current playbook is designed to make the necessary evaluation questions explicit. It lays out a shared vocabulary for AI evaluation that implementers and funders alike can use to communicate clearly and align expectations. It also introduces practical tools and methods for each evaluation level, and offers guidance tailored to the needs of engineers, data scientists, behavioral researchers, economists, and policymakers.
+            In conclusion, this current playbook is designed to <strong>make the necessary evaluation questions explicit</strong>. It lays out a shared vocabulary for AI evaluation that implementers and funders alike can use to communicate clearly and align expectations. It also introduces practical tools and methods for each evaluation level, and offers guidance tailored to the needs of engineers, data scientists, behavioral researchers, economists, and policymakers.
           </p>
         </div>
       </div>
 
       <div className="mb-16">
         <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
-          <h3 className="text-lg font-semibold mb-3 text-foreground">Living Playbook</h3>
+          <h3 className="text-lg font-semibold mb-3 text-foreground">This is a living playbook:</h3>
           <p className="text-muted-foreground">
-            This playbook is a living playbook. The current version is grounded in what we've learned so far from working directly with AI4GD accelerator teams and engaging experts across disciplines. In the next phase, we'll keep updating this playbook and collaborate more deeply with specialists to co-create shared evaluation tools, refine methodologies, and support their practical use in real-world settings.
+            The current version is grounded in what we've learned so far from working directly with AI4GD accelerator teams and engaging experts across disciplines. In the next phase, we'll keep updating this playbook and collaborate more deeply with specialists to co-create shared evaluation tools, refine methodologies, and support their practical use in real-world settings.
           </p>
         </div>
       </div>
