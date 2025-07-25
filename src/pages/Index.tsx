@@ -66,9 +66,9 @@ const Index = () => {
                   <br />
                   <br />
                   If you have any questions or feedback, please contact the authors {" "}
-                  <a href="/authors" className="text-white hover:text-white/80 transition-colors underline">
+                  <Link to="/authors" className="text-white hover:text-white/80 transition-colors underline">
                     here
-                  </a>.
+                  </Link>.
                 </p>
               </div>
             </div>
