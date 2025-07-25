@@ -61,17 +61,10 @@ const Index = () => {
             {/* Authors Credit */}
             <div className="mt-8 pt-6 border-t border-white/20">
               <div className="text-left">
-                <div className="flex items-center gap-3 mb-3">
-                  <img 
-                    src="/lovable-uploads/9a3d750a-2eef-48e5-9815-5a79d2de32ef.png" 
-                    alt="The Agency Fund" 
-                    className="h-8 w-auto brightness-0 invert"
-                  />
-                  <p className="text-sm text-white/90 mb-0">
-                    This playbook is created by the Agency Fund.
-                  </p>
-                </div>
                 <p className="text-sm text-white/70">
+                  This playbook is created by the Agency Fund.
+                  <br />
+                  <br />
                   If you have any questions or feedback, please contact the authors {" "}
                   <Link to="/authors" className="text-white hover:text-white/80 transition-colors underline">
                     here
@@ -79,30 +72,6 @@ const Index = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Greg Brockman Quote Section */}
-      <section className="py-16 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 border-y border-cyan-200/20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="relative">
-            <div className="absolute -top-4 -left-4 text-6xl text-cyan-400/30 font-serif">"</div>
-            <div className="absolute -bottom-8 -right-4 text-6xl text-cyan-400/30 font-serif">"</div>
-            <blockquote className="text-xl lg:text-2xl font-medium text-foreground leading-relaxed mb-6 relative z-10">
-              Evals are surprisingly often all you need.
-            </blockquote>
-            <cite className="text-lg text-muted-foreground">
-              — Greg Brockman, Co-founder of OpenAI
-            </cite>
-          </div>
-          <div className="mt-8 p-6 bg-background/50 backdrop-blur-sm rounded-2xl border border-cyan-200/20">
-            <p className="text-base text-foreground leading-relaxed">
-              We believe that's true, but only if we're clear on what evaluation really means. In the AI for 
-              development space, "eval" isn't just about model accuracy. It's also about whether the entire 
-              product drives real, measurable change in people's lives. This playbook is your starting point 
-              for making that kind of evaluation not just possible, but practical.
-            </p>
           </div>
         </div>
       </section>
@@ -142,6 +111,45 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Quote Section */}
+      <section className="py-24 bg-gradient-accent/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <a 
+                href="https://x.com/gdb/status/1733553161884127435" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block group"
+              >
+                <div className="bg-white rounded-2xl shadow-card p-2 max-w-md mx-auto lg:mx-0 relative group-hover:shadow-float transition-shadow">
+                  <img 
+                    src="/lovable-uploads/402503cb-15e8-45c4-aff5-a795f2eb860a.png" 
+                    alt="Greg Brockman tweet about evals"
+                    className="w-full h-auto rounded-xl"
+                  />
+                  <div className="absolute top-4 right-4 bg-black rounded-full p-2 opacity-80 group-hover:opacity-100 transition-opacity">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg leading-relaxed text-foreground">
+                  Greg Brockman, co-founder of OpenAI, famously said, "evals are surprisingly often all you need." 
+                  We believe that's true, but only if we're clear on what evaluation really means. In the AI for 
+                  development space, "eval" isn't just about model accuracy. It's also about whether the entire 
+                  product drives real, measurable change in people's lives. This playbook is your starting point 
+                  for making that kind of evaluation not just possible, but practical.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-24 bg-playbook-gray-light">
