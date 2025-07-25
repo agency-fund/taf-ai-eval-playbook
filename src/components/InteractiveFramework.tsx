@@ -110,13 +110,17 @@ const initialNodes: Node[] = [
       width: 200,
       height: 90,
       fontSize: '12px',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
     id: 'l1-task',
     type: 'default',
-    position: { x: 300, y: 70 },
+    position: { x: 320, y: 70 },
     data: { 
       label: 'Iterate on models, knowledge base, prompts, evaluation databases, and benchmark metrics' 
     },
@@ -127,7 +131,11 @@ const initialNodes: Node[] = [
       padding: '8px',
       width: 200,
       height: 90,
-      fontSize: '11px'
+      fontSize: '11px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
@@ -144,13 +152,17 @@ const initialNodes: Node[] = [
       padding: '8px',
       width: 140,
       height: 60,
-      fontSize: '11px'
+      fontSize: '11px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
     id: 'l1-iterative',
     type: 'default',
-    position: { x: 720, y: 85 },
+    position: { x: 265, y: 85 },
     data: { 
       label: '⟲' 
     },
@@ -188,13 +200,17 @@ const initialNodes: Node[] = [
       width: 200,
       height: 90,
       fontSize: '12px',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
     id: 'l2-task',
     type: 'default',
-    position: { x: 300, y: 200 },
+    position: { x: 320, y: 200 },
     data: { 
       label: 'Experiment on how the product as a whole or features of the product influence users\' engagement, retention, and non-engagement metrics.' 
     },
@@ -205,7 +221,11 @@ const initialNodes: Node[] = [
       padding: '8px',
       width: 200,
       height: 90,
-      fontSize: '11px'
+      fontSize: '11px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
@@ -222,13 +242,17 @@ const initialNodes: Node[] = [
       padding: '8px',
       width: 140,
       height: 60,
-      fontSize: '11px'
+      fontSize: '11px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
     id: 'l2-iterative',
     type: 'default',
-    position: { x: 720, y: 215 },
+    position: { x: 265, y: 215 },
     data: { 
       label: '⟲' 
     },
@@ -266,13 +290,17 @@ const initialNodes: Node[] = [
       width: 200,
       height: 90,
       fontSize: '12px',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
     id: 'l3-task',
     type: 'default',
-    position: { x: 300, y: 330 },
+    position: { x: 320, y: 330 },
     data: { 
       label: 'Experiment on how the product as a whole or features of the product influence users\' proximal psychological and behavioral metrics.' 
     },
@@ -283,7 +311,11 @@ const initialNodes: Node[] = [
       padding: '8px',
       width: 200,
       height: 90,
-      fontSize: '11px'
+      fontSize: '11px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
@@ -300,13 +332,17 @@ const initialNodes: Node[] = [
       padding: '8px',
       width: 140,
       height: 60,
-      fontSize: '11px'
+      fontSize: '11px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
     id: 'l3-iterative',
     type: 'default',
-    position: { x: 720, y: 345 },
+    position: { x: 265, y: 345 },
     data: { 
       label: '⟲' 
     },
@@ -344,13 +380,17 @@ const initialNodes: Node[] = [
       width: 200,
       height: 90,
       fontSize: '12px',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
     id: 'l4-task',
     type: 'default',
-    position: { x: 300, y: 460 },
+    position: { x: 320, y: 460 },
     data: { 
       label: 'Assess the impact of the product on users\' distal developmental outcomes.' 
     },
@@ -361,7 +401,11 @@ const initialNodes: Node[] = [
       padding: '8px',
       width: 200,
       height: 90,
-      fontSize: '11px'
+      fontSize: '11px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
   {
@@ -378,7 +422,11 @@ const initialNodes: Node[] = [
       padding: '8px',
       width: 140,
       height: 80,
-      fontSize: '11px'
+      fontSize: '11px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center'
     },
   },
 
@@ -406,7 +454,7 @@ const initialNodes: Node[] = [
   {
     id: 'implications-low',
     type: 'default',
-    position: { x: 760, y: 120 },
+    position: { x: 750, y: 85 },
     data: { 
       label: 'Lower cost, risk, and time spent' 
     },
@@ -419,13 +467,16 @@ const initialNodes: Node[] = [
       height: 60,
       fontSize: '11px',
       fontWeight: 'bold',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       textAlign: 'center'
     },
   },
   {
     id: 'implications-high',
     type: 'default',
-    position: { x: 760, y: 420 },
+    position: { x: 750, y: 485 },
     data: { 
       label: 'Higher cost, risk, and time spent' 
     },
@@ -438,6 +489,9 @@ const initialNodes: Node[] = [
       height: 60,
       fontSize: '11px',
       fontWeight: 'bold',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       textAlign: 'center'
     },
   },
@@ -514,6 +568,8 @@ const initialEdges: Edge[] = [
     style: { stroke: '#9CA3AF', strokeWidth: 1 },
     markerEnd: { type: MarkerType.ArrowClosed, color: '#9CA3AF' },
     label: 'work on',
+    labelStyle: { fontSize: '10px', fill: '#6B7280' },
+    labelBgStyle: { fill: '#F9FAFB' },
   },
   {
     id: 'work-l2',
@@ -522,6 +578,8 @@ const initialEdges: Edge[] = [
     style: { stroke: '#9CA3AF', strokeWidth: 1 },
     markerEnd: { type: MarkerType.ArrowClosed, color: '#9CA3AF' },
     label: 'work on',
+    labelStyle: { fontSize: '10px', fill: '#6B7280' },
+    labelBgStyle: { fill: '#F9FAFB' },
   },
   {
     id: 'work-l3',
@@ -530,6 +588,8 @@ const initialEdges: Edge[] = [
     style: { stroke: '#9CA3AF', strokeWidth: 1 },
     markerEnd: { type: MarkerType.ArrowClosed, color: '#9CA3AF' },
     label: 'work on',
+    labelStyle: { fontSize: '10px', fill: '#6B7280' },
+    labelBgStyle: { fill: '#F9FAFB' },
   },
   {
     id: 'work-l4',
@@ -538,6 +598,8 @@ const initialEdges: Edge[] = [
     style: { stroke: '#9CA3AF', strokeWidth: 1 },
     markerEnd: { type: MarkerType.ArrowClosed, color: '#9CA3AF' },
     label: 'work on',
+    labelStyle: { fontSize: '10px', fill: '#6B7280' },
+    labelBgStyle: { fill: '#F9FAFB' },
   },
 
   // Question to task arrows
@@ -589,7 +651,7 @@ const InteractiveFramework = () => {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         fitView
-        attributionPosition="bottom-left"
+        proOptions={{ hideAttribution: true }}
         style={{ backgroundColor: "#F9FAFB" }}
         defaultViewport={{ x: 0, y: 0, zoom: 0.8 }}
       >
