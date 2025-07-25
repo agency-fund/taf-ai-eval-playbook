@@ -65,9 +65,9 @@ const Index = () => {
                   <img 
                     src="/lovable-uploads/9a3d750a-2eef-48e5-9815-5a79d2de32ef.png" 
                     alt="The Agency Fund" 
-                    className="h-8 w-auto filter brightness-0 invert"
+                    className="h-8 w-auto brightness-0 invert"
                   />
-                  <p className="text-sm text-white/70 mb-0">
+                  <p className="text-sm text-white/90 mb-0">
                     This playbook is created by the Agency Fund.
                   </p>
                 </div>
