@@ -57,7 +57,7 @@ const initialNodes: Node[] = [
   {
     id: 'header-stakeholders',
     type: 'default',
-    position: { x: 580, y: 10 },
+    position: { x: 600, y: 10 },
     data: { 
       label: 'Key Stakeholders' 
     },
@@ -120,7 +120,7 @@ const initialNodes: Node[] = [
   {
     id: 'l1-task',
     type: 'default',
-    position: { x: 320, y: 70 },
+    position: { x: 285, y: 70 },
     data: { 
       label: 'Iterate on models, knowledge base, prompts, evaluation databases, and benchmark metrics' 
     },
@@ -141,7 +141,7 @@ const initialNodes: Node[] = [
   {
     id: 'l1-stakeholders',
     type: 'default',
-    position: { x: 580, y: 70 },
+    position: { x: 600, y: 70 },
     data: { 
       label: 'AI Engineers\nProduct Researchers' 
     },
@@ -162,7 +162,7 @@ const initialNodes: Node[] = [
   {
     id: 'l1-iterative',
     type: 'default',
-    position: { x: 265, y: 85 },
+    position: { x: 250, y: 85 },
     data: { 
       label: '⟲' 
     },
@@ -210,7 +210,7 @@ const initialNodes: Node[] = [
   {
     id: 'l2-task',
     type: 'default',
-    position: { x: 320, y: 200 },
+    position: { x: 285, y: 200 },
     data: { 
       label: 'Experiment on how the product as a whole or features of the product influence users\' engagement, retention, and non-engagement metrics.' 
     },
@@ -231,7 +231,7 @@ const initialNodes: Node[] = [
   {
     id: 'l2-stakeholders',
     type: 'default',
-    position: { x: 580, y: 200 },
+    position: { x: 600, y: 200 },
     data: { 
       label: 'Product Managers\nData Scientists' 
     },
@@ -252,7 +252,7 @@ const initialNodes: Node[] = [
   {
     id: 'l2-iterative',
     type: 'default',
-    position: { x: 265, y: 215 },
+    position: { x: 250, y: 215 },
     data: { 
       label: '⟲' 
     },
@@ -300,7 +300,7 @@ const initialNodes: Node[] = [
   {
     id: 'l3-task',
     type: 'default',
-    position: { x: 320, y: 330 },
+    position: { x: 285, y: 330 },
     data: { 
       label: 'Experiment on how the product as a whole or features of the product influence users\' proximal psychological and behavioral metrics.' 
     },
@@ -321,7 +321,7 @@ const initialNodes: Node[] = [
   {
     id: 'l3-stakeholders',
     type: 'default',
-    position: { x: 580, y: 330 },
+    position: { x: 600, y: 330 },
     data: { 
       label: 'Behavioral Researchers\nPsychologists' 
     },
@@ -342,7 +342,7 @@ const initialNodes: Node[] = [
   {
     id: 'l3-iterative',
     type: 'default',
-    position: { x: 265, y: 345 },
+    position: { x: 250, y: 345 },
     data: { 
       label: '⟲' 
     },
@@ -390,7 +390,7 @@ const initialNodes: Node[] = [
   {
     id: 'l4-task',
     type: 'default',
-    position: { x: 320, y: 460 },
+    position: { x: 285, y: 460 },
     data: { 
       label: 'Assess the impact of the product on users\' distal developmental outcomes.' 
     },
@@ -411,7 +411,7 @@ const initialNodes: Node[] = [
   {
     id: 'l4-stakeholders',
     type: 'default',
-    position: { x: 580, y: 460 },
+    position: { x: 600, y: 460 },
     data: { 
       label: 'Economists,\nPublic Health,\nPolicymakers' 
     },
@@ -434,7 +434,7 @@ const initialNodes: Node[] = [
   {
     id: 'stakeholder-container',
     type: 'default',
-    position: { x: 570, y: 60 },
+    position: { x: 590, y: 60 },
     data: { 
       label: '' 
     },
@@ -560,11 +560,11 @@ const initialEdges: Edge[] = [
     markerEnd: { type: MarkerType.ArrowClosed, color: '#F59E0B' },
   },
 
-  // Work on arrows
+  // Work on arrows (reversed direction)
   {
     id: 'work-l1',
-    source: 'l1-task',
-    target: 'l1-stakeholders',
+    source: 'l1-stakeholders',
+    target: 'l1-task',
     style: { stroke: '#9CA3AF', strokeWidth: 1 },
     markerEnd: { type: MarkerType.ArrowClosed, color: '#9CA3AF' },
     label: 'work on',
@@ -573,8 +573,8 @@ const initialEdges: Edge[] = [
   },
   {
     id: 'work-l2',
-    source: 'l2-task',
-    target: 'l2-stakeholders',
+    source: 'l2-stakeholders',
+    target: 'l2-task',
     style: { stroke: '#9CA3AF', strokeWidth: 1 },
     markerEnd: { type: MarkerType.ArrowClosed, color: '#9CA3AF' },
     label: 'work on',
@@ -583,8 +583,8 @@ const initialEdges: Edge[] = [
   },
   {
     id: 'work-l3',
-    source: 'l3-task',
-    target: 'l3-stakeholders',
+    source: 'l3-stakeholders',
+    target: 'l3-task',
     style: { stroke: '#9CA3AF', strokeWidth: 1 },
     markerEnd: { type: MarkerType.ArrowClosed, color: '#9CA3AF' },
     label: 'work on',
@@ -593,8 +593,8 @@ const initialEdges: Edge[] = [
   },
   {
     id: 'work-l4',
-    source: 'l4-task',
-    target: 'l4-stakeholders',
+    source: 'l4-stakeholders',
+    target: 'l4-task',
     style: { stroke: '#9CA3AF', strokeWidth: 1 },
     markerEnd: { type: MarkerType.ArrowClosed, color: '#9CA3AF' },
     label: 'work on',
@@ -602,28 +602,6 @@ const initialEdges: Edge[] = [
     labelBgStyle: { fill: '#F9FAFB' },
   },
 
-  // Self-loop to task connections
-  {
-    id: 'loop-to-task-l1',
-    source: 'l1-iterative',
-    target: 'l1-task',
-    style: { stroke: '#3B82F6', strokeWidth: 2 },
-    markerEnd: { type: MarkerType.ArrowClosed, color: '#3B82F6' },
-  },
-  {
-    id: 'loop-to-task-l2',
-    source: 'l2-iterative',
-    target: 'l2-task',
-    style: { stroke: '#10B981', strokeWidth: 2 },
-    markerEnd: { type: MarkerType.ArrowClosed, color: '#10B981' },
-  },
-  {
-    id: 'loop-to-task-l3',
-    source: 'l3-iterative',
-    target: 'l3-task',
-    style: { stroke: '#8B5CF6', strokeWidth: 2 },
-    markerEnd: { type: MarkerType.ArrowClosed, color: '#8B5CF6' },
-  },
 ];
 
 const InteractiveFramework = () => {
