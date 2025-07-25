@@ -103,25 +103,14 @@ const Index = () => {
               </a>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="relative">
-                <div className="absolute -top-6 -left-4 text-6xl font-bold text-cyan-400/30">"</div>
-                <div className="absolute -bottom-6 -right-4 text-6xl font-bold text-cyan-400/30 rotate-180">"</div>
-                <blockquote className="relative bg-white/10 backdrop-blur border border-cyan-300/30 rounded-xl p-8 shadow-lg">
-                  <p className="text-lg leading-relaxed text-foreground font-medium">
-                    evals are surprisingly often all you need
-                  </p>
-                  <footer className="mt-4 text-sm text-cyan-600 font-semibold">
-                    — Greg Brockman, co-founder of OpenAI
-                  </footer>
-                </blockquote>
-                <div className="mt-6 prose prose-lg max-w-none">
-                  <p className="text-base leading-relaxed text-muted-foreground">
-                    We believe that's true, but only if we're clear on what evaluation really means. In the AI for 
-                    development space, "eval" isn't just about model accuracy. It's also about whether the entire 
-                    product drives real, measurable change in people's lives. This playbook is your starting point 
-                    for making that kind of evaluation not just possible, but practical.
-                  </p>
-                </div>
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg leading-relaxed text-foreground">
+                  Greg Brockman, co-founder of OpenAI, famously said, "evals are surprisingly often all you need." 
+                  We believe that's true, but only if we're clear on what evaluation really means. In the AI for 
+                  development space, "eval" isn't just about model accuracy. It's also about whether the entire 
+                  product drives real, measurable change in people's lives. This playbook is your starting point 
+                  for making that kind of evaluation not just possible, but practical.
+                </p>
               </div>
             </div>
           </div>
