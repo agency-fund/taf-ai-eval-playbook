@@ -136,6 +136,47 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
       </div>
 
       <div className="mb-16">
+        <Card className="border-0 shadow-lg bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200/50">
+          <CardHeader>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <Database className="w-6 h-6 text-blue-600" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl">Building Repeatable Motions through an AI Evaluation Platform</CardTitle>
+                <CardDescription className="text-blue-700/80">Creating unified infrastructure for systematic evaluation</CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="bg-white/70 rounded-xl p-6 border border-blue-200/50">
+              <div className="prose prose-sm max-w-none">
+                <div className="whitespace-pre-line text-blue-900/90 leading-relaxed">
+                  {`To host the essential repeatable motions, we are creating a unified platform that can systematically instrument, track, and optimize evaluation across all four levels. Specifically, this AI evaluation platform allows teams to track changes to models (e.g., prompt tweaks, fine-tuning), measure their downstream impact on engagement (Level 2), user cognition, emotion, and behavior (Level 3), and development outcomes (Level 4), and close the loop through integrated feedback and versioning tools. This would enable organizations to make evidence-based decisions at every stage of AI product development and deployment.
+
+Unlike traditional development interventions, generative AI systems offer two key advantages:
+• Passive, high-resolution data capture of on-platform interactions and behavior, and
+• Precise, version-controlled deployment of models and product features.
+
+These properties respectively map to outcomes and interventions allowing for a rigorous, tech-enabled approach to continuous evaluation. But today, most social sector organizations lack the tools to make use of that potential. Evaluation often happens in silos – spread across spreadsheets, analytics dashboards, user interviews, and research reports – without a central system to connect the dots or guide action.
+
+We envision building an AI evaluation platform that supports:
+
+• Version-aware evaluation pipelines, where each model change (e.g., new prompt, fine-tuned model, updated retrieval source) is logged, compared, and tested across all evaluation levels.
+• Real-time metric tracking from model performance (Level 1) through to user retention (Level 2), changes in cognition, emotion, and behavior (Level 3), and development outcomes – where feasible (Level 4).
+• Integrated experiment frameworks that allow teams to run A/B tests, holdout studies, or pragmatic RCTs on product variations and their effects on user behavior or impact metrics.
+• Custom metric builders that let teams define what matters in their context (e.g., empathy in a mental health bot, or cultural relevance in a chatbot using low-resource languages).
+• Safety auditing tools that flag hallucinations, toxicity, or failures in grounding across both automated and human-in-the-loop evaluations.
+
+The platform would ideally integrate with existing tools such as Langfuse, Helicone, Traceloop, and Evidential, combining model observability with behavioral analytics, survey pipelines, and impact reporting. It would enable organizations to track how a model tweak made today propagates through user behavior in a month and potentially improves outcomes a year from now.`}
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="mb-16">
         <Card className="border-0 shadow-lg bg-gradient-to-br from-amber-50 to-orange-50 border-amber-200/50">
           <CardHeader>
             <div className="flex items-center gap-3">
