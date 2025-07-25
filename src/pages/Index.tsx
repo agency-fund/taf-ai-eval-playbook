@@ -61,10 +61,17 @@ const Index = () => {
             {/* Authors Credit */}
             <div className="mt-8 pt-6 border-t border-white/20">
               <div className="text-left">
+                <div className="flex items-center gap-3 mb-3">
+                  <img 
+                    src="/lovable-uploads/9a3d750a-2eef-48e5-9815-5a79d2de32ef.png" 
+                    alt="The Agency Fund" 
+                    className="h-8 w-auto filter brightness-0 invert"
+                  />
+                  <p className="text-sm text-white/70 mb-0">
+                    This playbook is created by the Agency Fund.
+                  </p>
+                </div>
                 <p className="text-sm text-white/70">
-                  This playbook is created by the Agency Fund.
-                  <br />
-                  <br />
                   If you have any questions or feedback, please contact the authors {" "}
                   <Link to="/authors" className="text-white hover:text-white/80 transition-colors underline">
                     here
