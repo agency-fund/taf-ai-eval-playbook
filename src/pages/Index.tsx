@@ -57,38 +57,36 @@ const Index = () => {
                 </Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Authors Section */}
-      <section className="py-12 bg-background border-b">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-2">Created by</p>
-            <div className="flex flex-wrap justify-center gap-4 mb-4">
-              <a href="https://www.linkedin.com/in/zezhenwu/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                Zezhen Wu
-              </a>
-              <span className="text-muted-foreground">•</span>
-              <a href="https://www.linkedin.com/in/robert-on/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                Robert On
-              </a>
-              <span className="text-muted-foreground">•</span>
-              <a href="https://www.linkedin.com/in/jamessonamwalsh/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                James Walsh
-              </a>
-              <span className="text-muted-foreground">•</span>
-              <a href="https://www.linkedin.com/in/edmundkorley/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                Edmund Korley
-              </a>
+            
+            {/* Authors Section */}
+            <div className="mt-12 pt-8 border-t border-white/20">
+              <div className="text-center">
+                <p className="text-sm text-white/70 mb-2">Created by</p>
+                <div className="flex flex-wrap justify-center gap-4 mb-4">
+                  <a href="https://www.linkedin.com/in/zezhenwu/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+                    Zezhen Wu
+                  </a>
+                  <span className="text-white/50">•</span>
+                  <a href="https://www.linkedin.com/in/robert-on/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+                    Robert On
+                  </a>
+                  <span className="text-white/50">•</span>
+                  <a href="https://www.linkedin.com/in/jamessonamwalsh/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+                    James Walsh
+                  </a>
+                  <span className="text-white/50">•</span>
+                  <a href="https://www.linkedin.com/in/edmundkorley/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+                    Edmund Korley
+                  </a>
+                </div>
+                <p className="text-sm text-white/70">
+                  For questions and requests, please reach out to{" "}
+                  <a href="mailto:zezhen@agency.fund" className="text-white hover:text-white/80 transition-colors underline">
+                    Zezhen Wu at zezhen@agency.fund
+                  </a>
+                </p>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground">
-              For questions and requests, please reach out to{" "}
-              <a href="mailto:zezhen@agency.fund" className="text-primary hover:underline">
-                Zezhen Wu at zezhen@agency.fund
-              </a>
-            </p>
           </div>
         </div>
       </section>
