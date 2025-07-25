@@ -174,24 +174,73 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
           <CardContent className="space-y-6">
             <div className="bg-white/70 rounded-xl p-6 border border-blue-200/50">
               <div className="prose prose-sm max-w-none">
-                <div className="whitespace-pre-line text-blue-900/90 leading-relaxed">
+                <div className="text-blue-900/90 leading-relaxed space-y-4">
                   {`To host the essential repeatable motions, we are creating a unified platform that can systematically instrument, track, and optimize evaluation across all four levels. Specifically, this AI evaluation platform allows teams to track changes to models (e.g., prompt tweaks, fine-tuning), measure their downstream impact on engagement (Level 2), user cognition, emotion, and behavior (Level 3), and development outcomes (Level 4), and close the loop through integrated feedback and versioning tools. This would enable organizations to make evidence-based decisions at every stage of AI product development and deployment.
 
-Unlike traditional development interventions, generative AI systems offer two key advantages:
-• Passive, high-resolution data capture of on-platform interactions and behavior, and
-• Precise, version-controlled deployment of models and product features.
+Unlike traditional development interventions, generative AI systems offer two key advantages:`.split('\n\n').map((paragraph, index) => {
+                    if (paragraph.includes('•')) {
+                      const lines = paragraph.split('\n');
+                      return (
+                        <div key={index} className="space-y-2">
+                          {lines.map((line, lineIndex) => {
+                            if (line.trim().startsWith('•')) {
+                              return (
+                                <div key={lineIndex} className="flex items-start gap-3">
+                                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                                  <p className="text-sm leading-relaxed">{line.replace('•', '').trim()}</p>
+                                </div>
+                              );
+                            } else if (line.trim()) {
+                              return <p key={lineIndex} className="text-sm leading-relaxed">{line}</p>;
+                            }
+                            return null;
+                          })}
+                        </div>
+                      );
+                    } else {
+                      return <p key={index} className="text-sm leading-relaxed">{paragraph}</p>;
+                    }
+                  })}
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm leading-relaxed">Passive, high-resolution data capture of on-platform interactions and behavior, and</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm leading-relaxed">Precise, version-controlled deployment of models and product features.</p>
+                    </div>
+                  </div>
 
-These properties respectively map to outcomes and interventions allowing for a rigorous, tech-enabled approach to continuous evaluation. But today, most social sector organizations lack the tools to make use of that potential. Evaluation often happens in silos – spread across spreadsheets, analytics dashboards, user interviews, and research reports – without a central system to connect the dots or guide action.
+                  <p className="text-sm leading-relaxed">These properties respectively map to outcomes and interventions allowing for a rigorous, tech-enabled approach to continuous evaluation. But today, most social sector organizations lack the tools to make use of that potential. Evaluation often happens in silos – spread across spreadsheets, analytics dashboards, user interviews, and research reports – without a central system to connect the dots or guide action.</p>
 
-We envision building an AI evaluation platform that supports:
+                  <p className="text-sm leading-relaxed">We envision building an AI evaluation platform that supports:</p>
 
-• Version-aware evaluation pipelines, where each model change (e.g., new prompt, fine-tuned model, updated retrieval source) is logged, compared, and tested across all evaluation levels.
-• Real-time metric tracking from model performance (Level 1) through to user retention (Level 2), changes in cognition, emotion, and behavior (Level 3), and development outcomes – where feasible (Level 4).
-• Integrated experiment frameworks that allow teams to run A/B tests, holdout studies, or pragmatic RCTs on product variations and their effects on user behavior or impact metrics.
-• Custom metric builders that let teams define what matters in their context (e.g., empathy in a mental health bot, or cultural relevance in a chatbot using low-resource languages).
-• Safety auditing tools that flag hallucinations, toxicity, or failures in grounding across both automated and human-in-the-loop evaluations.
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm leading-relaxed">Version-aware evaluation pipelines, where each model change (e.g., new prompt, fine-tuned model, updated retrieval source) is logged, compared, and tested across all evaluation levels.</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm leading-relaxed">Real-time metric tracking from model performance (Level 1) through to user retention (Level 2), changes in cognition, emotion, and behavior (Level 3), and development outcomes – where feasible (Level 4).</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm leading-relaxed">Integrated experiment frameworks that allow teams to run A/B tests, holdout studies, or pragmatic RCTs on product variations and their effects on user behavior or impact metrics.</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm leading-relaxed">Custom metric builders that let teams define what matters in their context (e.g., empathy in a mental health bot, or cultural relevance in a chatbot using low-resource languages).</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm leading-relaxed">Safety auditing tools that flag hallucinations, toxicity, or failures in grounding across both automated and human-in-the-loop evaluations.</p>
+                    </div>
+                  </div>
 
-The platform would ideally integrate with existing tools such as Langfuse, Helicone, Traceloop, and Evidential, combining model observability with behavioral analytics, survey pipelines, and impact reporting. It would enable organizations to track how a model tweak made today propagates through user behavior in a month and potentially improves outcomes a year from now.`}
+                  <p className="text-sm leading-relaxed">The platform would ideally integrate with existing tools such as Langfuse, Helicone, Traceloop, and Evidential, combining model observability with behavioral analytics, survey pipelines, and impact reporting. It would enable organizations to track how a model tweak made today propagates through user behavior in a month and potentially improves outcomes a year from now.</p>
                 </div>
               </div>
             </div>
