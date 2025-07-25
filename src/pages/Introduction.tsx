@@ -92,13 +92,6 @@ const Introduction = () => {
             </ul>
           </div>
           
-          <div className="my-8">
-            <img 
-              src="/lovable-uploads/7ea13bea-2ef5-479d-9017-9c9c99076558.png" 
-              alt="Four-level evaluation framework diagram showing levels from model evaluation to impact evaluation with stakeholders and implications"
-              className="w-full h-auto rounded-lg shadow-card"
-            />
-          </div>
           
           <div className="my-8">
             <h3 className="text-lg font-semibold mb-4 text-center">Interactive Framework Diagram</h3>
