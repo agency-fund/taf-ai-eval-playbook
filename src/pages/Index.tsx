@@ -101,13 +101,25 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <div className="bg-white rounded-2xl shadow-card p-2 max-w-md mx-auto lg:mx-0">
-                <img 
-                  src="/lovable-uploads/402503cb-15e8-45c4-aff5-a795f2eb860a.png" 
-                  alt="Greg Brockman tweet about evals"
-                  className="w-full h-auto rounded-xl"
-                />
-              </div>
+              <a 
+                href="https://x.com/gdb/status/1733553161884127435" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block group"
+              >
+                <div className="bg-white rounded-2xl shadow-card p-2 max-w-md mx-auto lg:mx-0 relative group-hover:shadow-float transition-shadow">
+                  <img 
+                    src="/lovable-uploads/402503cb-15e8-45c4-aff5-a795f2eb860a.png" 
+                    alt="Greg Brockman tweet about evals"
+                    className="w-full h-auto rounded-xl"
+                  />
+                  <div className="absolute top-4 right-4 bg-black rounded-full p-2 opacity-80 group-hover:opacity-100 transition-opacity">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
             </div>
             <div className="order-1 lg:order-2">
               <div className="prose prose-lg max-w-none">
