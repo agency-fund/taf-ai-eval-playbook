@@ -124,8 +124,31 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
               <CardContent className="space-y-6">
                 <div className="bg-gradient-to-br from-muted/20 to-muted/40 rounded-xl p-6 border border-border/30">
                   <div className="prose prose-sm max-w-none">
-                    <div className="whitespace-pre-line text-foreground/90 leading-relaxed">
-                      {motion.fullContent}
+                    <div className="text-foreground/90 leading-relaxed space-y-4">
+                      {motion.fullContent.split('\n\n').map((paragraph, index) => {
+                        if (paragraph.includes('•')) {
+                          const lines = paragraph.split('\n');
+                          return (
+                            <div key={index} className="space-y-2">
+                              {lines.map((line, lineIndex) => {
+                                if (line.trim().startsWith('•')) {
+                                  return (
+                                    <div key={lineIndex} className="flex items-start gap-3">
+                                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                                      <p className="text-sm leading-relaxed">{line.replace('•', '').trim()}</p>
+                                    </div>
+                                  );
+                                } else if (line.trim()) {
+                                  return <p key={lineIndex} className="text-sm leading-relaxed">{line}</p>;
+                                }
+                                return null;
+                              })}
+                            </div>
+                          );
+                        } else {
+                          return <p key={index} className="text-sm leading-relaxed">{paragraph}</p>;
+                        }
+                      })}
                     </div>
                   </div>
                 </div>
