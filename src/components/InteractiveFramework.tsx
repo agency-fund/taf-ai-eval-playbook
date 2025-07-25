@@ -443,33 +443,8 @@ const initialNodes: Node[] = [
       border: '2px dashed #9CA3AF',
       borderRadius: '8px',
       width: 160,
-      height: 510,
+      height: 490,
       zIndex: -1
-    },
-    draggable: false,
-    selectable: false,
-  },
-
-  // Cross-functional team label
-  {
-    id: 'cross-functional-label',
-    type: 'default',
-    position: { x: 600, y: 75 },
-    data: { 
-      label: 'Cross-functional Team' 
-    },
-    style: {
-      backgroundColor: 'transparent',
-      border: 'none',
-      fontSize: '14px',
-      fontWeight: 'bold',
-      textAlign: 'center',
-      width: 160,
-      height: 30,
-      color: '#4B5563',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
     },
     draggable: false,
     selectable: false,
