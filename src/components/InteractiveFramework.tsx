@@ -57,7 +57,7 @@ const initialNodes: Node[] = [
   {
     id: 'header-stakeholders',
     type: 'default',
-    position: { x: 550, y: 10 },
+    position: { x: 580, y: 10 },
     data: { 
       label: 'Key Stakeholders' 
     },
@@ -76,7 +76,7 @@ const initialNodes: Node[] = [
   {
     id: 'header-implications',
     type: 'default',
-    position: { x: 750, y: 10 },
+    position: { x: 780, y: 10 },
     data: { 
       label: 'Implications' 
     },
@@ -141,7 +141,7 @@ const initialNodes: Node[] = [
   {
     id: 'l1-stakeholders',
     type: 'default',
-    position: { x: 550, y: 70 },
+    position: { x: 580, y: 70 },
     data: { 
       label: 'AI Engineers\nProduct Researchers' 
     },
@@ -231,7 +231,7 @@ const initialNodes: Node[] = [
   {
     id: 'l2-stakeholders',
     type: 'default',
-    position: { x: 550, y: 200 },
+    position: { x: 580, y: 200 },
     data: { 
       label: 'Product Managers\nData Scientists' 
     },
@@ -321,7 +321,7 @@ const initialNodes: Node[] = [
   {
     id: 'l3-stakeholders',
     type: 'default',
-    position: { x: 550, y: 330 },
+    position: { x: 580, y: 330 },
     data: { 
       label: 'Behavioral Researchers\nPsychologists' 
     },
@@ -411,7 +411,7 @@ const initialNodes: Node[] = [
   {
     id: 'l4-stakeholders',
     type: 'default',
-    position: { x: 550, y: 460 },
+    position: { x: 580, y: 460 },
     data: { 
       label: 'Economists,\nPublic Health,\nPolicymakers' 
     },
@@ -434,7 +434,7 @@ const initialNodes: Node[] = [
   {
     id: 'stakeholder-container',
     type: 'default',
-    position: { x: 540, y: 60 },
+    position: { x: 570, y: 60 },
     data: { 
       label: '' 
     },
@@ -454,7 +454,7 @@ const initialNodes: Node[] = [
   {
     id: 'implications-low',
     type: 'default',
-    position: { x: 750, y: 85 },
+    position: { x: 780, y: 85 },
     data: { 
       label: 'Lower cost, risk, and time spent' 
     },
@@ -476,7 +476,7 @@ const initialNodes: Node[] = [
   {
     id: 'implications-high',
     type: 'default',
-    position: { x: 750, y: 485 },
+    position: { x: 780, y: 485 },
     data: { 
       label: 'Higher cost, risk, and time spent' 
     },
@@ -602,34 +602,27 @@ const initialEdges: Edge[] = [
     labelBgStyle: { fill: '#F9FAFB' },
   },
 
-  // Question to task arrows
+  // Self-loop to task connections
   {
-    id: 'q-to-t-l1',
-    source: 'l1-question',
+    id: 'loop-to-task-l1',
+    source: 'l1-iterative',
     target: 'l1-task',
-    style: { stroke: '#D1D5DB', strokeWidth: 1 },
-    markerEnd: { type: MarkerType.ArrowClosed, color: '#D1D5DB' },
+    style: { stroke: '#3B82F6', strokeWidth: 2 },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#3B82F6' },
   },
   {
-    id: 'q-to-t-l2',
-    source: 'l2-question',
+    id: 'loop-to-task-l2',
+    source: 'l2-iterative',
     target: 'l2-task',
-    style: { stroke: '#D1D5DB', strokeWidth: 1 },
-    markerEnd: { type: MarkerType.ArrowClosed, color: '#D1D5DB' },
+    style: { stroke: '#10B981', strokeWidth: 2 },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#10B981' },
   },
   {
-    id: 'q-to-t-l3',
-    source: 'l3-question',
+    id: 'loop-to-task-l3',
+    source: 'l3-iterative',
     target: 'l3-task',
-    style: { stroke: '#D1D5DB', strokeWidth: 1 },
-    markerEnd: { type: MarkerType.ArrowClosed, color: '#D1D5DB' },
-  },
-  {
-    id: 'q-to-t-l4',
-    source: 'l4-question',
-    target: 'l4-task',
-    style: { stroke: '#D1D5DB', strokeWidth: 1 },
-    markerEnd: { type: MarkerType.ArrowClosed, color: '#D1D5DB' },
+    style: { stroke: '#8B5CF6', strokeWidth: 2 },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#8B5CF6' },
   },
 ];
 
@@ -657,14 +650,6 @@ const InteractiveFramework = () => {
       >
         <Background color="#E5E7EB" gap={16} />
         <Controls />
-        <MiniMap 
-          zoomable 
-          pannable 
-          style={{
-            backgroundColor: '#F3F4F6',
-            border: '1px solid #D1D5DB'
-          }}
-        />
       </ReactFlow>
     </div>
   );
