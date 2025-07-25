@@ -62,9 +62,9 @@ const Index = () => {
             <div className="mt-8 pt-6 border-t border-white/20">
               <div className="text-left">
                 <p className="text-sm text-white/70">
-                  This playbook is created by the{" "}
+                  This playbook is created by the Agency Fund. Please see author list {" "}.
                   <a href="/authors" className="text-white hover:text-white/80 transition-colors underline">
-                    Agency Fund
+                    here
                   </a>
                 </p>
               </div>
