@@ -96,6 +96,34 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Quote Section */}
+      <section className="py-24 bg-gradient-accent/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="bg-white rounded-2xl shadow-card p-2 max-w-md mx-auto lg:mx-0">
+                <img 
+                  src="/lovable-uploads/402503cb-15e8-45c4-aff5-a795f2eb860a.png" 
+                  alt="Greg Brockman tweet about evals"
+                  className="w-full h-auto rounded-xl"
+                />
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg leading-relaxed text-foreground">
+                  Greg Brockman, co-founder of OpenAI, famously said, "evals are surprisingly often all you need." 
+                  We believe that's true, but only if we're clear on what evaluation really means. In the AI for 
+                  development space, "eval" isn't just about model accuracy. It's also about whether the entire 
+                  product drives real, measurable change in people's lives. This playbook is your starting point 
+                  for making that kind of evaluation not just possible, but practical.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-playbook-gray-light">
         <div className="max-w-4xl mx-auto px-6 text-center">
