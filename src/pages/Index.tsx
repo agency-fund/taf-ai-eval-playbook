@@ -59,8 +59,8 @@ const Index = () => {
             </div>
             
             {/* Authors Credit */}
-            <div className="mt-12 pt-8 border-t border-white/20">
-              <div className="text-center">
+            <div className="mt-8 pt-6 border-t border-white/20">
+              <div className="text-left">
                 <p className="text-sm text-white/70">
                   This playbook is created by the{" "}
                   <a href="/authors" className="text-white hover:text-white/80 transition-colors underline">
