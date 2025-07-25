@@ -15,11 +15,89 @@ import {
 import '@xyflow/react/dist/style.css';
 
 const initialNodes: Node[] = [
+  // Column Headers
+  {
+    id: 'header-levels',
+    type: 'default',
+    position: { x: 50, y: 10 },
+    data: { 
+      label: 'Levels of Evaluation' 
+    },
+    style: {
+      backgroundColor: 'transparent',
+      border: 'none',
+      fontSize: '14px',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      width: 200,
+      height: 30
+    },
+    draggable: false,
+    selectable: false,
+  },
+  {
+    id: 'header-tasks',
+    type: 'default',
+    position: { x: 300, y: 10 },
+    data: { 
+      label: 'Main Task' 
+    },
+    style: {
+      backgroundColor: 'transparent',
+      border: 'none',
+      fontSize: '14px',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      width: 200,
+      height: 30
+    },
+    draggable: false,
+    selectable: false,
+  },
+  {
+    id: 'header-stakeholders',
+    type: 'default',
+    position: { x: 550, y: 10 },
+    data: { 
+      label: 'Key Stakeholders' 
+    },
+    style: {
+      backgroundColor: 'transparent',
+      border: 'none',
+      fontSize: '14px',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      width: 160,
+      height: 30
+    },
+    draggable: false,
+    selectable: false,
+  },
+  {
+    id: 'header-implications',
+    type: 'default',
+    position: { x: 750, y: 10 },
+    data: { 
+      label: 'Implications' 
+    },
+    style: {
+      backgroundColor: 'transparent',
+      border: 'none',
+      fontSize: '14px',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      width: 140,
+      height: 30
+    },
+    draggable: false,
+    selectable: false,
+  },
+
   // Level 1 - Model Evaluation
   {
     id: 'l1-question',
     type: 'default',
-    position: { x: 50, y: 50 },
+    position: { x: 50, y: 70 },
     data: { 
       label: 'L1: Model evaluation\nDoes the AI model produce the desired responses?' 
     },
@@ -30,7 +108,7 @@ const initialNodes: Node[] = [
       borderRadius: '8px',
       padding: '10px',
       width: 200,
-      height: 80,
+      height: 90,
       fontSize: '12px',
       fontWeight: 'bold'
     },
@@ -38,7 +116,7 @@ const initialNodes: Node[] = [
   {
     id: 'l1-task',
     type: 'default',
-    position: { x: 300, y: 50 },
+    position: { x: 300, y: 70 },
     data: { 
       label: 'Iterate on models, knowledge base, prompts, evaluation databases, and benchmark metrics' 
     },
@@ -47,15 +125,15 @@ const initialNodes: Node[] = [
       border: '1px solid #D1D5DB',
       borderRadius: '8px',
       padding: '8px',
-      width: 180,
-      height: 70,
+      width: 200,
+      height: 90,
       fontSize: '11px'
     },
   },
   {
     id: 'l1-stakeholders',
     type: 'default',
-    position: { x: 520, y: 50 },
+    position: { x: 550, y: 70 },
     data: { 
       label: 'AI Engineers\nProduct Researchers' 
     },
@@ -64,17 +142,40 @@ const initialNodes: Node[] = [
       border: '1px solid #9CA3AF',
       borderRadius: '8px',
       padding: '8px',
-      width: 120,
-      height: 50,
+      width: 140,
+      height: 60,
       fontSize: '11px'
     },
+  },
+  {
+    id: 'l1-iterative',
+    type: 'default',
+    position: { x: 720, y: 85 },
+    data: { 
+      label: '⟲' 
+    },
+    style: {
+      backgroundColor: '#DBEAFE',
+      border: '2px solid #3B82F6',
+      borderRadius: '50%',
+      padding: '5px',
+      width: 30,
+      height: 30,
+      fontSize: '16px',
+      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    draggable: false,
+    selectable: false,
   },
   
   // Level 2 - Product Evaluation
   {
     id: 'l2-question',
     type: 'default',
-    position: { x: 50, y: 180 },
+    position: { x: 50, y: 200 },
     data: { 
       label: 'L2: Product evaluation\nDoes the product facilitate meaningful interactions?' 
     },
@@ -85,7 +186,7 @@ const initialNodes: Node[] = [
       borderRadius: '8px',
       padding: '10px',
       width: 200,
-      height: 80,
+      height: 90,
       fontSize: '12px',
       fontWeight: 'bold'
     },
@@ -93,7 +194,7 @@ const initialNodes: Node[] = [
   {
     id: 'l2-task',
     type: 'default',
-    position: { x: 300, y: 180 },
+    position: { x: 300, y: 200 },
     data: { 
       label: 'Experiment on how the product as a whole or features of the product influence users\' engagement, retention, and non-engagement metrics.' 
     },
@@ -102,15 +203,15 @@ const initialNodes: Node[] = [
       border: '1px solid #D1D5DB',
       borderRadius: '8px',
       padding: '8px',
-      width: 180,
-      height: 70,
+      width: 200,
+      height: 90,
       fontSize: '11px'
     },
   },
   {
     id: 'l2-stakeholders',
     type: 'default',
-    position: { x: 520, y: 180 },
+    position: { x: 550, y: 200 },
     data: { 
       label: 'Product Managers\nData Scientists' 
     },
@@ -119,17 +220,40 @@ const initialNodes: Node[] = [
       border: '1px solid #9CA3AF',
       borderRadius: '8px',
       padding: '8px',
-      width: 120,
-      height: 50,
+      width: 140,
+      height: 60,
       fontSize: '11px'
     },
+  },
+  {
+    id: 'l2-iterative',
+    type: 'default',
+    position: { x: 720, y: 215 },
+    data: { 
+      label: '⟲' 
+    },
+    style: {
+      backgroundColor: '#D1FAE5',
+      border: '2px solid #10B981',
+      borderRadius: '50%',
+      padding: '5px',
+      width: 30,
+      height: 30,
+      fontSize: '16px',
+      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    draggable: false,
+    selectable: false,
   },
 
   // Level 3 - User Evaluation
   {
     id: 'l3-question',
     type: 'default',
-    position: { x: 50, y: 310 },
+    position: { x: 50, y: 330 },
     data: { 
       label: 'L3: User evaluation\nDoes the product positively support users\' thoughts, feelings, and actions?' 
     },
@@ -140,7 +264,7 @@ const initialNodes: Node[] = [
       borderRadius: '8px',
       padding: '10px',
       width: 200,
-      height: 80,
+      height: 90,
       fontSize: '12px',
       fontWeight: 'bold'
     },
@@ -148,7 +272,7 @@ const initialNodes: Node[] = [
   {
     id: 'l3-task',
     type: 'default',
-    position: { x: 300, y: 310 },
+    position: { x: 300, y: 330 },
     data: { 
       label: 'Experiment on how the product as a whole or features of the product influence users\' proximal psychological and behavioral metrics.' 
     },
@@ -157,15 +281,15 @@ const initialNodes: Node[] = [
       border: '1px solid #D1D5DB',
       borderRadius: '8px',
       padding: '8px',
-      width: 180,
-      height: 70,
+      width: 200,
+      height: 90,
       fontSize: '11px'
     },
   },
   {
     id: 'l3-stakeholders',
     type: 'default',
-    position: { x: 520, y: 310 },
+    position: { x: 550, y: 330 },
     data: { 
       label: 'Behavioral Researchers\nPsychologists' 
     },
@@ -174,17 +298,40 @@ const initialNodes: Node[] = [
       border: '1px solid #9CA3AF',
       borderRadius: '8px',
       padding: '8px',
-      width: 120,
-      height: 50,
+      width: 140,
+      height: 60,
       fontSize: '11px'
     },
+  },
+  {
+    id: 'l3-iterative',
+    type: 'default',
+    position: { x: 720, y: 345 },
+    data: { 
+      label: '⟲' 
+    },
+    style: {
+      backgroundColor: '#EDE9FE',
+      border: '2px solid #8B5CF6',
+      borderRadius: '50%',
+      padding: '5px',
+      width: 30,
+      height: 30,
+      fontSize: '16px',
+      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    draggable: false,
+    selectable: false,
   },
 
   // Level 4 - Impact Evaluation
   {
     id: 'l4-question',
     type: 'default',
-    position: { x: 50, y: 440 },
+    position: { x: 50, y: 460 },
     data: { 
       label: 'L4: Impact evaluation\nDoes the product improve development outcomes?' 
     },
@@ -195,7 +342,7 @@ const initialNodes: Node[] = [
       borderRadius: '8px',
       padding: '10px',
       width: 200,
-      height: 80,
+      height: 90,
       fontSize: '12px',
       fontWeight: 'bold'
     },
@@ -203,7 +350,7 @@ const initialNodes: Node[] = [
   {
     id: 'l4-task',
     type: 'default',
-    position: { x: 300, y: 440 },
+    position: { x: 300, y: 460 },
     data: { 
       label: 'Assess the impact of the product on users\' distal developmental outcomes.' 
     },
@@ -212,15 +359,15 @@ const initialNodes: Node[] = [
       border: '1px solid #D1D5DB',
       borderRadius: '8px',
       padding: '8px',
-      width: 180,
-      height: 50,
+      width: 200,
+      height: 90,
       fontSize: '11px'
     },
   },
   {
     id: 'l4-stakeholders',
     type: 'default',
-    position: { x: 520, y: 440 },
+    position: { x: 550, y: 460 },
     data: { 
       label: 'Economists,\nPublic Health,\nPolicymakers' 
     },
@@ -229,38 +376,37 @@ const initialNodes: Node[] = [
       border: '1px solid #9CA3AF',
       borderRadius: '8px',
       padding: '8px',
-      width: 120,
-      height: 60,
+      width: 140,
+      height: 80,
       fontSize: '11px'
     },
   },
 
-  // Cross-functional team header
+  // Stakeholder container
   {
-    id: 'team-header',
+    id: 'stakeholder-container',
     type: 'default',
-    position: { x: 500, y: 10 },
+    position: { x: 540, y: 60 },
     data: { 
-      label: 'Cross-Functional Team' 
+      label: '' 
     },
     style: {
       backgroundColor: 'transparent',
-      border: '1px dashed #9CA3AF',
+      border: '2px dashed #9CA3AF',
       borderRadius: '8px',
-      padding: '5px',
       width: 160,
-      height: 25,
-      fontSize: '12px',
-      fontWeight: 'bold',
-      textAlign: 'center'
+      height: 490,
+      zIndex: -1
     },
+    draggable: false,
+    selectable: false,
   },
 
   // Implications
   {
     id: 'implications-low',
     type: 'default',
-    position: { x: 700, y: 100 },
+    position: { x: 760, y: 120 },
     data: { 
       label: 'Lower cost, risk, and time spent' 
     },
@@ -270,7 +416,7 @@ const initialNodes: Node[] = [
       borderRadius: '8px',
       padding: '8px',
       width: 140,
-      height: 50,
+      height: 60,
       fontSize: '11px',
       fontWeight: 'bold',
       textAlign: 'center'
@@ -279,7 +425,7 @@ const initialNodes: Node[] = [
   {
     id: 'implications-high',
     type: 'default',
-    position: { x: 700, y: 350 },
+    position: { x: 760, y: 420 },
     data: { 
       label: 'Higher cost, risk, and time spent' 
     },
@@ -289,7 +435,7 @@ const initialNodes: Node[] = [
       borderRadius: '8px',
       padding: '8px',
       width: 140,
-      height: 50,
+      height: 60,
       fontSize: '11px',
       fontWeight: 'bold',
       textAlign: 'center'
@@ -298,7 +444,7 @@ const initialNodes: Node[] = [
 ];
 
 const initialEdges: Edge[] = [
-  // Main flow arrows (feedback)
+  // Main flow arrows (forward)
   {
     id: 'feedback-l1-l2',
     source: 'l1-question',
@@ -322,6 +468,42 @@ const initialEdges: Edge[] = [
     type: 'smoothstep',
     style: { stroke: '#6B7280', strokeWidth: 2 },
     markerEnd: { type: MarkerType.ArrowClosed, color: '#6B7280' },
+  },
+
+  // Feedback arrows (reverse flow)
+  {
+    id: 'feedback-l3-l2',
+    source: 'l3-question',
+    target: 'l2-question',
+    type: 'smoothstep',
+    style: { stroke: '#A855F7', strokeWidth: 2, strokeDasharray: '5,5' },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#A855F7' },
+  },
+  {
+    id: 'feedback-l3-l1',
+    source: 'l3-question',
+    target: 'l1-question',
+    type: 'smoothstep',
+    style: { stroke: '#A855F7', strokeWidth: 2, strokeDasharray: '5,5' },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#A855F7' },
+  },
+  {
+    id: 'feedback-l2-l1',
+    source: 'l2-question',
+    target: 'l1-question',
+    type: 'smoothstep',
+    style: { stroke: '#10B981', strokeWidth: 2, strokeDasharray: '5,5' },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#10B981' },
+  },
+
+  // Implications arrow
+  {
+    id: 'implications-arrow',
+    source: 'implications-low',
+    target: 'implications-high',
+    type: 'smoothstep',
+    style: { stroke: '#F59E0B', strokeWidth: 2 },
+    markerEnd: { type: MarkerType.ArrowClosed, color: '#F59E0B' },
   },
 
   // Work on arrows
