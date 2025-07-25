@@ -64,6 +64,7 @@ const Index = () => {
                 <p className="text-sm text-white/70">
                   This playbook is created by the Agency Fund.
                   <br />
+                  <br />
                   If you have any questions or feedback, please contact the authors {" "}
                   <a href="/authors" className="text-white hover:text-white/80 transition-colors underline">
                     here
