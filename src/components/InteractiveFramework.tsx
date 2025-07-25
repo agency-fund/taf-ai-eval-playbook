@@ -99,7 +99,7 @@ const initialNodes: Node[] = [
     type: 'default',
     position: { x: 50, y: 70 },
     data: { 
-      label: 'L1: Model\nevaluation\nDoes the AI model produce the desired responses?' 
+      label: 'L1: Model evaluation\nDoes the AI model produce the desired responses?' 
     },
     style: {
       backgroundColor: '#3B82F6',
@@ -189,7 +189,7 @@ const initialNodes: Node[] = [
     type: 'default',
     position: { x: 50, y: 200 },
     data: { 
-      label: 'L2: Product\nevaluation\nDoes the product facilitate meaningful interactions?' 
+      label: 'L2: Product evaluation\nDoes the product facilitate meaningful interactions?' 
     },
     style: {
       backgroundColor: '#10B981',
@@ -279,7 +279,7 @@ const initialNodes: Node[] = [
     type: 'default',
     position: { x: 50, y: 330 },
     data: { 
-      label: 'L3: User\nevaluation\nDoes the product positively support users\' thoughts, feelings, and actions?' 
+      label: 'L3: User evaluation\nDoes the product positively support users\' thoughts, feelings, and actions?' 
     },
     style: {
       backgroundColor: '#8B5CF6',
@@ -369,7 +369,7 @@ const initialNodes: Node[] = [
     type: 'default',
     position: { x: 50, y: 460 },
     data: { 
-      label: 'L4: Impact\nevaluation\nDoes the product improve development outcomes?' 
+      label: 'L4: Impact evaluation\nDoes the product improve development outcomes?' 
     },
     style: {
       backgroundColor: '#F59E0B',
