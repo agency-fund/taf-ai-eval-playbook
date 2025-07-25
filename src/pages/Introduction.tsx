@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lightbulb, Target, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import InteractiveFramework from "@/components/InteractiveFramework";
 import React from "react";
 
 type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -97,6 +98,14 @@ const Introduction = () => {
               alt="Four-level evaluation framework diagram showing levels from model evaluation to impact evaluation with stakeholders and implications"
               className="w-full h-auto rounded-lg shadow-card"
             />
+          </div>
+          
+          <div className="my-8">
+            <h3 className="text-lg font-semibold mb-4 text-center">Interactive Framework Diagram</h3>
+            <InteractiveFramework />
+            <p className="text-sm text-muted-foreground mt-4 text-center">
+              Drag to explore • Click and zoom • Use controls to navigate the framework
+            </p>
           </div>
           
           <p>
