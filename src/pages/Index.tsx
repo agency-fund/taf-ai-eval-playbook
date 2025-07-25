@@ -36,7 +36,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-hero text-white">
         <div className="absolute inset-0 bg-black/10" />
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-6 py-16 lg:py-20">
           <div className="max-w-3xl">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               AI Evaluation in the Development Sector
