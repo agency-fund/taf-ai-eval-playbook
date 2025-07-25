@@ -443,7 +443,7 @@ const initialNodes: Node[] = [
       border: '2px dashed #9CA3AF',
       borderRadius: '8px',
       width: 160,
-      height: 490,
+      height: 510,
       zIndex: -1
     },
     draggable: false,
@@ -454,7 +454,7 @@ const initialNodes: Node[] = [
   {
     id: 'cross-functional-label',
     type: 'default',
-    position: { x: 600, y: 560 },
+    position: { x: 600, y: 75 },
     data: { 
       label: 'Cross-functional Team' 
     },
