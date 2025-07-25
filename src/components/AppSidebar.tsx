@@ -35,6 +35,7 @@ const sections = [
   { title: "Case Studies", url: "/case-studies", icon: FileText },
   { title: "Evaluation Methods", url: "/methods", icon: Settings },
   { title: "Glossary", url: "/glossary", icon: BookMarked },
+  { title: "Authors", url: "/authors", icon: Users },
 ];
 
 const tools = [
