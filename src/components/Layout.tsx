@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
 
@@ -6,6 +8,11 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full">
