@@ -58,31 +58,13 @@ const Index = () => {
               </Button>
             </div>
             
-            {/* Authors Section */}
+            {/* Authors Credit */}
             <div className="mt-12 pt-8 border-t border-white/20">
               <div className="text-center">
-                <p className="text-sm text-white/70 mb-2">Created by</p>
-                <div className="flex flex-wrap justify-center gap-4 mb-4">
-                  <a href="https://www.linkedin.com/in/zezhenwu/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-                    Zezhen Wu
-                  </a>
-                  <span className="text-white/50">•</span>
-                  <a href="https://www.linkedin.com/in/robert-on/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-                    Robert On
-                  </a>
-                  <span className="text-white/50">•</span>
-                  <a href="https://www.linkedin.com/in/jamessonamwalsh/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-                    James Walsh
-                  </a>
-                  <span className="text-white/50">•</span>
-                  <a href="https://www.linkedin.com/in/edmundkorley/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-                    Edmund Korley
-                  </a>
-                </div>
                 <p className="text-sm text-white/70">
-                  For questions and requests, please reach out to{" "}
-                  <a href="mailto:zezhen@agency.fund" className="text-white hover:text-white/80 transition-colors underline">
-                    Zezhen Wu at zezhen@agency.fund
+                  This playbook is created by the{" "}
+                  <a href="/authors" className="text-white hover:text-white/80 transition-colors underline">
+                    Agency Fund
                   </a>
                 </p>
               </div>
