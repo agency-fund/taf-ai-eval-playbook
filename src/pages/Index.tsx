@@ -104,7 +104,7 @@ const Index = () => {
             </div>
             <div className="order-1 lg:order-2">
               <div className="prose prose-lg max-w-none">
-                <p className="text-lg leading-relaxed text-foreground">
+                <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-200">
                   Greg Brockman, co-founder of OpenAI, famously said, "evals are surprisingly often all you need." 
                   We believe that's true, but only if we're clear on what evaluation really means. In the AI for 
                   development space, "eval" isn't just about model accuracy. It's also about whether the entire 
