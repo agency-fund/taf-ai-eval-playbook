@@ -101,7 +101,15 @@ const Index = () => {
                 </div>
               </a>
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 relative">
+              {/* Agency Fund Logo - positioned in top right */}
+              <div className="absolute top-0 right-0 -mt-4 -mr-4">
+                <img 
+                  src="/lovable-uploads/9a3d750a-2eef-48e5-9815-5a79d2de32ef.png" 
+                  alt="Agency Fund" 
+                  className="w-16 h-16 object-contain opacity-60"
+                />
+              </div>
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-200">
                   Greg Brockman, co-founder of OpenAI, famously said, "evals are surprisingly often all you need." 
