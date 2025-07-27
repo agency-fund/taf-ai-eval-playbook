@@ -6,90 +6,106 @@ import { Link } from "react-router-dom";
 const Methods = () => {
   const methodsByLevel = [
     {
-      level: "Model Evaluation",
+      level: "Level 1: Model Evaluation",
       icon: Settings,
       color: "bg-red-100 text-red-700 border-red-200",
+      coreQuestion: "Does the AI model produce the desired responses?",
       methods: [
         {
-          name: "Cross-validation Testing",
-          description: "Assess model generalization across different data splits",
-          when: "During model development and training"
+          name: "Automatic Benchmarking",
+          description: "Compare AI outputs to pre-labeled 'gold standard' answers using metrics like BLEU, ROUGE, or accuracy/F1",
+          when: "Tasks with clear correct answers (fact recall, data extraction)",
+          example: "A health chatbot evaluated against expert-approved medical FAQs"
         },
         {
-          name: "Bias and Fairness Analysis", 
-          description: "Evaluate model performance across different demographic groups",
-          when: "Before deployment and regularly thereafter"
+          name: "Human as a Judge", 
+          description: "Users and experts manually score or annotate AI outputs using defined criteria",
+          when: "Tasks requiring subjective judgment or nuanced criteria (accuracy, empathy, completeness)",
+          example: "Users and experts rate chatbot responses for cultural sensitivity"
         },
         {
-          name: "Adversarial Testing",
-          description: "Test model robustness against edge cases and attacks",
-          when: "Pre-deployment security assessment"
+          name: "LLM as a Judge (with Human in the Loop)",
+          description: "A high-performing LLM evaluates another LLM's outputs, calibrated against human judgments",
+          when: "Large-scale evaluations needing consistency, with human oversight",
+          example: "GPT-4 assesses helpfulness and accuracy of outputs from a smaller educational chatbot"
         }
       ]
     },
     {
-      level: "Product Evaluation",
+      level: "Level 2: Product Evaluation",
       icon: Package,
       color: "bg-orange-100 text-orange-700 border-orange-200",
+      coreQuestion: "Does the product facilitate meaningful interactions?",
       methods: [
         {
-          name: "Integration Testing",
-          description: "Verify AI system works correctly within product ecosystem",
-          when: "During product integration phases"
-        },
-        {
-          name: "Performance Benchmarking",
-          description: "Measure system response times and resource usage",
-          when: "Pre-deployment and ongoing monitoring"
-        },
-        {
           name: "A/B Testing",
-          description: "Compare AI-enabled vs non-AI product versions",
-          when: "Post-deployment feature validation"
+          description: "Feature A vs. Feature B comparison to optimize user engagement",
+          when: "Post-deployment feature validation and continuous improvement",
+          example: "Testing different UI designs or AI response styles"
+        },
+        {
+          name: "Multi-armed Bandit",
+          description: "Performance-based adaptive allocations, including contextual bandits for user characteristics",
+          when: "Dynamic optimization based on user feedback and performance",
+          example: "Automatically adjusting content recommendations based on user engagement"
+        },
+        {
+          name: "Holdout Testing",
+          description: "AI vs. non-AI comparison or status quo vs. enhanced engagement testing",
+          when: "Measuring overall product impact vs baseline experiences",
+          example: "Comparing user outcomes with and without AI-powered features"
         }
       ]
     },
     {
-      level: "User Evaluation", 
+      level: "Level 3: User Evaluation", 
       icon: User,
       color: "bg-blue-100 text-blue-700 border-blue-200",
+      coreQuestion: "Does the product positively support users' thoughts, feelings, and actions?",
       methods: [
         {
-          name: "Usability Testing",
-          description: "Observe users interacting with AI features in realistic contexts",
-          when: "During design and post-deployment phases"
+          name: "On-Platform Behavioral Measures",
+          description: "Analyze user interaction data to assess cognitive and affective outcomes",
+          when: "Continuous monitoring of user engagement and learning patterns",
+          example: "Tracking query complexity over time to measure knowledge growth"
         },
         {
-          name: "User Interviews",
-          description: "Gather qualitative feedback on user experience and trust",
-          when: "Throughout product lifecycle"
+          name: "Short Self-Report Surveys",
+          description: "Brief, contextual surveys using validated scales to measure user states",
+          when: "After significant interactions or at logical breakpoints",
+          example: "Post-session confidence and motivation assessments"
+        },
+        {
+          name: "NLP-Based Text Analysis",
+          description: "Automated analysis of user text for sentiment, cognitive indicators, and psychological constructs",
+          when: "Large-scale analysis of conversational data",
+          example: "Sentiment analysis to track emotional state changes over time"
+        }
+      ]
+    },
+    {
+      level: "Level 4: Impact Evaluation",
+      icon: BarChart3, 
+      color: "bg-green-100 text-green-700 border-green-200",
+      coreQuestion: "Does the product improve development outcomes?",
+      methods: [
+        {
+          name: "Randomized Controlled Trials (RCTs)",
+          description: "Gold standard for establishing causal relationships between interventions and long-term outcomes",
+          when: "When product is mature and ready for scale evaluation",
+          example: "Multi-site evaluation of educational AI impact on learning outcomes"
+        },
+        {
+          name: "Quasi-Experimental Designs",
+          description: "Alternative approaches when RCTs are not feasible: natural experiments, regression discontinuity",
+          when: "When randomization is not possible or ethical",
+          example: "Using policy rollouts to measure health AI impact"
         },
         {
           name: "Longitudinal Studies",
-          description: "Track user behavior and satisfaction changes over time",
-          when: "Post-deployment, ongoing"
-        }
-      ]
-    },
-    {
-      level: "Impact Evaluation",
-      icon: BarChart3, 
-      color: "bg-green-100 text-green-700 border-green-200",
-      methods: [
-        {
-          name: "Randomized Controlled Trials",
-          description: "Measure causal impact on intended development outcomes",
-          when: "Post-deployment impact assessment"
-        },
-        {
-          name: "Cost-Effectiveness Analysis",
-          description: "Compare costs to achieved outcomes and benefits",
-          when: "Regular intervals post-deployment"
-        },
-        {
-          name: "Mixed-Methods Evaluation",
-          description: "Combine quantitative metrics with qualitative insights",
-          when: "Comprehensive impact evaluation"
+          description: "Multi-year follow-up studies to assess sustained impact and cost-effectiveness",
+          when: "Measuring long-term development outcomes",
+          example: "Tracking income and health improvements over 2-3 years"
         }
       ]
     }
@@ -112,7 +128,10 @@ const Methods = () => {
               <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${level.color}`}>
                 <level.icon className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-bold">{level.level}</h2>
+              <div>
+                <h2 className="text-2xl font-bold">{level.level}</h2>
+                <p className="text-lg text-muted-foreground italic">"{level.coreQuestion}"</p>
+              </div>
             </div>
             
             <div className="grid md:grid-cols-3 gap-6">
@@ -124,11 +143,17 @@ const Methods = () => {
                       {method.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="space-y-3">
                     <div className="bg-muted rounded-lg p-3">
                       <div className="text-xs font-medium text-muted-foreground mb-1">WHEN TO USE</div>
                       <div className="text-sm">{method.when}</div>
                     </div>
+                    {method.example && (
+                      <div className="bg-primary/5 rounded-lg p-3 border border-primary/10">
+                        <div className="text-xs font-medium text-primary mb-1">EXAMPLE</div>
+                        <div className="text-sm text-primary/80">{method.example}</div>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
