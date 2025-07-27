@@ -25,7 +25,7 @@ export function Layout({ children }: LayoutProps) {
               <img 
                 src="/lovable-uploads/9a3d750a-2eef-48e5-9815-5a79d2de32ef.png" 
                 alt="The Agency Fund" 
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
               <h1 className="text-lg font-semibold">AI Evaluation in Development Sector</h1>
             </div>
