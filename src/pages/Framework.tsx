@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cog, Package, User, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ExternalLink } from "@/components/ExternalLink";
 
 const Framework = () => {
   const levels = [
@@ -9,7 +10,7 @@ const Framework = () => {
       level: "Level 1",
       title: "Model Evaluation",
       icon: Cog,
-      description: "Technical performance assessment of the AI model itself",
+      description: "Does the AI model produce the desired responses?",
       examples: ["Accuracy metrics", "Bias detection", "Robustness testing", "Performance benchmarking"],
       color: "bg-red-100 text-red-700 border-red-200"
     },
@@ -17,7 +18,7 @@ const Framework = () => {
       level: "Level 2", 
       title: "Product Evaluation",
       icon: Package,
-      description: "Assessment of the AI system integrated into the product context",
+      description: "Does the product facilitate meaningful interactions?",
       examples: ["User interface testing", "System integration", "Feature usability", "Technical reliability"],
       color: "bg-orange-100 text-orange-700 border-orange-200"
     },
@@ -25,7 +26,7 @@ const Framework = () => {
       level: "Level 3",
       title: "User Evaluation", 
       icon: User,
-      description: "How users interact with and benefit from the AI-enabled product",
+      description: "Does the product positively support users' thoughts, feelings, and actions?",
       examples: ["User satisfaction", "Task completion rates", "Learning curves", "Accessibility assessment"],
       color: "bg-blue-100 text-blue-700 border-blue-200"
     },
@@ -33,7 +34,7 @@ const Framework = () => {
       level: "Level 4",
       title: "Impact Evaluation",
       icon: BarChart3,
-      description: "Real-world outcomes and societal impact of the AI system",
+      description: "Does the product improve development outcomes?",
       examples: ["Development outcomes", "Behavioral change", "Cost-effectiveness", "Sustainability metrics"],
       color: "bg-green-100 text-green-700 border-green-200"
     }
@@ -100,15 +101,15 @@ const Framework = () => {
               <div>
                 <h4 className="font-semibold mb-2">Progressive Assessment</h4>
                 <p className="text-sm text-muted-foreground">
-                  Start with model evaluation and progress through each level as your AI system 
-                  moves from development to deployment and impact.
+                  Each level provides the foundation for the next, ensuring comprehensive evaluation 
+                  from technical performance to real-world impact.
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Contextual Adaptation</h4>
+                <h4 className="font-semibold mb-2">Cross-Functional Collaboration</h4>
                 <p className="text-sm text-muted-foreground">
-                  Adapt each level's metrics and methods to your specific development context, 
-                  user population, and intended outcomes.
+                  Different stakeholders bring expertise to different levels, requiring coordination 
+                  and shared understanding across teams.
                 </p>
               </div>
             </div>
@@ -116,14 +117,25 @@ const Framework = () => {
         </Card>
       </div>
 
+      <div className="mb-16">
+        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+          <p>
+            In conclusion, this current playbook is designed to <strong>make the necessary evaluation questions explicit</strong>. 
+            It lays out a shared vocabulary for AI evaluation that implementers and funders alike can use to communicate 
+            clearly and align expectations. It also introduces practical tools and methods for each evaluation level, and 
+            offers guidance tailored to the needs of engineers, data scientists, behavioral researchers, economists, and policymakers.
+          </p>
+        </div>
+      </div>
+
       <div className="flex justify-between items-center">
         <div>
-          <h3 className="text-lg font-semibold mb-2">Ready to implement?</h3>
-          <p className="text-muted-foreground">Learn how to integrate evaluation into your product cycles</p>
+          <h3 className="text-lg font-semibold mb-2">Ready to dive deeper?</h3>
+          <p className="text-muted-foreground">Explore each level in detail to understand specific evaluation methods and tools</p>
         </div>
         <Button asChild size="lg">
-          <Link to="/motions">
-            Repeatable Motions <ArrowRight className="ml-2 h-4 w-4" />
+          <Link to="/level1">
+            Start with Level 1 <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       </div>

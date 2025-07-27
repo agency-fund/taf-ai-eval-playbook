@@ -1,32 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Package, Users, MousePointer, BarChart3, Settings, Activity, Star, Clock } from "lucide-react";
+import { ArrowRight, Package, Users, MousePointer, BarChart3, Settings, Activity, Star, Clock, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Level2 = () => {
-  const keyMetrics = [
-    {
-      title: "User Engagement",
-      description: "How users interact with and utilize the AI-enabled product features",
-      examples: ["Session duration", "Feature adoption rates", "Return usage", "Engagement depth"]
-    },
-    {
-      title: "Usability & Interface",
-      description: "Assessment of how intuitive and effective the product interface is",
-      examples: ["Task completion rates", "User interface testing", "Accessibility scores", "Navigation efficiency"]
-    },
-    {
-      title: "System Integration",
-      description: "How well the AI integrates with existing workflows and systems",
-      examples: ["Integration success rates", "Workflow disruption", "System compatibility", "Performance impact"]
-    },
-    {
-      title: "Technical Reliability",
-      description: "Stability and performance of the AI system in production",
-      examples: ["Uptime metrics", "Error rates", "Response times", "Scalability performance"]
-    }
-  ];
-
   const evaluationMethods = [
     {
       title: "A/B Testing",
@@ -212,6 +189,37 @@ const Level2 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Evaluation Methods</h2>
+        <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
+          <p>
+            For detailed guidance on evaluation methods, please refer to:
+          </p>
+          <ul className="space-y-2">
+            <li>
+              <a 
+                href="https://docs.google.com/document/d/1_i1LjHIA3MHBCez1gxvSqZohN9zkwjG09h5L2k4BryQ/edit?tab=t.0#heading=h.wdgt1uho9q75" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-orange-600 hover:text-orange-700 underline flex items-center gap-2"
+              >
+                AI4GD A/B Testing Playbook
+                <ExternalLink className="w-4 h-4" />
+              </a>
+              <span className="text-sm text-muted-foreground"> by Elia Gandolfi</span>
+            </li>
+            <li>
+              <a 
+                href="https://docs.google.com/document/u/0/d/18OFMLI70IZLQuwhuxTwZXrDhw6Z-kpT-QUqZZJugEZ4/edit" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-orange-600 hover:text-orange-700 underline flex items-center gap-2"
+              >
+                AI4GD User Funnel and Metrics Playbook
+                <ExternalLink className="w-4 h-4" />
+              </a>
+              <span className="text-sm text-muted-foreground"> by Robert On & Temina Madon</span>
+            </li>
+          </ul>
+        </div>
         <div className="grid md:grid-cols-1 gap-6">
           {evaluationMethods.map((method, index) => (
             <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
@@ -235,6 +243,35 @@ const Level2 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Measurement Tools</h2>
+        <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
+          <p>
+            <strong>References:</strong>
+          </p>
+          <ul className="space-y-2">
+            <li>
+              <a 
+                href="https://help.openai.com/en/articles/10875114-user-analytics-for-chatgpt-enterprise-and-edu-public-beta" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-orange-600 hover:text-orange-700 underline flex items-center gap-2"
+              >
+                User Analytics for ChatGPT Enterprise and Edu
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://arxiv.org/abs/2402.06831" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-orange-600 hover:text-orange-700 underline flex items-center gap-2"
+              >
+                What We Know About Using Non-Engagement Signals in Content Ranking
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </li>
+          </ul>
+        </div>
         <div className="space-y-8">
           <div>
             <h3 className="text-2xl font-bold mb-6">Retention Metrics</h3>
@@ -321,6 +358,25 @@ const Level2 = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-16">
+        <h2 className="text-3xl font-bold mb-8">Case Studies</h2>
+        <div className="prose prose-lg max-w-none text-muted-foreground">
+          <p>
+            <em>Case studies to be added - examples from organizations like Rocket Learning and others demonstrating 
+            product evaluation methods, metrics, and success determination.</em>
+          </p>
+          <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+            <h4 className="font-semibold mb-3">Guidance questions to address in case studies:</h4>
+            <ul className="space-y-2 text-sm">
+              <li>• What is the GenAI use case?</li>
+              <li>• How was the product evaluated, on what metrics?</li>
+              <li>• What methods and tools were used?</li>
+              <li>• How was success determined?</li>
+            </ul>
           </div>
         </div>
       </div>
