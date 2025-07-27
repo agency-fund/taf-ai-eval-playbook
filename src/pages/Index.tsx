@@ -37,6 +37,13 @@ const Index = () => {
       <section className="relative overflow-hidden bg-gradient-hero text-white">
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative max-w-7xl mx-auto px-6 py-16 lg:py-20">
+          <div className="absolute top-6 right-6">
+            <img 
+              src="/lovable-uploads/9a3d750a-2eef-48e5-9815-5a79d2de32ef.png" 
+              alt="The Agency Fund" 
+              className="h-12 w-auto"
+            />
+          </div>
           <div className="max-w-3xl">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               AI Evaluation in the Development Sector

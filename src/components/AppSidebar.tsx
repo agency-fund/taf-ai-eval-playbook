@@ -88,7 +88,7 @@ export function AppSidebar() {
             </div>
             <div>
               <h2 className="font-bold text-lg">AI Evaluation</h2>
-              <p className="text-sm text-muted-foreground">Living Playbook</p>
+              <p className="text-sm text-muted-foreground">A Living Playbook by the Agency Fund</p>
             </div>
           </div>
         </div>
