@@ -65,63 +65,176 @@ const CaseStudies = () => {
     <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-6">Case Studies</h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mb-4">
           Learn from real-world implementations of AI evaluation in development contexts. 
-          These case studies demonstrate practical application of the four-level framework.
+          Currently, our case studies focus on <strong>Level 1 (Model Evaluation)</strong> as organizations 
+          are still building foundational capabilities.
         </p>
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-3xl">
+          <p className="text-blue-800 text-sm">
+            <strong>Looking for examples across all evaluation levels?</strong> Check out our 
+            <Link to="/tools/framework-builder" className="text-blue-600 hover:text-blue-800 underline mx-1">
+              interactive tools
+            </Link>
+            which include hypothetical case studies covering Levels 2-4.
+          </p>
+        </div>
       </div>
 
-      <div className="space-y-12">
-        {caseStudies.map((study, index) => (
-          <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
-            <CardHeader>
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center">
-                    <study.icon className="w-6 h-6 text-primary" />
+      <div className="mb-8">
+        <Card className="border-0 shadow-card bg-gradient-accent">
+          <CardHeader>
+            <CardTitle className="text-lg mb-2">Guidance Questions for Case Studies</CardTitle>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>• What is the GenAI use case?</p>
+              <p>• How was the model evaluated, on what metrics?</p>
+              <p>• What methods and tools were used?</p>
+              <p>• How was success determined?</p>
+            </div>
+          </CardHeader>
+        </Card>
+      </div>
+
+      <div className="space-y-16">
+        <Card className="border-0 shadow-card">
+          <CardHeader>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center">
+                <Target className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl">Jacaranda Health</CardTitle>
+                <p className="text-primary font-medium">Voice-based Maternal Care in Kenya</p>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <p className="text-muted-foreground leading-relaxed">
+              <a href="https://jacarandahealth.org/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                Jacaranda Health (JH)
+              </a> is pioneering the use of generative AI to transform how underserved mothers in Sub-Saharan Africa 
+              access, understand, and act on vital maternal and newborn health information. They are adding voice 
+              capabilities to its services, aiming to help mothers who have difficulty reading or seeing text to 
+              access its content.
+            </p>
+            
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h4 className="font-semibold mb-3 text-gray-900">Challenge & Solution</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Jacaranda Health set out to bring voice-based maternal care to women who struggle with text. They 
+                recorded a balanced Swahili-English voice corpus from rural and urban mothers across Kenya, then 
+                fine-tuned OpenAI's Whisper model on that data. Over successive iterations they drove Word Error 
+                Rate down from 87 percent to 15 percent, inching toward their 6 percent target that matches 
+                top-tier languages.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-3">Evaluation Innovation</h4>
+              <p className="text-muted-foreground leading-relaxed">
+                Standard WER simply tallies substitutions, insertions and deletions without regard for meaning. 
+                That metric penalizes Swahili's flexible word order and complex verb forms even when the intent 
+                is clear. To get a truer picture of how well mothers can follow advice, Jacaranda now measures 
+                <strong> semantic accuracy using a cosine-similarity based WER</strong>. This approach rewards 
+                transcripts that convey the same health guidance, even if they differ in exact phrasing.
+              </p>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <p className="text-blue-800 text-sm">
+                <strong>Key Learning:</strong> Sometimes you need to invent new metrics and stray from the 
+                standard to get AI working for your beneficiaries.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-card">
+          <CardHeader>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center">
+                <Users className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl">Digital Green</CardTitle>
+                <p className="text-primary font-medium">Agricultural Extension Services in Ethiopia</p>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <p className="text-muted-foreground leading-relaxed">
+              <a href="https://digitalgreen.org/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                Digital Green (DG)
+              </a> collaborates with public, private, and non-profit organizations to enhance small-scale farmers' 
+              access to timely, actionable, and localized agricultural recommendations. In Ethiopia, partnerships 
+              with the Ministry of Agriculture and other institutions have strengthened the country's extension services.
+            </p>
+
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h4 className="font-semibold mb-3 text-gray-900">Evaluation Framework</h4>
+              <p className="text-gray-700 leading-relaxed">
+                To benchmark ASR models in agriculture, Digital Green used metrics such as WER, CER and MER but 
+                had to introduce a custom <strong>Agri-Weighted WER</strong> that penalizes errors in key 
+                agricultural terms more heavily. This evaluation framework helps identify which models are 
+                production-ready and where fine-tuning is needed.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-3">Multi-language Support</h4>
+              <p className="text-muted-foreground leading-relaxed">
+                Using weighted metrics, they track progress across Hindi, Telugu and Odiya datasets and tailor 
+                improvements to support scalable, farmer-focused advisory systems. Development Agents (DAs) use 
+                these digital tools to expand their reach and effectiveness.
+              </p>
+            </div>
+
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <p className="text-green-800 text-sm">
+                <strong>Key Learning:</strong> Domain-specific weighted metrics provide better signals for 
+                production readiness than generic evaluation approaches.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-0 shadow-card bg-gray-50">
+          <CardHeader>
+            <CardTitle className="text-xl">Additional Resources</CardTitle>
+            <CardDescription>
+              Explore these detailed evaluation frameworks and studies:
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <div>
+                <h4 className="font-medium mb-1">Comprehensive Report</h4>
+                <a href="https://cdh.stanford.edu/generative-ai-health-low-middle-income-countries" 
+                   className="text-primary hover:underline text-sm" 
+                   target="_blank" rel="noopener noreferrer">
+                  Generative AI for Health in Low & Middle Income Countries
+                </a>
+              </div>
+              <div>
+                <h4 className="font-medium mb-1">Evaluation Frameworks</h4>
+                <div className="text-sm space-y-1">
+                  <div>
+                    <a href="https://precisiondev.org/evaluating-ai-for-learning-a-framework/" 
+                       className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                      Precision Development Evaluation Framework
+                    </a>
                   </div>
                   <div>
-                    <CardTitle className="text-xl mb-1">{study.title}</CardTitle>
-                    <div className="text-sm font-medium text-primary">{study.organization}</div>
+                    <a href="https://arxiv.org/abs/2409.08916" 
+                       className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                      Evaluation of Farmer.Chat at Digital Green
+                    </a>
                   </div>
                 </div>
-                <Button variant="outline" size="sm" className="gap-2">
-                  <ExternalLink className="w-4 h-4" />
-                  Details
-                </Button>
               </div>
-              <CardDescription className="text-base leading-relaxed">
-                <strong>Context:</strong> {study.context}
-              </CardDescription>
-              <CardDescription className="text-base leading-relaxed">
-                <strong>Challenge:</strong> {study.challenge}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <h4 className="font-semibold mb-3">Evaluation Approach:</h4>
-                <ul className="space-y-2">
-                  {study.approach.map((item, idx) => (
-                    <li key={idx} className="text-sm text-muted-foreground flex items-start">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 mt-2 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-3">Key Outcomes:</h4>
-                <div className="grid md:grid-cols-3 gap-4">
-                  {study.outcomes.map((outcome, idx) => (
-                    <div key={idx} className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <div className="text-sm text-green-700 font-medium">{outcome}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
       <div className="mt-16">
