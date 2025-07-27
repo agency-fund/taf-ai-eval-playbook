@@ -7,6 +7,10 @@ import { Layout } from "./components/Layout";
 import Index from "./pages/Index";
 import Introduction from "./pages/Introduction";
 import Framework from "./pages/Framework";
+import Level1 from "./pages/Level1";
+import Level2 from "./pages/Level2";
+import Level3 from "./pages/Level3";
+import Level4 from "./pages/Level4";
 import Motions from "./pages/Motions";
 import Roles from "./pages/Roles";
 import CaseStudies from "./pages/CaseStudies";
@@ -31,6 +35,10 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/introduction" element={<Introduction />} />
             <Route path="/framework" element={<Framework />} />
+            <Route path="/level1" element={<Level1 />} />
+            <Route path="/level2" element={<Level2 />} />
+            <Route path="/level3" element={<Level3 />} />
+            <Route path="/level4" element={<Level4 />} />
             <Route path="/motions" element={<Motions />} />
             <Route path="/roles" element={<Roles />} />
             <Route path="/case-studies" element={<CaseStudies />} />

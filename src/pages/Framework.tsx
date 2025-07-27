@@ -52,35 +52,37 @@ const Framework = () => {
       <div className="mb-16">
         <div className="grid lg:grid-cols-2 gap-8">
           {levels.map((level, index) => (
-            <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
-              <CardHeader>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`w-16 h-16 rounded-lg flex items-center justify-center ${level.color}`}>
-                    <level.icon className="w-8 h-8" />
+            <Link key={index} to={`/level${index + 1}`}>
+              <Card className="border-0 shadow-card hover:shadow-float transition-all duration-300 cursor-pointer">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`w-16 h-16 rounded-lg flex items-center justify-center ${level.color}`}>
+                      <level.icon className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-muted-foreground">{level.level}</div>
+                      <CardTitle className="text-xl">{level.title}</CardTitle>
+                    </div>
                   </div>
+                  <CardDescription className="text-base leading-relaxed">
+                    {level.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
                   <div>
-                    <div className="text-sm font-medium text-muted-foreground">{level.level}</div>
-                    <CardTitle className="text-xl">{level.title}</CardTitle>
+                    <h4 className="font-semibold mb-3">Key Assessment Areas:</h4>
+                    <ul className="space-y-2">
+                      {level.examples.map((example, idx) => (
+                        <li key={idx} className="text-sm text-muted-foreground flex items-center">
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
+                          {example}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-                <CardDescription className="text-base leading-relaxed">
-                  {level.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div>
-                  <h4 className="font-semibold mb-3">Key Assessment Areas:</h4>
-                  <ul className="space-y-2">
-                    {level.examples.map((example, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
-                        {example}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

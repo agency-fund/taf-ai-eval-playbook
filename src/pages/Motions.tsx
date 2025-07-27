@@ -10,7 +10,7 @@ const Motions = () => {
       title: "Constructing a clear user funnel across Levels 1-4",
       icon: <Target className="w-6 h-6" />,
       description: "One of the most useful motions in AI for development is the construction of a user funnel – a structured way to map how individuals move through your product, from first exposure to long-term impact.",
-      fullContent: `One of the most useful motions in AI for development is the construction of a user funnel – a structured way to map how individuals move through your product, from first exposure to long-term impact. A robust funnel does more than describe usage; it creates a shared framework for teams to track progress, surface weak points, and align evaluation efforts across all four levels.
+      fullContent: `A robust funnel does more than describe usage; it creates a shared framework for teams to track progress, surface weak points, and align evaluation efforts across all four levels.
 
 To build a robust funnel, teams should begin by defining the final development outcome they're targeting (Level 4) – for instance, improved learning outcomes, better health decisions, or increased crop yields. From there, work backward to break down the journey into specific user stages. A typical funnel includes:
 
@@ -35,13 +35,11 @@ This structure transforms a generic funnel into a measurable, cost-aware tool. I
       title: "Building metrics through robust ETL pipelines",
       icon: <Database className="w-6 h-6" />,
       description: "A well-designed evaluation framework is only as good as the data infrastructure that supports it. At the heart of that infrastructure is a robust ETL pipeline – a system that Extracts, Transforms, and Loads data to power consistent, reliable measurement.",
-      fullContent: `A well-designed evaluation framework is only as good as the data infrastructure that supports it. At the heart of that infrastructure is a robust ETL pipeline – a system that Extracts, Transforms, and Loads data to power consistent, reliable measurement.
+      fullContent: `An ETL pipeline is a system that Extracts, Transforms, and Loads data to power consistent, reliable measurement.
 
-Extract: Collect data from various sources – model logs, product telemetry, survey tools, third-party APIs, or even spreadsheets.
-
-Transform: Clean, standardize, and reshape the raw data into a usable format. This could involve timestamp alignment, anonymization, session stitching, or deriving new metrics like time-on-task or trust indicators.
-
-Load: Store the transformed data in a centralized system (like a data warehouse or analytics dashboard) where teams can access it for analysis, visualization, or modeling.
+• Extract: Collect data from various sources – model logs, product telemetry, survey tools, third-party APIs, or even spreadsheets.
+• Transform: Clean, standardize, and reshape the raw data into a usable format. This could involve timestamp alignment, anonymization, session stitching, or deriving new metrics like time-on-task or trust indicators.
+• Load: Store the transformed data in a centralized system (like a data warehouse or analytics dashboard) where teams can access it for analysis, visualization, or modeling.
 
 AI products, especially those using generative models, produce high volumes of complex, often unstructured data: prompts, outputs, clicks, feedback, engagement patterns, and more. Without a clear ETL pipeline, it becomes impossible to turn this raw data into actionable metrics at scale. For example, imagine a product designed to support adolescent mental health. It might collect:
 
@@ -57,9 +55,18 @@ To make sense of this, the team needs a pipeline that can integrate raw logs fro
       title: "Diagnosing weak links through targeted hypotheses", 
       icon: <Zap className="w-6 h-6" />,
       description: "Once a user funnel is in place and metrics are flowing through a robust ETL pipeline, the next challenge is understanding why certain metrics underperform. This is where targeted hypotheses become essential.",
-      fullContent: `Once a user funnel is in place and metrics are flowing through a robust ETL pipeline, the next challenge is understanding why certain metrics underperform. This is where targeted hypotheses become essential. Rather than jumping to conclusions or relying on intuition, teams use targeted hypotheses to pose specific, testable questions about user behavior: Why are users stalling here? What mechanism might explain this drop-off? What change could move the needle? This approach sits at the intersection of evaluation and product science. It acknowledges that while product development is nonlinear, evaluation must remain disciplined and driven by clearly defined learning goals.
+      fullContent: `Rather than jumping to conclusions or relying on intuition, teams use targeted hypotheses to pose specific, testable questions about user behavior: 
+      • Why are users stalling here? 
+      • What mechanism might explain this drop-off? 
+      • What change could move the needle? 
+      • ...
+      This approach sits at the intersection of evaluation and product science. It acknowledges that while product development is nonlinear, evaluation must remain disciplined and driven by clearly defined learning goals.
 
-Importantly, this doesn't mean evaluation should dictate what teams build; rather, it means that evaluation should clarify what needs to be understood. For example, if engagement dips after onboarding, evaluators might surface competing hypotheses: Is the product's value proposition unclear? Are users overwhelmed by the interface? Do they mistrust the AI? 
+Importantly, this doesn't mean evaluation should dictate what teams build; rather, it means that evaluation should clarify what needs to be understood. For example, if engagement dips after onboarding, evaluators might surface competing hypotheses: 
+• Is the product's value proposition unclear? 
+• Are users overwhelmed by the interface? 
+• Do they mistrust the AI? 
+• ...
 
 Each hypothesis then becomes a lens for focused measurement or experiments, often co-designed with product, user research, and behavioral science leads. This makes evaluation generative: it is not just a judgment of what works, but a process that helps teams ask better questions, faster.`
     },
@@ -68,7 +75,7 @@ Each hypothesis then becomes a lens for focused measurement or experiments, ofte
       title: "Running experiments with rigor and speed",
       icon: <GitBranch className="w-6 h-6" />,
       description: "Once hypotheses are defined, the next step is to test them through experimentation. In the context of AI evaluation, experimentation is the bridge between observing a problem and understanding what causes it.",
-      fullContent: `Once hypotheses are defined, the next step is to test them through experimentation. In the context of AI evaluation, experimentation is the bridge between observing a problem and understanding what causes it. Whether it's an A/B test, a hold-out test, a pragmatic Randomized Controlled Trial (RCT), or a full-scale RCT, the goal is the same: to generate credible, causal evidence about what interventions improve user outcomes. This step is crucial for turning evaluation from a descriptive activity into a decision-making tool.
+      fullContent: `Whether it's an A/B test, a hold-out test, a pragmatic Randomized Controlled Trial (RCT), or a full-scale RCT, the goal is the same: to generate credible, causal evidence about what interventions improve user outcomes. This step is crucial for turning evaluation from a descriptive activity into a decision-making tool.
 
 Experimentation should be matched to the maturity of the product, the scale of the hypothesis, and the type of decision at hand. For lightweight product tweaks like changing a prompt or onboarding message, A/B tests are often the fastest and most cost-effective approach. For more complex behavioral shifts or policy-relevant questions, teams might deploy staggered rollouts or holdout-based designs. In some cases, a full RCT may be warranted, but only when the causal question justifies the cost.
 
@@ -79,17 +86,17 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="mb-16">
-        <h1 className="text-5xl font-bold mb-8 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold mb-6">
           Repeatable Motions in AI Evaluation
         </h1>
         <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
           <p className="text-xl mb-6">
             We strongly believe the success of AI evaluation depends on building practical tools that connect and operationalize all four levels in real time. Unlike traditional development interventions, generative AI systems allow for precise control over deployment and the passive collection of rich interaction data.
           </p>
-          <p className="text-lg mb-6">
+          <p className="text-xl mb-6">
             This creates a unique opportunity to evaluate, iterate, and improve continuously. For example, a deployment could automatically flag when a change that improves model helpfulness (Level 1) unexpectedly reduces user trust (Level 3), or when a product that boosts short-term engagement fails to shift long-term outcomes (Level 4).
           </p>
-          <p className="text-lg font-medium">
+          <p className="text-xl font-medium">
             This kind of end-to-end instrumentation allows us to move beyond static best practices toward repeatable motions that are tested, iterated, and embedded in real AI development cycles.
           </p>
         </div>
@@ -97,10 +104,7 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Four Concrete, Actionable Steps</h2>
-        <p className="text-lg text-muted-foreground mb-12">
-          These motions move evaluation from theory into practice with speed and discipline.
-        </p>
-        
+
         <div className="space-y-12">
           {motions.map((motion, index) => (
             <Card key={index} className="border-0 shadow-lg bg-gradient-to-br from-background to-background/80 backdrop-blur-sm">
