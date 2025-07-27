@@ -37,50 +37,39 @@ const Index = () => {
       <section className="relative overflow-hidden bg-gradient-hero text-white">
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative max-w-7xl mx-auto px-6 py-16 lg:py-20">
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            <div className="max-w-3xl">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                AI Evaluation in the Development Sector
-              </h1>
-              <p className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
-                A living playbook for evaluating AI products in the development sector, created by the Agency Fund.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
-                  <Link to="/introduction">
-                    Get Started <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 border-white/20 text-white hover:bg-white/20">
-                  <Link to="/tools/framework-builder">
-                    Try Interactive Tools
-                  </Link>
-                </Button>
-              </div>
-              
-              {/* Authors Credit */}
-              <div className="mt-8 pt-6 border-t border-white/20">
-                <div className="text-left">
-                  <p className="text-sm text-white/70">
-                    This playbook is created by the Agency Fund.
-                    <br />
-                    <br />
-                    If you have any questions or feedback, please contact the authors {" "}
-                    <Link to="/authors" className="text-white hover:text-white/80 transition-colors underline">
-                      here
-                    </Link>.
-                  </p>
-                </div>
-              </div>
+          <div className="max-w-3xl">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              AI Evaluation in the Development Sector
+            </h1>
+            <p className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
+              A living playbook for evaluating AI products in the development sector, created by the Agency Fund.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
+                <Link to="/introduction">
+                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 border-white/20 text-white hover:bg-white/20">
+                <Link to="/tools/framework-builder">
+                  Try Interactive Tools
+                </Link>
+              </Button>
             </div>
             
-            {/* Agency Fund Logo - positioned in top right of blue hero section */}
-            <div className="lg:flex lg:justify-end">
-              <img 
-                src="/lovable-uploads/9a3d750a-2eef-48e5-9815-5a79d2de32ef.png" 
-                alt="Agency Fund" 
-                className="w-24 h-24 lg:w-32 lg:h-32 object-contain opacity-80"
-              />
+            {/* Authors Credit */}
+            <div className="mt-8 pt-6 border-t border-white/20">
+              <div className="text-left">
+                <p className="text-sm text-white/70">
+                  This playbook is created by the Agency Fund.
+                  <br />
+                  <br />
+                  If you have any questions or feedback, please contact the authors {" "}
+                  <Link to="/authors" className="text-white hover:text-white/80 transition-colors underline">
+                    here
+                  </Link>.
+                </p>
+              </div>
             </div>
           </div>
         </div>
