@@ -1,33 +1,56 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, User, Code, BarChart, Users, Settings, Zap, MessageSquare, Briefcase, FileText } from "lucide-react";
+import { ArrowRight, Users, Settings, Zap, MessageSquare, Briefcase, FileText, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import aiEngineerIcon from "@/assets/ai-engineer-icon.png";
+import productManagerIcon from "@/assets/product-manager-icon.png";
+import dataScientistIcon from "@/assets/data-scientist-icon.png";
+import behavioralScientistIcon from "@/assets/behavioral-scientist-icon.png";
+import economistIcon from "@/assets/economist-icon.png";
+import domainExpertIcon from "@/assets/domain-expert-icon.png";
 
 const Roles = () => {
   const evaluationLevels = [
     {
-      level: "Level 1 – Model",
-      roles: "AI Engineers, ML Researchers, Domain Experts",
+      level: "Level 1",
+      title: "Model Evaluation", 
+      stakeholders: [
+        { name: "AI Engineers", icon: aiEngineerIcon, color: "from-blue-500 to-blue-600" },
+        { name: "ML Researchers", icon: aiEngineerIcon, color: "from-blue-500 to-blue-600" },
+        { name: "Domain Experts", icon: domainExpertIcon, color: "from-green-500 to-green-600" }
+      ],
       responsibilities: "Build and fine-tune models; run offline tests; ensure relevance and safety; log outputs for downstream use. Early domain input (e.g., educators for tutor bots) is essential.",
-      icon: Code
+      bgColor: "from-blue-50 to-indigo-50"
     },
     {
-      level: "Level 2 – Product",
-      roles: "Product Managers, Data Scientists",
+      level: "Level 2",
+      title: "Product Evaluation",
+      stakeholders: [
+        { name: "Product Managers", icon: productManagerIcon, color: "from-purple-500 to-purple-600" },
+        { name: "Data Scientists", icon: dataScientistIcon, color: "from-teal-500 to-teal-600" }
+      ],
       responsibilities: "Integrate AI into workflows; track engagement through A/B tests; maintain shared dashboards; align usage data with user behavior and product design.",
-      icon: Settings
+      bgColor: "from-purple-50 to-pink-50"
     },
     {
-      level: "Level 3 – User",
-      roles: "Behavioral Scientists, Psychologists",
+      level: "Level 3",
+      title: "User Evaluation",
+      stakeholders: [
+        { name: "Behavioral Scientists", icon: behavioralScientistIcon, color: "from-orange-500 to-orange-600" },
+        { name: "Psychologists", icon: behavioralScientistIcon, color: "from-orange-500 to-orange-600" }
+      ],
       responsibilities: "Measure user outcomes (cognitive, affective, and behavioral) and run A/B tests on these outcomes; run surveys and interviews; co-design metrics with end users; and integrate qualitative insights with usage data",
-      icon: User
+      bgColor: "from-orange-50 to-amber-50"
     },
     {
-      level: "Level 4 – Impact",
-      roles: "Economists, Policy Analysts",
+      level: "Level 4",
+      title: "Impact Evaluation",
+      stakeholders: [
+        { name: "Economists", icon: economistIcon, color: "from-emerald-500 to-emerald-600" },
+        { name: "Policy Analysts", icon: economistIcon, color: "from-emerald-500 to-emerald-600" }
+      ],
       responsibilities: "Evaluate long-term outcomes (e.g., learning, health, income); define theory of change; run RCTs;",
-      icon: BarChart
+      bgColor: "from-emerald-50 to-green-50"
     }
   ];
 
@@ -78,28 +101,47 @@ const Roles = () => {
         </div>
       </div>
 
-      {/* Evaluation Levels Table */}
+      {/* Evaluation Levels - Visual Design */}
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Cross-Functional Roles by Evaluation Level</h2>
-        <div className="space-y-6">
+        <div className="grid gap-8">
           {evaluationLevels.map((level, index) => (
-            <Card key={index} className="border-0 shadow-lg bg-gradient-to-br from-background to-background/80 backdrop-blur-sm">
-              <CardHeader className="pb-4">
-                <div className="flex items-start gap-4">
-                  <div className="flex items-center justify-center w-14 h-14 bg-primary/10 rounded-2xl border border-primary/20">
-                    <level.icon className="w-6 h-6 text-primary" />
+            <Card key={index} className={`border-0 shadow-lg bg-gradient-to-br ${level.bgColor} backdrop-blur-sm`}>
+              <CardHeader className="pb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center text-2xl font-bold text-primary">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl text-primary">{level.level}</CardTitle>
+                      <CardDescription className="text-lg font-semibold text-primary/80">
+                        {level.title}
+                      </CardDescription>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl mb-2">{level.level}</CardTitle>
-                    <CardDescription className="text-base font-medium text-primary/80">
-                      {level.roles}
-                    </CardDescription>
-                  </div>
+                  <ArrowUpRight className="w-6 h-6 text-primary/60" />
+                </div>
+                
+                {/* Stakeholder Icons */}
+                <div className="flex flex-wrap gap-3 mb-4">
+                  {level.stakeholders.map((stakeholder, stakeholderIndex) => (
+                    <div key={stakeholderIndex} className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 shadow-sm">
+                      <img 
+                        src={stakeholder.icon} 
+                        alt={stakeholder.name}
+                        className="w-8 h-8 rounded-full"
+                      />
+                      <span className="text-sm font-medium text-gray-700">{stakeholder.name}</span>
+                    </div>
+                  ))}
                 </div>
               </CardHeader>
+              
               <CardContent>
-                <div className="bg-gradient-to-br from-muted/20 to-muted/40 rounded-xl p-4 border border-border/30">
-                  <p className="text-sm leading-relaxed text-foreground/90">
+                <div className="bg-white/60 rounded-xl p-4 border border-white/40">
+                  <h4 className="font-semibold text-gray-800 mb-2">Core Responsibilities:</h4>
+                  <p className="text-sm leading-relaxed text-gray-700">
                     {level.responsibilities}
                   </p>
                 </div>
@@ -127,35 +169,26 @@ const Roles = () => {
         </div>
       </div>
 
-      {/* Best Practices */}
+      {/* Best Practices - Streamlined Cards */}
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Best Practices for Cross-Level Collaboration</h2>
         <p className="text-lg text-muted-foreground mb-8">
           From our experiences working with AI4GD organizations, here are the broader best practices that we'd recommend for cross-level collaboration in AI evaluation projects.
         </p>
         
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {bestPractices.map((practice, index) => (
-            <Card key={index} className="border-0 shadow-lg bg-gradient-to-br from-background to-background/80 backdrop-blur-sm">
-              <CardHeader className="pb-4">
-                <div className="flex items-start gap-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl border border-primary/20">
-                    <practice.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-lg font-mono font-bold text-primary/70">{String(index + 1).padStart(2, '0')}</span>
-                      <CardTitle className="text-xl">{practice.title}</CardTitle>
-                    </div>
-                  </div>
+            <Card key={index} className="border-0 shadow-lg bg-gradient-to-br from-background to-background/95 backdrop-blur-sm hover:shadow-xl transition-all duration-300 group">
+              <CardHeader className="text-center pb-2">
+                <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <practice.icon className="w-7 h-7 text-white" />
                 </div>
+                <CardTitle className="text-lg leading-tight">{practice.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="bg-gradient-to-br from-muted/20 to-muted/40 rounded-xl p-4 border border-border/30">
-                  <p className="text-sm leading-relaxed text-foreground/90">
-                    {practice.description}
-                  </p>
-                </div>
+              <CardContent className="pt-0">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {practice.description}
+                </p>
               </CardContent>
             </Card>
           ))}
