@@ -1,13 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Settings, Zap, MessageSquare, Briefcase, FileText, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Users, Settings, Zap, MessageSquare, Briefcase, FileText, ArrowUpRight, Code, Database, Brain, TrendingUp, BookOpen, User } from "lucide-react";
 import { Link } from "react-router-dom";
-import aiEngineerIcon from "@/assets/ai-engineer-icon.png";
-import productManagerIcon from "@/assets/product-manager-icon.png";
-import dataScientistIcon from "@/assets/data-scientist-icon.png";
-import behavioralScientistIcon from "@/assets/behavioral-scientist-icon.png";
-import economistIcon from "@/assets/economist-icon.png";
-import domainExpertIcon from "@/assets/domain-expert-icon.png";
 
 const Roles = () => {
   const evaluationLevels = [
@@ -15,9 +9,9 @@ const Roles = () => {
       level: "Level 1",
       title: "Model Evaluation", 
       stakeholders: [
-        { name: "AI Engineers", icon: aiEngineerIcon, color: "from-blue-500 to-blue-600" },
-        { name: "ML Researchers", icon: aiEngineerIcon, color: "from-blue-500 to-blue-600" },
-        { name: "Domain Experts", icon: domainExpertIcon, color: "from-green-500 to-green-600" }
+        { name: "AI Engineers", icon: Code, color: "from-blue-500 to-blue-600" },
+        { name: "ML Researchers", icon: Database, color: "from-blue-500 to-blue-600" },
+        { name: "Domain Experts", icon: BookOpen, color: "from-green-500 to-green-600" }
       ],
       responsibilities: "Build and fine-tune models; run offline tests; ensure relevance and safety; log outputs for downstream use. Early domain input (e.g., educators for tutor bots) is essential.",
       bgColor: "from-blue-50 to-indigo-50"
@@ -26,8 +20,8 @@ const Roles = () => {
       level: "Level 2",
       title: "Product Evaluation",
       stakeholders: [
-        { name: "Product Managers", icon: productManagerIcon, color: "from-purple-500 to-purple-600" },
-        { name: "Data Scientists", icon: dataScientistIcon, color: "from-teal-500 to-teal-600" }
+        { name: "Product Managers", icon: Briefcase, color: "from-purple-500 to-purple-600" },
+        { name: "Data Scientists", icon: TrendingUp, color: "from-teal-500 to-teal-600" }
       ],
       responsibilities: "Integrate AI into workflows; track engagement through A/B tests; maintain shared dashboards; align usage data with user behavior and product design.",
       bgColor: "from-purple-50 to-pink-50"
@@ -36,8 +30,8 @@ const Roles = () => {
       level: "Level 3",
       title: "User Evaluation",
       stakeholders: [
-        { name: "Behavioral Scientists", icon: behavioralScientistIcon, color: "from-orange-500 to-orange-600" },
-        { name: "Psychologists", icon: behavioralScientistIcon, color: "from-orange-500 to-orange-600" }
+        { name: "Behavioral Scientists", icon: Brain, color: "from-orange-500 to-orange-600" },
+        { name: "Psychologists", icon: User, color: "from-orange-500 to-orange-600" }
       ],
       responsibilities: "Measure user outcomes (cognitive, affective, and behavioral) and run A/B tests on these outcomes; run surveys and interviews; co-design metrics with end users; and integrate qualitative insights with usage data",
       bgColor: "from-orange-50 to-amber-50"
@@ -46,8 +40,8 @@ const Roles = () => {
       level: "Level 4",
       title: "Impact Evaluation",
       stakeholders: [
-        { name: "Economists", icon: economistIcon, color: "from-emerald-500 to-emerald-600" },
-        { name: "Policy Analysts", icon: economistIcon, color: "from-emerald-500 to-emerald-600" }
+        { name: "Economists", icon: TrendingUp, color: "from-emerald-500 to-emerald-600" },
+        { name: "Policy Analysts", icon: FileText, color: "from-emerald-500 to-emerald-600" }
       ],
       responsibilities: "Evaluate long-term outcomes (e.g., learning, health, income); define theory of change; run RCTs;",
       bgColor: "from-emerald-50 to-green-50"
@@ -125,16 +119,17 @@ const Roles = () => {
                 
                 {/* Stakeholder Icons */}
                 <div className="flex flex-wrap gap-3 mb-4">
-                  {level.stakeholders.map((stakeholder, stakeholderIndex) => (
-                    <div key={stakeholderIndex} className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 shadow-sm">
-                      <img 
-                        src={stakeholder.icon} 
-                        alt={stakeholder.name}
-                        className="w-8 h-8 rounded-full"
-                      />
-                      <span className="text-sm font-medium text-gray-700">{stakeholder.name}</span>
-                    </div>
-                  ))}
+                  {level.stakeholders.map((stakeholder, stakeholderIndex) => {
+                    const IconComponent = stakeholder.icon;
+                    return (
+                      <div key={stakeholderIndex} className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 shadow-sm">
+                        <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${stakeholder.color} flex items-center justify-center`}>
+                          <IconComponent className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-sm font-medium text-gray-700">{stakeholder.name}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </CardHeader>
               
