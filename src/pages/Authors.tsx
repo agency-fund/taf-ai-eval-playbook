@@ -11,15 +11,18 @@ const Authors = () => {
     },
     {
       name: "Robert On",
-      linkedIn: "https://www.linkedin.com/in/robert-on/"
+      linkedIn: "https://www.linkedin.com/in/robert-on/",
+      email: "robert@agency.fund"
     },
     {
       name: "James Walsh",
-      linkedIn: "https://www.linkedin.com/in/jamessonamwalsh/"
+      linkedIn: "https://www.linkedin.com/in/jamessonamwalsh/",
+      email: "james@agency.fund"
     },
     {
       name: "Edmund Korley",
-      linkedIn: "https://www.linkedin.com/in/edmundkorley/"
+      linkedIn: "https://www.linkedin.com/in/edmundkorley/",
+      email: "edmund@agency.fund"
     }
   ];
 
