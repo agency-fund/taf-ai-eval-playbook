@@ -7,74 +7,213 @@ const Glossary = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const terms = [
+    // Level 1: Model Evaluation
+    {
+      term: "Automatic Benchmarking",
+      definition: "Comparing AI outputs to pre-labeled 'gold standard' answers using metrics like BLEU, ROUGE, or accuracy/F1. Works best for tasks with clear correct answers like fact recall or data extraction.",
+      category: "Model Evaluation"
+    },
+    {
+      term: "Human as a Judge",
+      definition: "Users and experts manually score or annotate AI outputs using defined criteria. Essential for tasks requiring subjective judgment or nuanced criteria like accuracy, empathy, or completeness.",
+      category: "Model Evaluation"
+    },
+    {
+      term: "LLM as a Judge",
+      definition: "A high-performing LLM evaluates another LLM's outputs, calibrated against human judgments. Useful for large-scale evaluations needing consistency with human oversight.",
+      category: "Model Evaluation"
+    },
+    {
+      term: "BLEU Score",
+      definition: "Measures how closely AI-generated translations match human reference translations by comparing n-gram overlap.",
+      category: "Model Evaluation"
+    },
+    {
+      term: "ROUGE Score",
+      definition: "Evaluates how well AI-generated summaries overlap with human-written summaries using recall-oriented metrics.",
+      category: "Model Evaluation"
+    },
+    {
+      term: "RAG Metrics",
+      definition: "Composite metrics measuring how well an AI model retrieves useful information and uses it to generate accurate, grounded answers. Includes answer relevancy, faithfulness, contextual recall, and contextual precision.",
+      category: "Model Evaluation"
+    },
+    {
+      term: "Answer Relevancy",
+      definition: "Percentage of responses judged to be directly relevant to the input query, measured by humans or LLM-as-judge on binary or Likert scales.",
+      category: "Model Evaluation"
+    },
+    {
+      term: "Faithfulness",
+      definition: "Percentage of responses where all claims are verifiable from retrieved context, ensuring AI doesn't fabricate information not present in source documents.",
+      category: "Model Evaluation"
+    },
+    {
+      term: "Contextual Recall",
+      definition: "Measures whether the model used all relevant documents it retrieved: (Number of relevant retrieved documents used) ÷ (Total relevant retrieved documents).",
+      category: "Model Evaluation"
+    },
+    {
+      term: "Contextual Precision",
+      definition: "Measures whether the model avoided using irrelevant documents: (Number of relevant documents used) ÷ (Total documents used in answer).",
+      category: "Model Evaluation"
+    },
+    {
+      term: "Word Error Rate (WER)",
+      definition: "Standard metric for speech recognition accuracy that tallies substitutions, insertions and deletions. Can be enhanced with semantic variations like cosine-similarity based WER.",
+      category: "Model Evaluation"
+    },
+
+    // Level 2: Product Evaluation
     {
       term: "A/B Testing",
-      definition: "A controlled experiment comparing two versions of a product feature to determine which performs better",
+      definition: "Feature A vs. Feature B comparison to determine which performs better in terms of user engagement and product metrics.",
       category: "Product Evaluation"
     },
     {
-      term: "Bias Assessment",
-      definition: "Systematic evaluation of whether an AI model produces unfair or discriminatory outcomes for different groups",
-      category: "Model Evaluation"
+      term: "Multi-armed Bandit",
+      definition: "Performance-based adaptive allocations that automatically adjust which users see which features based on real-time performance. Includes contextual bandits for user-specific allocation.",
+      category: "Product Evaluation"
     },
     {
-      term: "Cost-Effectiveness Analysis",
-      definition: "Evaluation method comparing the costs of an intervention to its measured outcomes or benefits",
+      term: "Holdout Testing",
+      definition: "Comparing AI vs. non-AI versions or status quo vs. enhanced engagement to measure overall product impact.",
+      category: "Product Evaluation"
+    },
+    {
+      term: "DAU/MAU",
+      definition: "Daily Active Users/Monthly Active Users - key retention metrics measuring continued, active usage of the product over time.",
+      category: "Product Evaluation"
+    },
+    {
+      term: "Action-Based Engagement",
+      definition: "Measures user actions directly taken during interactions, including response rates, clicks, prompt rewrites, emoji reactions, and follow-up conversations.",
+      category: "Product Evaluation"
+    },
+    {
+      term: "Feature Uptake",
+      definition: "Measures usage of optional or advanced features like exporting content, feedback buttons, or reference links to assess product value.",
+      category: "Product Evaluation"
+    },
+    {
+      term: "Non-Engagement Metrics",
+      definition: "Quality indicators beyond user clicks and time spent, including content quality scores, user surveys, and user control features.",
+      category: "Product Evaluation"
+    },
+
+    // Level 3: User Evaluation
+    {
+      term: "Cognitive Outcomes",
+      definition: "Measures whether users are gaining new knowledge, correcting misconceptions, or demonstrating improved skills and decision-making ability from using the AI.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Affective Outcomes",
+      definition: "Assessment of how the product makes users feel - whether they report feeling supported, motivated, and capable or show signs of frustration, confusion, or distress.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Behavioral Outcomes",
+      definition: "Measures whether users are taking meaningful actions like asking more questions, trying recommended behaviors, or other actions that predict longer-term development.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Follow-up Question Rate",
+      definition: "Percentage of interactions where users ask new questions related to previous answers, indicating sustained engagement and intellectual curiosity.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Language Complexity Analysis",
+      definition: "Tracking the complexity of language users employ - vocabulary, syntax, and linguistic sophistication often increase as users learn and gain expertise.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Sentiment Analysis",
+      definition: "Automatically scoring the sentiment of user utterances over time to detect whether words used are becoming more positive or less anxious.",
+      category: "User Evaluation"
+    },
+    {
+      term: "LIWC Analysis",
+      definition: "Linguistic Inquiry and Word Count - dictionary-based text analysis that maps words to psychological categories like emotion, social words, and cognitive processes.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Validated Scales",
+      definition: "Research-backed psychological questionnaires that measure latent constructs like self-efficacy, motivation, or emotional state with proven reliability.",
+      category: "User Evaluation"
+    },
+
+    // Level 4: Impact Evaluation
+    {
+      term: "Randomized Controlled Trial (RCT)",
+      definition: "Gold standard experimental design where participants are randomly assigned to treatment and control groups to establish causal relationships between interventions and outcomes.",
       category: "Impact Evaluation"
     },
     {
-      term: "Cross-validation",
-      definition: "Statistical method for assessing how well a model generalizes to independent datasets",
-      category: "Model Evaluation"
+      term: "Quasi-Experimental Design",
+      definition: "Alternative evaluation approaches when RCTs are not feasible, including natural experiments, regression discontinuity, and difference-in-differences methods.",
+      category: "Impact Evaluation"
     },
     {
       term: "Development Outcomes",
-      definition: "Measurable changes in social, economic, or environmental conditions that development interventions aim to achieve",
+      definition: "Long-term, measurable improvements in areas like health, education, income, or overall well-being that development interventions aim to achieve.",
       category: "Impact Evaluation"
     },
     {
-      term: "Fairness Metrics",
-      definition: "Quantitative measures used to assess whether an AI system treats different groups equitably",
-      category: "Model Evaluation"
+      term: "Cost-Effectiveness Analysis",
+      definition: "Assessment of impact relative to cost, enabling comparison with other interventions. Includes cost per outcome achieved and return on investment calculations.",
+      category: "Impact Evaluation"
     },
     {
-      term: "Human-in-the-Loop",
-      definition: "AI system design that incorporates human judgment and oversight in the decision-making process",
-      category: "Product Evaluation"
+      term: "Theory of Change",
+      definition: "Explicit framework defining how an intervention is expected to lead to specific development outcomes, including assumptions and causal pathways.",
+      category: "Impact Evaluation"
     },
     {
-      term: "Impact Evaluation",
-      definition: "Systematic assessment of the changes that can be attributed to a particular intervention",
+      term: "Counterfactual",
+      definition: "What participants would receive in the absence of the AI tool - could be business-as-usual, non-AI digital tools, or human-delivered services.",
       category: "Impact Evaluation"
     },
     {
       term: "Longitudinal Study",
-      definition: "Research design that follows the same subjects over extended periods to track changes over time",
-      category: "User Evaluation"
-    },
-    {
-      term: "Model Drift",
-      definition: "Degradation in model performance over time due to changes in data patterns or environment",
-      category: "Model Evaluation"
-    },
-    {
-      term: "Randomized Controlled Trial (RCT)",
-      definition: "Experimental design where participants are randomly assigned to treatment and control groups",
+      definition: "Multi-year follow-up studies tracking outcomes over extended periods to measure sustained impact and long-term development effects.",
       category: "Impact Evaluation"
     },
     {
-      term: "User Acceptance Testing",
-      definition: "Evaluation process where real users test a product to ensure it meets their needs and expectations",
-      category: "User Evaluation"
+      term: "Cluster Randomization",
+      definition: "Randomization strategy where groups (clusters) rather than individuals are assigned to treatment, useful for reducing spillover effects in AI product evaluations.",
+      category: "Impact Evaluation"
     },
     {
-      term: "Usability Testing",
-      definition: "Evaluation method where users perform tasks while observers watch and take notes",
-      category: "User Evaluation"
+      term: "Administrative Data",
+      definition: "Objective data from official records (schools, hospitals, government) used for credible measurement of development outcomes that can't be gamed by AI output.",
+      category: "Impact Evaluation"
+    },
+
+    // Cross-cutting Terms
+    {
+      term: "Four-Level Framework",
+      definition: "Comprehensive evaluation approach covering Model (Level 1), Product (Level 2), User (Level 3), and Impact (Level 4) assessment to ensure AI tools drive meaningful development outcomes.",
+      category: "Framework"
+    },
+    {
+      term: "Cross-Functional Team",
+      definition: "Collaborative team structure including AI engineers, product managers, data scientists, behavioral researchers, and domain experts working together across all evaluation levels.",
+      category: "Framework"
+    },
+    {
+      term: "Spillover Effects",
+      definition: "When treatment effects spread beyond intended recipients, potentially contaminating control groups in evaluations. Particularly relevant for publicly available AI products.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Pre-registration",
+      definition: "Publishing study design, hypotheses, and analysis plans before conducting research to ensure transparency and prevent selective reporting of results.",
+      category: "Impact Evaluation"
     }
   ];
 
-  const categories = ["All", "Model Evaluation", "Product Evaluation", "User Evaluation", "Impact Evaluation"];
+  const categories = ["All", "Framework", "Model Evaluation", "Product Evaluation", "User Evaluation", "Impact Evaluation"];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredTerms = terms.filter(term => {
