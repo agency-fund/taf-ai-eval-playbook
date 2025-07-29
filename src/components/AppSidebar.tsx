@@ -65,13 +65,13 @@ export function AppSidebar() {
   
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
     isActive 
-      ? "bg-primary/10 text-primary font-medium border-r-2 border-primary" 
-      : "hover:bg-muted/50 text-muted-foreground hover:text-foreground";
+      ? "bg-primary/15 text-primary font-semibold border-r-4 border-primary shadow-sm" 
+      : "hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors";
 
   const getSubNavCls = ({ isActive }: { isActive: boolean }) =>
     isActive 
-      ? "bg-primary/5 text-primary font-medium border-r-2 border-primary ml-4" 
-      : "hover:bg-muted/30 text-muted-foreground hover:text-foreground ml-4";
+      ? "bg-primary/10 text-primary font-semibold border-r-4 border-primary ml-4 shadow-sm" 
+      : "hover:bg-muted/30 text-muted-foreground hover:text-foreground ml-4 transition-colors";
 
   const handleFrameworkClick = () => {
     // Navigate to the main framework page
@@ -121,8 +121,8 @@ export function AppSidebar() {
                     onClick={handleFrameworkClick}
                     className={`transition-all duration-300 ease-in-out ${
                       isFrameworkActive 
-                        ? "bg-primary/10 text-primary font-medium border-r-2 border-primary" 
-                        : "hover:bg-muted/50 text-muted-foreground hover:text-foreground"
+                        ? "bg-primary/15 text-primary font-semibold border-r-4 border-primary shadow-sm" 
+                        : "hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-colors"
                     }`}
                   >
                     <Target className="h-4 w-4 transition-transform duration-300" />
