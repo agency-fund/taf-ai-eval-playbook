@@ -51,7 +51,7 @@ const Index = () => {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 border-white/20 text-white hover:bg-white/20">
-                <Link to="/tools/framework-builder">
+                <Link to="/tools/model-evaluation">
                   Try Interactive Tools
                 </Link>
               </Button>
