@@ -19,6 +19,7 @@ import Glossary from "./pages/Glossary";
 import FrameworkBuilder from "./pages/tools/FrameworkBuilder";
 import Planning from "./pages/tools/Planning";
 import Metrics from "./pages/tools/Metrics";
+import ModelEvaluation from "./pages/tools/ModelEvaluation";
 import NotFound from "./pages/NotFound";
 import Authors from "./pages/Authors";
 
@@ -47,6 +48,7 @@ const App = () => (
             <Route path="/tools/framework-builder" element={<FrameworkBuilder />} />
             <Route path="/tools/planning" element={<Planning />} />
             <Route path="/tools/metrics" element={<Metrics />} />
+            <Route path="/tools/model-evaluation" element={<ModelEvaluation />} />
             <Route path="/authors" element={<Authors />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
