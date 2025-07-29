@@ -343,7 +343,7 @@ Always be supportive, clear, and practical in your advice.`);
               <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
                 <CardHeader className="bg-gray-50">
                   <CardTitle className="flex items-center gap-2 text-gray-900">
-                    <Shield className="h-5 w-5" />
+                    <Shield className="h-5 w-5 text-primary" />
                     Safety Guardrails
                   </CardTitle>
                   <CardDescription>
@@ -363,7 +363,7 @@ Always be supportive, clear, and practical in your advice.`);
               <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
                 <CardHeader className="bg-gray-50">
                   <CardTitle className="flex items-center gap-2 text-gray-900">
-                    <Brain className="h-5 w-5" />
+                    <Brain className="h-5 w-5 text-primary" />
                     Knowledge Base
                   </CardTitle>
                   <CardDescription>
@@ -384,7 +384,7 @@ Always be supportive, clear, and practical in your advice.`);
             <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
               <CardHeader className="bg-gray-50">
                 <CardTitle className="flex items-center gap-2 text-gray-900">
-                  <Zap className="h-5 w-5" />
+                  <Zap className="h-5 w-5 text-primary" />
                   System Prompt
                 </CardTitle>
                 <CardDescription>
@@ -532,7 +532,7 @@ Always be supportive, clear, and practical in your advice.`);
             <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
               <CardHeader className="bg-gray-50">
                 <CardTitle className="flex items-center gap-2 text-gray-900">
-                  <MessageSquare className="h-5 w-5" />
+                  <MessageSquare className="h-5 w-5 text-primary" />
                   Interactive Chat Interface
                 </CardTitle>
                 <CardDescription>
@@ -541,7 +541,7 @@ Always be supportive, clear, and practical in your advice.`);
               </CardHeader>
               <CardContent className="p-6">
                 <div className="text-center py-4 mb-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                  <AlertCircle className="h-5 w-5 text-yellow-600 mx-auto mb-2" />
+                  <AlertCircle className="h-5 w-5 text-primary mx-auto mb-2" />
                   <p className="text-sm text-yellow-800 font-medium">
                     This is a simulated chat interface for demonstration purposes only.
                   </p>
@@ -554,7 +554,7 @@ Always be supportive, clear, and practical in your advice.`);
                   <div className="space-y-4">
                     {conversationHistory.length === 0 && (
                       <div className="text-center text-muted-foreground py-8">
-                        <MessageSquare className="h-12 w-12 mx-auto mb-4 text-gray-400" />
+                        <MessageSquare className="h-12 w-12 mx-auto mb-4 text-primary" />
                         <p>Start a conversation to test your AI assistant</p>
                       </div>
                     )}
@@ -627,7 +627,7 @@ Always be supportive, clear, and practical in your advice.`);
               }}>
                 <CardHeader className="bg-gray-50">
                   <CardTitle className="flex items-center gap-2 text-gray-900">
-                    <TrendingUp className="h-5 w-5" />
+                    <TrendingUp className="h-5 w-5 text-primary" />
                     Cosine Similarity
                   </CardTitle>
                   <CardDescription>
@@ -669,7 +669,7 @@ Always be supportive, clear, and practical in your advice.`);
               }}>
                 <CardHeader className="bg-gray-50">
                   <CardTitle className="flex items-center gap-2 text-gray-900">
-                    <Gauge className="h-5 w-5" />
+                    <Gauge className="h-5 w-5 text-primary" />
                     Contextual Precision
                   </CardTitle>
                   <CardDescription>
@@ -700,13 +700,13 @@ Always be supportive, clear, and practical in your advice.`);
             </div>
 
             <Alert>
-              <Info className="h-4 w-4" />
+              <Info className="h-4 w-4 text-primary" />
               <AlertDescription>
                 <strong>Note:</strong> This demonstration focuses on two key metrics for simplicity. For comprehensive evaluation including 
                 human-as-a-judge, LLM-as-a-judge, and other advanced metrics, please refer to the{' '}
                 <a href="/level1" className="text-blue-600 hover:text-blue-800 underline flex items-center gap-1 inline">
                   Level 1: Model Evaluation page
-                  <ExternalLink className="h-3 w-3" />
+                  <ExternalLink className="h-3 w-3 text-primary" />
                 </a>
               </AlertDescription>
             </Alert>
@@ -731,7 +731,7 @@ Always be supportive, clear, and practical in your advice.`);
             <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
               <CardHeader className="bg-gray-50">
                 <CardTitle className="flex items-center gap-2 text-gray-900">
-                  <BarChart3 className="h-5 w-5" />
+                  <BarChart3 className="h-5 w-5 text-primary" />
                   Evaluation Dashboard
                 </CardTitle>
                 <CardDescription>
