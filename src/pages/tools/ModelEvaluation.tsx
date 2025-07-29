@@ -908,10 +908,10 @@ Always be supportive, clear, and practical in your advice.`);
                 onClick={() => goToStep(index)}
                 className={`px-6 py-4 rounded-lg flex items-center justify-center gap-3 text-sm font-medium transition-all duration-300 flex-1 whitespace-nowrap ${
                   index === currentStep
-                    ? 'bg-blue-400 text-white shadow-md'
+                    ? 'bg-primary text-primary-foreground shadow-md'
                     : index < currentStep
-                    ? 'bg-blue-50 text-blue-600 hover:bg-blue-100'
-                    : 'bg-gray-200 text-gray-500 hover:bg-gray-300'
+                    ? 'bg-primary/10 text-primary hover:bg-primary/20'
+                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
                 }`}
               >
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">
@@ -947,7 +947,7 @@ Always be supportive, clear, and practical in your advice.`);
           <Button
             onClick={nextStep}
             disabled={currentStep === steps.length - 1}
-            className="bg-gradient-to-r from-blue-300 to-indigo-400 hover:from-blue-400 hover:to-indigo-500 text-white flex items-center gap-2"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground flex items-center gap-2"
           >
             {currentStep < steps.length - 1 ? steps[currentStep + 1].title : 'Next'}
             <ChevronRight className="h-4 w-4" />
