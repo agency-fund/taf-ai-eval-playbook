@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Target, RefreshCw, Users, Wrench } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { ArrowRight, Target, RefreshCw, Users, Wrench, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -33,6 +34,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Development Banner */}
+      <Alert className="rounded-none border-x-0 border-t-0 bg-amber-50 border-amber-200 dark:bg-amber-950 dark:border-amber-800">
+        <AlertTriangle className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+        <AlertDescription className="text-amber-800 dark:text-amber-200">
+          <strong>Development Notice:</strong> This website is still in development. All content is tentative and subject to change.
+        </AlertDescription>
+      </Alert>
+      
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-hero text-white">
         <div className="absolute inset-0 bg-black/10" />
