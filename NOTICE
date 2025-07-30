@@ -1,0 +1,34 @@
+TAF AI Evaluation Playbook
+Copyright 2024 [Your Organization Name]
+
+This project incorporates content and methodologies from various sources:
+
+1. ChatSEL Project
+   - Source: https://agency-fund.github.io/chatsel-docs/
+   - Used for: Case study examples and evaluation scenarios
+   - License: [Include ChatSEL's license if available]
+
+2. AI Evaluation Methodologies
+   - Cosine Similarity and Contextual Precision metrics
+   - Golden test dataset methodologies
+   - Model evaluation frameworks
+
+3. Educational Content
+   - Social and Emotional Learning (SEL) domain knowledge
+   - Teacher coaching methodologies
+   - AI safety and guardrail concepts
+
+4. Technical Components
+   - React/TypeScript framework
+   - Shadcn UI components
+   - Tailwind CSS styling
+
+Additional Dependencies:
+- Vite build system
+- Lucide React icons
+- React Router for navigation
+
+This project is designed for educational and research purposes in AI evaluation.
+Please maintain appropriate attributions when using or modifying this work.
+
+For questions about licensing or attribution, please contact the project maintainers. 
