@@ -1,6 +1,6 @@
 # AI Evaluation in the Development Sector  
 *A Living Playbook by The Agency Fund*  
-**🚧 Draft in Progress – For Internal Use Only 🚧**
+**🚧 Draft in Progress – Open Source 🚧**
 
 ---
 
@@ -70,16 +70,61 @@ This playbook is a **living document**. Current content is based on:
 
 ---
 
+## 🤝 Contributing
+
+We welcome contributions from the AI evaluation community! This is an open-source project designed to advance the field of AI evaluation in development contexts.
+
+### How to Contribute
+
+1. **Fork the repository** and create a feature branch
+2. **Make your changes** following the project's coding standards
+3. **Test your changes** to ensure they work as expected
+4. **Submit a pull request** with a clear description of your changes
+5. **Maintain attribution** for any external sources you incorporate
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone [repository-url]
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
 ## 📬 Contact
 
 Have suggestions, ideas, or want to collaborate?  
-Please reach out to the authors via [email](https://eval.playbook.org.ai/authors).
+Please reach out to the authors via [email](https://eval.playbook.org.ai/authors) or open an issue on GitHub.
 
 ---
 
-## License
+## 📄 License
 
-This project is shared for internal and collaborative use only. External sharing or reproduction is not permitted without explicit permission from The Agency Fund.
+This project is licensed under the **Apache License, Version 2.0** - see the [LICENSE](LICENSE) file for details.
+
+### Attribution Requirements
+
+This playbook incorporates content and methodologies from various sources. When using, modifying, or distributing this work, you must:
+
+1. **Maintain attribution** to original sources where applicable
+2. **Include references** to the TAF AI Evaluation Playbook
+3. **Acknowledge contributions** from the AI evaluation community
+4. **Preserve educational and research integrity** in derivative works
+
+For specific attribution requirements, see the [NOTICE](NOTICE) file.
+
+### Key Sources
+
+- **ChatSEL Project**: Case study examples and evaluation scenarios
+- **AI Evaluation Methodologies**: Cosine Similarity, Contextual Precision, and golden test frameworks
+- **Educational Content**: Social and Emotional Learning (SEL) domain knowledge
+- **Technical Components**: React/TypeScript framework with Shadcn UI
+
+This project is designed for educational and research purposes in AI evaluation. Please maintain appropriate attributions when using or modifying this work.
 
 ---
 
