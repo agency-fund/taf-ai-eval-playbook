@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
@@ -68,6 +69,7 @@ export default function ModelEvaluation() {
   const [userInput, setUserInput] = useState('');
   const [evaluationResults, setEvaluationResults] = useState<EvaluationResult[]>([]);
   const [isEvaluating, setIsEvaluating] = useState(false);
+  const [isChatLoading, setIsChatLoading] = useState(false);
   const [evaluationProgress, setEvaluationProgress] = useState(0);
   const [selectedMetrics, setSelectedMetrics] = useState<string[]>(['cosine-similarity', 'contextual-precision']);
   const [showResults, setShowResults] = useState(false);
@@ -173,19 +175,51 @@ Always be supportive, clear, and practical in your advice.`);
     ));
   };
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     if (!userInput.trim()) return;
 
     const userMessage = { role: 'user' as const, content: userInput };
     setConversationHistory([...conversationHistory, userMessage]);
     setUserInput('');
+    setIsChatLoading(true);
 
-    // Simulate AI response based on knowledge base and guardrails
-    setTimeout(() => {
-      const aiResponse = simulateAIResponse(userInput);
+    try {
+      // Create the system prompt with guardrails and knowledge base
+      const fullSystemPrompt = `${systemPrompt}
+
+GUARDRAILS:
+${guardrails}
+
+KNOWLEDGE BASE:
+${knowledgeBase}`;
+
+      // Call OpenAI API through our edge function
+      const { data, error } = await supabase.functions.invoke('openai-chat', {
+        body: {
+          messages: [
+            { role: 'system', content: fullSystemPrompt },
+            ...conversationHistory,
+            userMessage
+          ],
+          model: 'gpt-4o',
+          temperature: 0.7
+        }
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      const aiResponse = data.choices[0].message.content;
       const assistantMessage = { role: 'assistant' as const, content: aiResponse };
       setConversationHistory(prev => [...prev, assistantMessage]);
-    }, 1000);
+    } catch (error) {
+      console.error('Error calling OpenAI:', error);
+      const errorMessage = { role: 'assistant' as const, content: 'Sorry, I encountered an error. Please try again.' };
+      setConversationHistory(prev => [...prev, errorMessage]);
+    } finally {
+      setIsChatLoading(false);
+    }
   };
 
   const simulateAIResponse = (input: string): string => {
@@ -582,14 +616,16 @@ Always be supportive, clear, and practical in your advice.`);
                     value={userInput}
                     onChange={(e) => setUserInput(e.target.value)}
                     placeholder="Type your message..."
-                    onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+                    onKeyPress={(e) => e.key === 'Enter' && !isChatLoading && sendMessage()}
+                    disabled={isChatLoading}
                     className="border-2 focus:border-blue-300 font-sans"
                   />
                   <Button 
                     onClick={sendMessage}
+                    disabled={isChatLoading || !userInput.trim()}
                     className="bg-gradient-to-r from-blue-400 to-indigo-500 hover:from-blue-500 hover:to-indigo-600 text-white"
                   >
-                    Send
+                    {isChatLoading ? 'Sending...' : 'Send'}
                   </Button>
                 </div>
               </CardContent>
