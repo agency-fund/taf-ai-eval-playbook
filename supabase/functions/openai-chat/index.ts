@@ -48,6 +48,19 @@ serve(async (req) => {
 
     const data = await response.json();
     
+    // Log the OpenAI response message
+    if (data.choices && data.choices.length > 0) {
+      const message = data.choices[0].message;
+      console.log('OpenAI response message:', {
+        role: message.role,
+        content: message.content,
+        model: data.model,
+        usage: data.usage
+      });
+    } else {
+      console.log('OpenAI response data (no choices):', data);
+    }
+    
     return new Response(JSON.stringify(data), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
