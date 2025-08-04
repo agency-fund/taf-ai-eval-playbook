@@ -23,14 +23,39 @@ const Authors = () => {
       name: "Edmund Korley",
       linkedIn: "https://www.linkedin.com/in/edmundkorley/",
       email: "edmund@agency.fund"
+    },
+    {
+      name: "Temina Madon",
+      linkedIn: "https://www.linkedin.com/in/temina/",
+      email: "temina@agency.fund"
+    },
+    {
+      name: "Linus Wong",
+      linkedIn: "https://www.linkedin.com/in/linus-wong-999b551/",
+      email: "linus@agency.fund"
+    }
+  ];
+
+  const contributors = [
+    {
+      name: "Farhan Abrol",
+      linkedIn: "https://www.linkedin.com/in/fabrol/"
+    },
+    {
+      name: "Han Sheng Chia",
+      linkedIn: "https://www.linkedin.com/in/han-sheng-chia-427a0448/"
+    },
+    {
+      name: "Kang-Xing (KX) Jin",
+      linkedIn: "https://www.linkedin.com/in/kxjin/"
     }
   ];
 
   return (
     <div className="container mx-auto px-6 py-12">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Authors</h1>
+        <div className="text-left mb-12">
+          <h1 className="text-4xl font-bold mb-4">Authors and Contributors</h1>
           <p className="text-lg text-muted-foreground">
             This AI Evaluation Playbook was created by the team at Agency Fund, 
             bringing together expertise in AI development, evaluation frameworks, 
@@ -38,7 +63,12 @@ const Authors = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-left">Authors</h2>
+          <p className="text-muted-foreground text-left mb-8">
+            The authors are the team members who wrote the content and developed the core framework for this playbook.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
           {authors.map((author, index) => (
             <Card key={index} className="hover:shadow-float transition-shadow">
               <CardHeader>
@@ -73,18 +103,51 @@ const Authors = () => {
               </CardContent>
             </Card>
           ))}
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-left">Contributors</h2>
+          <p className="text-muted-foreground text-left mb-8">
+            The contributors generously shared their expertise and provided valuable insights during the idea generation phase.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {contributors.map((contributor, index) => (
+              <Card key={index} className="hover:shadow-float transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-lg">{contributor.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-col gap-3">
+                    <Button asChild variant="outline" size="sm">
+                      <a 
+                        href={contributor.linkedIn} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        LinkedIn Profile
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <div className="bg-gradient-accent/5 rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Questions & Requests</h2>
+          <h2 className="text-2xl font-bold mb-4">Contribute to the Playbook</h2>
           <p className="text-muted-foreground mb-6">
-            For questions about this playbook, collaboration opportunities, 
-            or to request additional content, please reach out to our team.
+            Interested in contributing to this playbook? We welcome contributions 
+            from the AI evaluation community. For questions, collaboration opportunities, 
+            or to suggest improvements, please reach out to our team.
           </p>
           <Button asChild size="lg">
             <a href="mailto:zezhen@agency.fund" className="flex items-center gap-2">
               <Mail className="w-5 h-5" />
-              Contact Zezhen Wu
+              Contribute to the Playbook
             </a>
           </Button>
         </div>
