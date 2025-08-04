@@ -23,7 +23,7 @@ export function Layout({ children }: LayoutProps) {
             <SidebarTrigger className="ml-4" />
             <div className="flex-1 px-6 flex items-center gap-4">
               <img 
-                src="/lovable-uploads/9a3d750a-2eef-48e5-9815-5a79d2de32ef.png" 
+                src="/agency-fund-logo.png" 
                 alt="The Agency Fund" 
                 className="h-8 w-auto"
               />
