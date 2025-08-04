@@ -56,7 +56,7 @@ const Authors = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-left mb-12">
           <h1 className="text-4xl font-bold mb-4">Authors and Contributors</h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-black">
             This AI Evaluation Playbook was created by the team at Agency Fund, 
             bringing together expertise in AI development, evaluation frameworks, 
             and social impact measurement.
@@ -65,9 +65,9 @@ const Authors = () => {
 
         <div className="mb-12">
           <h2 className="text-2xl font-bold mb-6 text-left">Authors</h2>
-          <p className="text-muted-foreground text-left mb-8">
-            The authors are the team members who wrote the content and developed the core framework for this playbook.
-          </p>
+                      <p className="text-black text-left mb-8">
+              The authors are the team members who wrote the content and developed the core framework for this playbook.
+            </p>
           <div className="grid md:grid-cols-2 gap-6">
           {authors.map((author, index) => (
             <Card key={index} className="hover:shadow-float transition-shadow">
@@ -108,9 +108,9 @@ const Authors = () => {
 
         <div className="mb-12">
           <h2 className="text-2xl font-bold mb-6 text-left">Contributors</h2>
-          <p className="text-muted-foreground text-left mb-8">
-            The contributors generously shared their expertise and provided valuable insights during the idea generation phase.
-          </p>
+                      <p className="text-black text-left mb-8">
+              The contributors generously shared their expertise and provided valuable insights during the idea generation phase.
+            </p>
           <div className="grid md:grid-cols-3 gap-6">
             {contributors.map((contributor, index) => (
               <Card key={index} className="hover:shadow-float transition-shadow">

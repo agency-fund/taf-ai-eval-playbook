@@ -89,7 +89,7 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
         <h1 className="text-4xl font-bold mb-6">
           Repeatable Motions in AI Evaluation
         </h1>
-        <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
+        <div className="prose prose-lg max-w-none text-black leading-relaxed">
           <p className="text-xl mb-6">
             We strongly believe the success of AI evaluation depends on building practical tools that connect and operationalize all four levels in real time. Unlike traditional development interventions, generative AI systems allow for precise control over deployment and the passive collection of rich interaction data.
           </p>
@@ -118,9 +118,9 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
                       <span className="text-2xl font-mono font-bold text-primary/70">{motion.number}</span>
                       <CardTitle className="text-2xl leading-tight">{motion.title}</CardTitle>
                     </div>
-                    <CardDescription className="text-lg text-muted-foreground">
-                      {motion.description}
-                    </CardDescription>
+                                    <CardDescription className="text-lg text-black">
+                  {motion.description}
+                </CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -167,7 +167,7 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
           <CardHeader>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                <Database className="w-6 h-6 text-blue-600" />
+                <Database className="w-6 h-6 text-taf-light-blue" />
               </div>
               <div>
                 <CardTitle className="text-2xl">Building Repeatable Motions through an AI Evaluation Platform</CardTitle>
@@ -278,7 +278,7 @@ Unlike traditional development interventions, generative AI systems offer two ke
       <div className="flex justify-between items-center">
         <div>
           <h3 className="text-lg font-semibold mb-2">Build your evaluation team</h3>
-          <p className="text-muted-foreground">Learn about roles and responsibilities for effective evaluation</p>
+          <p className="text-black">Learn about roles and responsibilities for effective evaluation</p>
         </div>
         <Button asChild size="lg" className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary">
           <Link to="/roles">

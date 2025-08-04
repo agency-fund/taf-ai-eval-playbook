@@ -65,6 +65,12 @@ export default {
 					gray: 'hsl(var(--playbook-gray))',
 					'gray-light': 'hsl(var(--playbook-gray-light))'
 				},
+				taf: {
+					yellow: 'var(--taf-yellow)',
+					blue: 'var(--taf-blue)',
+					'light-blue': 'var(--taf-light-blue)',
+					black: 'var(--taf-black)'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

@@ -130,7 +130,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">What's Inside the Playbook</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-black max-w-2xl mx-auto">
               Comprehensive guidance, practical tools, and real-world case studies to help you 
               implement effective AI evaluation in development contexts.
             </p>
@@ -144,7 +144,7 @@ const Index = () => {
                     <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                       <feature.icon className="w-6 h-6 text-[#003087]" />
                     </div>
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                                          <CardTitle className="text-lg group-hover:text-taf-blue transition-colors">
                       {feature.title}
                     </CardTitle>
                   </CardHeader>
@@ -165,7 +165,7 @@ const Index = () => {
       <section className="py-24 bg-playbook-gray-light">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to Start Evaluating?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-black mb-8 max-w-2xl mx-auto">
             Whether you're building your first AI tool or refining existing evaluation practices, 
             this playbook provides the frameworks and tools you need.
           </p>

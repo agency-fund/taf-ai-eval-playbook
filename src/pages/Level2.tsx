@@ -75,27 +75,27 @@ const Level2 = () => {
     <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="mb-12">
         <div className="flex items-center gap-4 mb-6">
-          <Link to="/framework" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/framework" className="text-black hover:text-taf-blue transition-colors">
             ← Back to Framework
           </Link>
         </div>
         <h1 className="text-4xl font-bold mb-6">Level 2: Product Evaluation</h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="text-xl text-black leading-relaxed max-w-3xl">
           Assessment of the AI system integrated into the product context. This level focuses on how well 
           the AI-enabled product facilitates meaningful interactions and solves user problems.
         </p>
       </div>
 
       <div className="mb-16">
-        <Card className="border-0 shadow-card bg-gradient-to-br from-orange-50 to-orange-100/50">
+        <Card className="border-0 shadow-card bg-taf-yellow/10">
           <CardHeader>
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-orange-100 text-orange-700 rounded-lg flex items-center justify-center">
+              <div className="w-16 h-16 bg-orange-100 text-orange-700 border-orange-200 rounded-lg flex items-center justify-center">
                 <Package className="w-8 h-8" />
               </div>
               <div>
                 <CardTitle className="text-2xl">Core Question</CardTitle>
-                <CardDescription className="text-lg">
+                <CardDescription className="text-lg text-black">
                   Does the product facilitate meaningful interactions?
                 </CardDescription>
               </div>
@@ -106,7 +106,7 @@ const Level2 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Why is this level of evaluation important?</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+        <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             Beyond evaluating how the AI model responds to a self-constructed evaluation data set, organizations 
             need to assess how well the product engages real users, and whether it solves a meaningful problem 
@@ -133,17 +133,17 @@ const Level2 = () => {
           <Card className="border-0 shadow-card">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
                   <CardTitle className="text-lg">Execute</CardTitle>
-                  <CardDescription>Product Managers</CardDescription>
+                  <CardDescription className="text-black">Product Managers</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-black">
                 Directly responsible for product metrics at this level. Works cross-functionally to prioritize the most promising hypotheses to test.
               </p>
             </CardContent>
@@ -151,17 +151,17 @@ const Level2 = () => {
           <Card className="border-0 shadow-card">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                   <BarChart3 className="w-6 h-6" />
                 </div>
                 <div>
                   <CardTitle className="text-lg">Support</CardTitle>
-                  <CardDescription>Data Scientists</CardDescription>
+                  <CardDescription className="text-black">Data Scientists</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-black">
                 Apply evaluation methods with the proper measurement tools. Ensure accuracy and availability of product metrics (data pipelines).
               </p>
             </CardContent>
@@ -169,17 +169,17 @@ const Level2 = () => {
           <Card className="border-0 shadow-card">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                   <Settings className="w-6 h-6" />
                 </div>
                 <div>
                   <CardTitle className="text-lg">Support</CardTitle>
-                  <CardDescription>Engineers</CardDescription>
+                  <CardDescription className="text-black">Engineers</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-black">
                 Build and roll out product features.
               </p>
             </CardContent>
@@ -189,7 +189,7 @@ const Level2 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Evaluation Methods</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
+        <div className="prose prose-lg max-w-none text-black mb-8">
           <p>
             For detailed guidance on evaluation methods, please refer to:
           </p>
@@ -199,24 +199,24 @@ const Level2 = () => {
                 href="https://docs.google.com/document/d/1_i1LjHIA3MHBCez1gxvSqZohN9zkwjG09h5L2k4BryQ/edit?tab=t.0#heading=h.wdgt1uho9q75" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-orange-600 hover:text-orange-700 underline flex items-center gap-2"
+                className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2"
               >
                 AI4GD A/B Testing Playbook
                 <ExternalLink className="w-4 h-4" />
               </a>
-              <span className="text-sm text-muted-foreground"> by Elia Gandolfi</span>
+              <span className="text-sm text-black"> by Elia Gandolfi</span>
             </li>
             <li>
               <a 
                 href="https://docs.google.com/document/u/0/d/18OFMLI70IZLQuwhuxTwZXrDhw6Z-kpT-QUqZZJugEZ4/edit" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-orange-600 hover:text-orange-700 underline flex items-center gap-2"
+                className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2"
               >
                 AI4GD User Funnel and Metrics Playbook
                 <ExternalLink className="w-4 h-4" />
               </a>
-              <span className="text-sm text-muted-foreground"> by Robert On & Temina Madon</span>
+              <span className="text-sm text-black"> by Robert On & Temina Madon</span>
             </li>
           </ul>
         </div>
@@ -225,16 +225,16 @@ const Level2 = () => {
             <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-orange-100 text-orange-700 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                     <method.icon className="w-6 h-6" />
                   </div>
                   <CardTitle className="text-xl">{method.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base">
-                  {method.description}
-                </CardDescription>
+                                  <CardDescription className="text-base text-black">
+                    {method.description}
+                  </CardDescription>
               </CardContent>
             </Card>
           ))}
@@ -243,7 +243,7 @@ const Level2 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Measurement Tools</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
+        <div className="prose prose-lg max-w-none text-black mb-8">
           <p>
             <strong>References:</strong>
           </p>
@@ -253,7 +253,7 @@ const Level2 = () => {
                 href="https://help.openai.com/en/articles/10875114-user-analytics-for-chatgpt-enterprise-and-edu-public-beta" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-orange-600 hover:text-orange-700 underline flex items-center gap-2"
+                className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2"
               >
                 User Analytics for ChatGPT Enterprise and Edu
                 <ExternalLink className="w-4 h-4" />
@@ -264,7 +264,7 @@ const Level2 = () => {
                 href="https://arxiv.org/abs/2402.06831" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-orange-600 hover:text-orange-700 underline flex items-center gap-2"
+                className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2"
               >
                 What We Know About Using Non-Engagement Signals in Content Ranking
                 <ExternalLink className="w-4 h-4" />
@@ -280,17 +280,17 @@ const Level2 = () => {
                 <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="text-lg">{metric.title}</CardTitle>
-                    <CardDescription className="text-base">
+                    <CardDescription className="text-base text-black">
                       {metric.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-muted-foreground">Examples (in A/B Tests):</h4>
+                      <h4 className="font-semibold text-sm text-black">Examples (in A/B Tests):</h4>
                       <ul className="space-y-1">
                         {metric.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3" />
+                          <li key={idx} className="text-sm text-black flex items-center">
+                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
                             {example}
                           </li>
                         ))}
@@ -309,17 +309,17 @@ const Level2 = () => {
                 <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="text-lg">{metric.title}</CardTitle>
-                    <CardDescription className="text-base">
+                    <CardDescription className="text-base text-black">
                       {metric.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-muted-foreground">Examples (in A/B Tests):</h4>
+                      <h4 className="font-semibold text-sm text-black">Examples (in A/B Tests):</h4>
                       <ul className="space-y-1">
                         {metric.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3" />
+                          <li key={idx} className="text-sm text-black flex items-center">
+                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
                             {example}
                           </li>
                         ))}
@@ -338,17 +338,17 @@ const Level2 = () => {
                 <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="text-lg">{metric.title}</CardTitle>
-                    <CardDescription className="text-base">
+                    <CardDescription className="text-base text-black">
                       {metric.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-muted-foreground">Examples (in A/B Tests):</h4>
+                      <h4 className="font-semibold text-sm text-black">Examples (in A/B Tests):</h4>
                       <ul className="space-y-1">
                         {metric.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3" />
+                          <li key={idx} className="text-sm text-black flex items-center">
+                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
                             {example}
                           </li>
                         ))}
@@ -364,12 +364,12 @@ const Level2 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Case Studies</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground">
+        <div className="prose prose-lg max-w-none text-black">
           <p>
             <em>Case studies to be added - examples from organizations like Rocket Learning and others demonstrating 
             product evaluation methods, metrics, and success determination.</em>
           </p>
-          <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+          <div className="mt-6 p-4 bg-taf-yellow/10 rounded-lg">
             <h4 className="font-semibold mb-3">Guidance questions to address in case studies:</h4>
             <ul className="space-y-2 text-sm">
               <li>• What is the GenAI use case?</li>
@@ -414,7 +414,7 @@ const Level2 = () => {
       <div className="flex justify-between items-center">
         <div>
           <h3 className="text-lg font-semibold mb-2">Ready to explore the next level?</h3>
-          <p className="text-muted-foreground">Learn about user evaluation and behavioral impact</p>
+          <p className="text-black">Learn about user evaluation and behavioral impact</p>
         </div>
         <Button asChild size="lg">
           <Link to="/level3">

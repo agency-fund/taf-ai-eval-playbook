@@ -241,19 +241,19 @@ const Level1 = () => {
     <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="mb-12">
         <div className="flex items-center gap-4 mb-6">
-          <Link to="/framework" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/framework" className="text-black hover:text-taf-blue transition-colors">
             ← Back to Framework
           </Link>
         </div>
         <h1 className="text-4xl font-bold mb-6">Level 1: Model Evaluation</h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="text-xl text-black leading-relaxed max-w-3xl">
           Technical performance assessment of the AI model itself. This level focuses on ensuring the model
           produces accurate, safe, and reliable outputs before integration into products.
         </p>
       </div>
 
       <div className="mb-16">
-        <Card className="border-0 shadow-card bg-gradient-to-br from-red-50 to-red-100/50">
+        <Card className="border-0 shadow-card bg-taf-yellow/10">
           <CardHeader>
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 bg-red-100 text-red-700 rounded-lg flex items-center justify-center">
@@ -261,7 +261,7 @@ const Level1 = () => {
               </div>
               <div>
                 <CardTitle className="text-2xl">Core Question</CardTitle>
-                <CardDescription className="text-lg">
+                <CardDescription className="text-lg text-black">
                   Does the AI model produce the desired responses?
                 </CardDescription>
               </div>
@@ -272,7 +272,7 @@ const Level1 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Why is this level of evaluation important?</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+                  <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             AI models, especially large language models (LLMs), do not{" "}
             <ExternalLink href="https://www.sciencenews.org/article/ai-large-language-model-understanding?utm_source=chatgpt.com">
@@ -301,14 +301,14 @@ const Level1 = () => {
             <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-red-100 text-red-700 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                     <useCase.icon className="w-6 h-6" />
                   </div>
                   <CardTitle className="text-lg">{useCase.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base">
+                <CardDescription className="text-base text-black">
                   {useCase.description}
                 </CardDescription>
               </CardContent>
@@ -323,17 +323,17 @@ const Level1 = () => {
           <Card className="border-0 shadow-card">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                   <Cog className="w-6 h-6" />
                 </div>
                 <div>
                   <CardTitle className="text-lg">Execute</CardTitle>
-                  <CardDescription>AI Engineers, ML Researchers</CardDescription>
+                  <CardDescription className="text-black">AI Engineers, ML Researchers</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-black">
                 Design and build evaluation pipelines, run benchmark tests, implement metrics, and iterate on model fine-tuning.
               </p>
             </CardContent>
@@ -341,17 +341,17 @@ const Level1 = () => {
           <Card className="border-0 shadow-card">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                   <Brain className="w-6 h-6" />
                 </div>
                 <div>
                   <CardTitle className="text-lg">Support</CardTitle>
-                  <CardDescription>Domain Experts</CardDescription>
+                  <CardDescription className="text-black">Domain Experts</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-black">
                 Contribute to evaluation rubric design, identify harmful or biased outputs, and contextualize AI behavior within real-world use cases.
               </p>
             </CardContent>
@@ -361,7 +361,7 @@ const Level1 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">How do we evaluate AI models?</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-8">
+        <div className="prose prose-lg max-w-none text-black space-y-6 mb-8">
           <p>
             Model evaluation combines automated metrics, human judgment, and LLMs acting as evaluators. Here are 
             common approaches and tools:
@@ -384,9 +384,9 @@ const Level1 = () => {
             <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-red-100 text-red-700 rounded-lg flex items-center justify-center">
-                    <Target className="w-6 h-6" />
-                  </div>
+                                  <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
+                  <Target className="w-6 h-6" />
+                </div>
                   <CardTitle className="text-xl">
                     {method.title}
                     {method.link && (
@@ -400,21 +400,21 @@ const Level1 = () => {
               <CardContent className="space-y-4">
                 <div>
                   <h4 className="font-semibold mb-2">Description</h4>
-                  <p className="text-sm text-muted-foreground">{method.description}</p>
+                  <p className="text-sm text-black">{method.description}</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">When it works well</h4>
-                  <p className="text-sm text-muted-foreground">{method.whenWorks}</p>
+                  <p className="text-sm text-black">{method.whenWorks}</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Example</h4>
-                  <p className="text-sm text-muted-foreground">{method.example}</p>
+                  <p className="text-sm text-black">{method.example}</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Key Practices</h4>
                   <ul className="space-y-1">
                     {method.keyPractices.map((practice, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-center">
+                      <li key={idx} className="text-sm text-black flex items-center">
                         <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-3" />
                         {practice}
                       </li>
@@ -429,7 +429,7 @@ const Level1 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Measurement Tools</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-8">
+        <div className="prose prose-lg max-w-none text-black space-y-6 mb-8">
           <p>
             Evaluating an AI model's performance requires both <strong>generalized metrics</strong> and{" "}
             <strong>context-specific metrics</strong> tailored to the model's specific use case, domain, and user 
@@ -472,18 +472,18 @@ const Level1 = () => {
               <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="text-lg">{metric.metric}</CardTitle>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base text-black">
                     {metric.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
                     <h4 className="font-semibold mb-2">Technical Definition & Calculation</h4>
-                    <p className="text-sm text-muted-foreground">{metric.technical}</p>
+                    <p className="text-sm text-black">{metric.technical}</p>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2">Example</h4>
-                    <p className="text-sm text-muted-foreground">{metric.example}</p>
+                    <p className="text-sm text-black">{metric.example}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -493,7 +493,7 @@ const Level1 = () => {
 
         <div className="mb-12">
           <h3 className="text-2xl font-bold mb-6">Domain-Specific Metrics</h3>
-          <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-8">
+          <div className="prose prose-lg max-w-none text-black space-y-6 mb-8">
             <p>
               Off-the-shelf metrics are not enough for high-stakes, context-specific applications in the global 
               development sector. <strong>Domain-specific metrics</strong> help ensure that model performance is 
@@ -505,7 +505,7 @@ const Level1 = () => {
               <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                       <Shield className="w-6 h-6" />
                     </div>
                     <div>
@@ -521,7 +521,7 @@ const Level1 = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base text-black">
                     {tool.description}
                   </CardDescription>
                 </CardContent>
@@ -537,7 +537,7 @@ const Level1 = () => {
               <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                       <Zap className="w-6 h-6" />
                     </div>
                     <div>
@@ -563,7 +563,7 @@ const Level1 = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base text-black">
                     {tool.description}
                   </CardDescription>
                 </CardContent>
@@ -575,7 +575,7 @@ const Level1 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Case Studies</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-8">
+        <div className="prose prose-lg max-w-none text-black space-y-6 mb-8">
           <p>
             <em>Expand on this report{" "}
               <ExternalLink href="https://cdh.stanford.edu/generative-ai-health-low-middle-income-countries">
@@ -594,18 +594,18 @@ const Level1 = () => {
             <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-xl">{study.title}</CardTitle>
-                <CardDescription className="text-base">
+                <CardDescription className="text-base text-black">
                   {study.description}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <h4 className="font-semibold mb-2">Evaluation Approach</h4>
-                  <p className="text-sm text-muted-foreground">{study.evaluation}</p>
+                  <p className="text-sm text-black">{study.evaluation}</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Innovation</h4>
-                  <p className="text-sm text-muted-foreground">{study.innovation}</p>
+                  <p className="text-sm text-black">{study.innovation}</p>
                 </div>
               </CardContent>
             </Card>
@@ -617,18 +617,18 @@ const Level1 = () => {
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <h4 className="font-semibold mb-2">Evaluation Frameworks</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• <ExternalLink href="https://cdh.stanford.edu/generative-ai-health-low-middle-income-countries">Evaluation framework of PROMPTS at Jacaranda Health</ExternalLink></li>
-                <li>• <ExternalLink href="https://precisiondev.org/evaluating-ai-for-learning-a-framework/">Evaluation framework at Precision Development</ExternalLink></li>
-                <li>• <ExternalLink href="https://docs.google.com/presentation/d/1agCgpDWNVWtbOFhdlDYUpLM3OxyHP5CxyzON_tn61x0/edit?slide=id.p#slide=id.p">[slide]</ExternalLink></li>
-              </ul>
+                                  <ul className="space-y-2 text-sm text-black">
+                      <li>• <ExternalLink href="https://cdh.stanford.edu/generative-ai-health-low-middle-income-countries">Evaluation framework of PROMPTS at Jacaranda Health</ExternalLink></li>
+                      <li>• <ExternalLink href="https://precisiondev.org/evaluating-ai-for-learning-a-framework/">Evaluation framework at Precision Development</ExternalLink></li>
+                      <li>• <ExternalLink href="https://docs.google.com/presentation/d/1agCgpDWNVWtbOFhdlDYUpLM3OxyHP5CxyzON_tn61x0/edit?slide=id.p#slide=id.p">[slide]</ExternalLink></li>
+                    </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-2">Research Papers</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• <ExternalLink href="https://arxiv.org/abs/2409.08916">Evaluation of Farmer.Chat at Digital Green</ExternalLink></li>
-                <li>• <ExternalLink href="https://docs.google.com/presentation/d/1mAF1lI8tkTjLLW3SjwrV8mdz4VDkTdog/edit?slide=id.p1#slide=id.p1">Evaluation mMitra at Armman</ExternalLink></li>
-              </ul>
+                                  <ul className="space-y-2 text-sm text-black">
+                      <li>• <ExternalLink href="https://arxiv.org/abs/2409.08916">Evaluation of Farmer.Chat at Digital Green</ExternalLink></li>
+                      <li>• <ExternalLink href="https://docs.google.com/presentation/d/1mAF1lI8tkTjLLW3SjwrV8mdz4VDkTdog/edit?slide=id.p1#slide=id.p1">Evaluation mMitra at Armman</ExternalLink></li>
+                    </ul>
             </div>
           </div>
         </div>
@@ -667,7 +667,7 @@ const Level1 = () => {
       <div className="flex justify-between items-center">
         <div>
           <h3 className="text-lg font-semibold mb-2">Ready to explore the next level?</h3>
-          <p className="text-muted-foreground">Learn about product evaluation and user engagement</p>
+          <p className="text-black">Learn about product evaluation and user engagement</p>
         </div>
         <Button asChild size="lg">
           <Link to="/level2">

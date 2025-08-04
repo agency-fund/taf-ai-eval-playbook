@@ -4,7 +4,7 @@ const Planning = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
       <h1 className="text-4xl font-bold mb-6">Planning Templates</h1>
-      <p className="text-xl text-muted-foreground mb-8">
+      <p className="text-xl text-black mb-8">
         Ready-to-use templates for evaluation planning and tracking.
       </p>
       
@@ -13,7 +13,7 @@ const Planning = () => {
           <CardTitle>Coming Soon</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground">
+          <p className="text-black">
             Interactive planning templates will be available here to help you organize 
             and track your evaluation activities.
           </p>

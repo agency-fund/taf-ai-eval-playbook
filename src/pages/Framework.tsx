@@ -44,7 +44,7 @@ const Framework = () => {
     <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-6">Four-Level Evaluation Framework</h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="text-xl text-black leading-relaxed max-w-3xl">
           A comprehensive framework for evaluating AI systems in development contexts, progressing 
           from technical assessment to real-world impact measurement.
         </p>
@@ -61,7 +61,7 @@ const Framework = () => {
                       <level.icon className="w-8 h-8" />
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-muted-foreground">{level.level}</div>
+                      <div className="text-sm font-medium text-black">{level.level}</div>
                       <CardTitle className="text-xl">{level.title}</CardTitle>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ const Framework = () => {
                     <h4 className="font-semibold mb-3">Key Assessment Areas:</h4>
                     <ul className="space-y-2">
                       {level.examples.map((example, idx) => (
-                        <li key={idx} className="text-sm text-muted-foreground flex items-center">
+                        <li key={idx} className="text-sm text-black flex items-center">
                           <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
                           {example}
                         </li>
@@ -118,7 +118,7 @@ const Framework = () => {
       </div>
 
       <div className="mb-16">
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+                  <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             In conclusion, this current playbook is designed to <strong>make the necessary evaluation questions explicit</strong>. 
             It lays out a shared vocabulary for AI evaluation that implementers and funders alike can use to communicate 
@@ -131,7 +131,7 @@ const Framework = () => {
       <div className="flex justify-between items-center">
         <div>
           <h3 className="text-lg font-semibold mb-2">Ready to dive deeper?</h3>
-          <p className="text-muted-foreground">Explore each level in detail to understand specific evaluation methods and tools</p>
+          <p className="text-black">Explore each level in detail to understand specific evaluation methods and tools</p>
         </div>
         <Button asChild size="lg">
           <Link to="/level1">

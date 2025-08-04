@@ -13,7 +13,7 @@ type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 export const ExternalLink: React.FC<ExternalLinkProps> = ({ href, children, className = "", ...props }) => (
   <a
     href={href}
-    className={`text-blue-600 hover:text-blue-800 transition-colors underline ${className}`}
+    className={`text-taf-blue hover:text-taf-blue/80 transition-colors underline ${className}`}
     target="_blank"
     rel="noopener noreferrer"
     {...props}
@@ -48,7 +48,7 @@ const Introduction = () => {
       </div>
 
       <div className="mb-12">
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+        <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             Evaluation is a critical tool for AI product developers. Generative AI (GenAI) is a relatively new technology, and product development today seems more of an art than a science. By rapidly iterating through different models, architectures, prompts, and knowledge bases, developers can steadily improve a product or workflow. So it is no surprise that AI evaluation has gained significant attention from companies, investors, and academics alike.
           </p>
@@ -59,7 +59,7 @@ const Introduction = () => {
       </div>
 
       <div className="mb-12">
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+        <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             In 2025, <ExternalLink href="https://www.agency.fund/">The Agency Fund</ExternalLink> (TAF) launched an <ExternalLink href="https://agencyfund.notion.site/ai-for-global-development">AI for Global Development (AI4GD) accelerator</ExternalLink> in collaboration with our partners at <ExternalLink href="https://openai.com/">OpenAI</ExternalLink> and <ExternalLink href="https://www.cgdev.org/">Center for Global Development (CGD)</ExternalLink>. With an investment of $5 million, the accelerator represents an effort to not only identify successful use cases for the development sector, but also learn how to appropriately evaluate AI-assisted social services.
           </p>
@@ -70,7 +70,7 @@ const Introduction = () => {
       </div>
 
       <div className="mb-12">
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+        <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             One thing has become clear: <strong>while there is broad consensus on the importance of evaluating AI in the social sector, there has been little agreement on what this actually means.</strong> Different organizations have adopted very different evaluation approaches. Funders and academics have mixed opinions on what constitutes a "good" evaluation in this emerging space. In the absence of clear standards, many social service providers have defaulted to familiar benchmarks like randomized controlled trials (RCTs) to assess impact on development outcomes, even when such methods are not appropriate or even feasible.
           </p>
@@ -79,7 +79,7 @@ const Introduction = () => {
 
       <div className="mb-12">
         <h2 className="text-2xl font-bold mb-6">The Four-Level Framework</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+        <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             To bring clarity and structure to the evaluation of AI services in the development sector for both the funders and the implementers, we introduced a four-level framework. We first shared the framework at the AI4GD accelerator launch in Bangalore in March 2025. We later wrote about it in a <ExternalLink href="https://theagencyfund.substack.com/p/an-ai-evaluation-framework-for-the">blog post</ExternalLink> co-authored with the Center for Global Development (CGD) and J-PAL. This framework lays out four core questions to guide AI evaluation in development contexts:
           </p>
@@ -96,7 +96,7 @@ const Introduction = () => {
           <div className="my-8">
             <h3 className="text-lg font-semibold mb-4 text-center">Interactive Framework Diagram</h3>
             <InteractiveFramework />
-            <p className="text-sm text-muted-foreground mt-4 text-center">
+            <p className="text-sm text-black mt-4 text-center">
               Drag to explore • Click and zoom • Use controls to navigate the framework
             </p>
           </div>
@@ -109,7 +109,7 @@ const Introduction = () => {
 
       <div className="mb-12">
         <h2 className="text-2xl font-bold mb-6">Cautionary Principles</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+        <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             Importantly, there are three cautionary principles to applying this framework:
           </p>
@@ -127,7 +127,7 @@ const Introduction = () => {
 
       <div className="mb-12">
         <h2 className="text-2xl font-bold mb-6">Conclusion</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+        <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             In conclusion, this current playbook is designed to <strong>make the necessary evaluation questions explicit</strong>. It lays out a shared vocabulary for AI evaluation that implementers and funders alike can use to communicate clearly and align expectations. It also introduces practical tools and methods for each evaluation level, and offers guidance tailored to the needs of engineers, data scientists, behavioral researchers, economists, and policymakers.
           </p>
@@ -137,7 +137,7 @@ const Introduction = () => {
       <div className="mb-16">
         <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
           <h3 className="text-lg font-semibold mb-3 text-foreground">This is a living playbook:</h3>
-          <p className="text-muted-foreground">
+          <p className="text-black">
             The current version is grounded in what we've learned so far from working directly with AI4GD accelerator teams and engaging experts across disciplines. In the next phase, we'll keep updating this playbook and collaborate more deeply with specialists to co-create shared evaluation tools, refine methodologies, and support their practical use in real-world settings.
           </p>
         </div>
@@ -146,7 +146,7 @@ const Introduction = () => {
       <div className="flex justify-between items-center">
         <div>
           <h3 className="text-lg font-semibold mb-2">Ready to dive in?</h3>
-          <p className="text-muted-foreground">Start with our comprehensive evaluation framework</p>
+          <p className="text-black">Start with our comprehensive evaluation framework</p>
         </div>
         <Button asChild size="lg">
           <Link to="/framework">

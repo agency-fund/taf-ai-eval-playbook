@@ -82,7 +82,7 @@ const Roles = () => {
         <h1 className="text-4xl font-bold mb-6">
           Building Repeatable Motions with a Cross-Functional Team
         </h1>
-        <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
+        <div className="prose prose-lg max-w-none text-black leading-relaxed">
           <p className="text-xl mb-6">
             Building effective AI evaluation practices is fundamentally a team sport. No single role can cover all four evaluation levels – success comes from a cross-functional team in which each member understands their responsibilities and how they complement others.
           </p>
@@ -167,7 +167,7 @@ const Roles = () => {
       {/* Best Practices - Streamlined Cards */}
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Best Practices for Cross-Level Collaboration</h2>
-        <p className="text-lg text-muted-foreground mb-8">
+        <p className="text-lg text-black mb-8">
           From our experiences working with AI4GD organizations, here are the broader best practices that we'd recommend for cross-level collaboration in AI evaluation projects.
         </p>
         
@@ -181,7 +181,7 @@ const Roles = () => {
                 <CardTitle className="text-lg leading-tight">{practice.title}</CardTitle>
               </CardHeader>
               <CardContent className="pt-0">
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                <p className="text-sm leading-relaxed text-black">
                   {practice.description}
                 </p>
               </CardContent>
@@ -212,7 +212,7 @@ const Roles = () => {
       <div className="flex justify-between items-center">
         <div>
           <h3 className="text-lg font-semibold mb-2">See it in action</h3>
-          <p className="text-muted-foreground">Explore real-world case studies from development projects</p>
+          <p className="text-black">Explore real-world case studies from development projects</p>
         </div>
         <Button asChild size="lg" className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary">
           <Link to="/case-studies">

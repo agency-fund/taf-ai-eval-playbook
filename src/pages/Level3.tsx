@@ -143,27 +143,27 @@ const Level3 = () => {
     <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="mb-12">
         <div className="flex items-center gap-4 mb-6">
-          <Link to="/framework" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/framework" className="text-black hover:text-taf-blue transition-colors">
             ← Back to Framework
           </Link>
         </div>
         <h1 className="text-4xl font-bold mb-6">Level 3: User Evaluation</h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="text-xl text-black leading-relaxed max-w-3xl">
           Assessment of how users interact with and benefit from the AI-enabled product. This level focuses on 
           understanding the cognitive, affective, and behavioral changes that result from using the AI system.
         </p>
       </div>
 
       <div className="mb-16">
-        <Card className="border-0 shadow-card bg-gradient-to-br from-blue-50 to-blue-100/50">
+        <Card className="border-0 shadow-card bg-taf-yellow/10">
           <CardHeader>
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center">
+              <div className="w-16 h-16 bg-blue-100 text-blue-700 border-blue-200 rounded-lg flex items-center justify-center">
                 <User className="w-8 h-8" />
               </div>
               <div>
                 <CardTitle className="text-2xl">Core Question</CardTitle>
-                <CardDescription className="text-lg">
+                <CardDescription className="text-lg text-black">
                   Does the product positively support users' thoughts, feelings, and actions?
                 </CardDescription>
               </div>
@@ -174,7 +174,7 @@ const Level3 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Why is this level of evaluation important?</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
+        <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
             Once an AI product is functioning correctly (Level 1) and engaging users as intended (Level 2), the next 
             step is to ask: Is this product actually changing how users think, feel, or act in ways that are in line 
@@ -196,26 +196,26 @@ const Level3 = () => {
             <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                     <metric.icon className="w-6 h-6" />
                   </div>
                   <CardTitle className="text-xl">{metric.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base mb-4">
-                  {metric.description}
-                </CardDescription>
+                                  <CardDescription className="text-base mb-4 text-black">
+                    {metric.description}
+                  </CardDescription>
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-sm text-muted-foreground">Examples:</h4>
-                  <ul className="space-y-1">
-                    {metric.examples.map((example, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3" />
-                        {example}
-                      </li>
-                    ))}
-                  </ul>
+                                        <h4 className="font-semibold text-sm text-black">Examples:</h4>
+                      <ul className="space-y-1">
+                        {metric.examples.map((example, idx) => (
+                          <li key={idx} className="text-sm text-black flex items-center">
+                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
+                            {example}
+                          </li>
+                        ))}
+                      </ul>
                 </div>
               </CardContent>
             </Card>
@@ -229,17 +229,17 @@ const Level3 = () => {
           <Card className="border-0 shadow-card">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                   <Brain className="w-6 h-6" />
                 </div>
                 <div>
                   <CardTitle className="text-lg">Execute</CardTitle>
-                  <CardDescription>Behavioral Researchers, Psychologists</CardDescription>
+                  <CardDescription className="text-black">Behavioral Researchers, Psychologists</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-black">
                 Apply evaluation methods with the proper measurement tools.
               </p>
             </CardContent>
@@ -247,17 +247,17 @@ const Level3 = () => {
           <Card className="border-0 shadow-card">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                   <BarChart3 className="w-6 h-6" />
                 </div>
                 <div>
                   <CardTitle className="text-lg">Support</CardTitle>
-                  <CardDescription>Data Scientists</CardDescription>
+                  <CardDescription className="text-black">Data Scientists</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-black">
                 Support the design of A/B tests and randomized experiments.
               </p>
             </CardContent>
@@ -272,14 +272,14 @@ const Level3 = () => {
             <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                     <method.icon className="w-6 h-6" />
                   </div>
                   <CardTitle className="text-xl">{method.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base">
+                <CardDescription className="text-base text-black">
                   {method.description}
                 </CardDescription>
               </CardContent>
@@ -290,7 +290,7 @@ const Level3 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Measurement Tools</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-8">
+        <div className="prose prose-lg max-w-none text-black space-y-6 mb-8">
           <p>
             Measuring thoughts, feelings, and behaviors calls for a mix of quantitative and qualitative tools. 
             We can categorize these into <strong>on-platform measures</strong>, <strong>self-report surveys</strong>, 
@@ -301,7 +301,7 @@ const Level3 = () => {
         <div className="space-y-8">
           <div>
             <h3 className="text-2xl font-bold mb-6">1. On-Platform Behavioral Measures</h3>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-6">
+            <div className="prose prose-lg max-w-none text-black space-y-6 mb-6">
               <p>
                 Within the app or platform, we can collect rich <strong>telemetry and interaction data</strong> that 
                 serve as proxies for cognitive and affective outcomes. We offer a few examples in educational AI below:
@@ -312,17 +312,17 @@ const Level3 = () => {
                 <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="text-lg">{measure.title}</CardTitle>
-                    <CardDescription className="text-base">
+                    <CardDescription className="text-base text-black">
                       {measure.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-muted-foreground">Examples:</h4>
+                      <h4 className="font-semibold text-sm text-black">Examples:</h4>
                       <ul className="space-y-1">
                         {measure.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3" />
+                          <li key={idx} className="text-sm text-black flex items-center">
+                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
                             {example}
                           </li>
                         ))}
@@ -333,7 +333,7 @@ const Level3 = () => {
                             href={measure.reference} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-700 underline flex items-center gap-2 text-sm"
+                            className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2 text-sm"
                           >
                             Learn more
                             <ExternalLink className="w-4 h-4" />
@@ -349,7 +349,7 @@ const Level3 = () => {
 
           <div>
             <h3 className="text-2xl font-bold mb-6">2. Short Self-Report Surveys</h3>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-6">
+            <div className="prose prose-lg max-w-none text-black space-y-6 mb-6">
               <p>
                 Often the most direct way to gauge a user's thoughts and feelings is simply to ask them. 
                 Short surveys can capture self-reported changes and subjective experience. When developing such 
@@ -361,17 +361,17 @@ const Level3 = () => {
                 <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="text-lg">{guideline.title}</CardTitle>
-                    <CardDescription className="text-base">
+                    <CardDescription className="text-base text-black">
                       {guideline.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-muted-foreground">Examples:</h4>
+                      <h4 className="font-semibold text-sm text-black">Examples:</h4>
                       <ul className="space-y-1">
                         {guideline.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3" />
+                          <li key={idx} className="text-sm text-black flex items-center">
+                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
                             {example}
                           </li>
                         ))}
@@ -382,7 +382,7 @@ const Level3 = () => {
                             href={guideline.reference} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-700 underline flex items-center gap-2 text-sm"
+                            className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2 text-sm"
                           >
                             Learn more
                             <ExternalLink className="w-4 h-4" />
@@ -398,7 +398,7 @@ const Level3 = () => {
 
           <div>
             <h3 className="text-2xl font-bold mb-6">3. NLP and Text Analysis of User-Generated Content</h3>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-6">
+            <div className="prose prose-lg max-w-none text-black space-y-6 mb-6">
               <p>
                 An exciting addition to the toolkit is using Natural Language Processing (NLP) methods to analyze 
                 what users say or write during their interactions. The actual conversation logs or written outputs 
@@ -416,11 +416,11 @@ const Level3 = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-muted-foreground">Examples:</h4>
+                      <h4 className="font-semibold text-sm text-black">Examples:</h4>
                       <ul className="space-y-1">
                         {approach.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3" />
+                          <li key={idx} className="text-sm text-black flex items-center">
+                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
                             {example}
                           </li>
                         ))}
@@ -447,7 +447,7 @@ const Level3 = () => {
 
           <div>
             <h3 className="text-2xl font-bold mb-6">4. Off-Platform Measures (Field studies and external data)</h3>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-6">
+            <div className="prose prose-lg max-w-none text-black space-y-6 mb-6">
               <p>
                 In some cases, we need to look beyond the app itself to gauge real-world behavior changes. 
                 Especially for outcomes that manifest in daily life or over longer periods, we might collect 
@@ -465,11 +465,11 @@ const Level3 = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-muted-foreground">Examples:</h4>
+                      <h4 className="font-semibold text-sm text-black">Examples:</h4>
                       <ul className="space-y-1">
                         {measure.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3" />
+                          <li key={idx} className="text-sm text-black flex items-center">
+                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
                             {example}
                           </li>
                         ))}
@@ -498,7 +498,7 @@ const Level3 = () => {
 
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Case Studies</h2>
-        <div className="prose prose-lg max-w-none text-muted-foreground">
+        <div className="prose prose-lg max-w-none text-black">
           <p>
             <em>Case studies to be added - examples from published literature such as the AI can harm learning paper, 
             or self-regulated learning paper with AI tools. Most of our grantees have not yet reached this step.</em>
@@ -548,7 +548,7 @@ const Level3 = () => {
       <div className="flex justify-between items-center">
         <div>
           <h3 className="text-lg font-semibold mb-2">Ready to explore the next level?</h3>
-          <p className="text-muted-foreground">Learn about impact evaluation and development outcomes</p>
+          <p className="text-black">Learn about impact evaluation and development outcomes</p>
         </div>
         <Button asChild size="lg">
           <Link to="/level4">

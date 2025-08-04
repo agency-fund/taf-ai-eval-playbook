@@ -65,15 +65,15 @@ const CaseStudies = () => {
     <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-6">Case Studies</h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mb-4">
+        <p className="text-xl text-black leading-relaxed max-w-3xl mb-4">
           Learn from real-world implementations of AI evaluation in development contexts. 
           Currently, our case studies focus on <strong>Level 1 (Model Evaluation)</strong> as organizations 
           are still building foundational capabilities.
         </p>
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-3xl">
-          <p className="text-blue-800 text-sm">
+        <div className="bg-taf-light-blue/10 border border-taf-light-blue/20 rounded-lg p-4 max-w-3xl">
+          <p className="text-taf-blue text-sm">
             <strong>Looking for examples across all evaluation levels?</strong> Check out our 
-            <Link to="/tools/framework-builder" className="text-blue-600 hover:text-blue-800 underline mx-1">
+            <Link to="/tools/framework-builder" className="text-taf-blue hover:text-taf-blue/80 underline mx-1">
               interactive tools
             </Link>
             which include hypothetical case studies covering Levels 2-4.
@@ -85,7 +85,7 @@ const CaseStudies = () => {
         <Card className="border-0 shadow-card bg-gradient-accent">
           <CardHeader>
             <CardTitle className="text-lg mb-2">Guidance Questions for Case Studies</CardTitle>
-            <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="space-y-2 text-sm text-black">
               <p>• What is the GenAI use case?</p>
               <p>• How was the model evaluated, on what metrics?</p>
               <p>• What methods and tools were used?</p>
@@ -104,13 +104,13 @@ const CaseStudies = () => {
               </div>
               <div>
                 <CardTitle className="text-2xl">Jacaranda Health</CardTitle>
-                <p className="text-primary font-medium">Voice-based Maternal Care in Kenya</p>
+                <p className="text-taf-blue font-medium">Voice-based Maternal Care in Kenya</p>
               </div>
             </div>
           </CardHeader>
           <CardContent className="space-y-6">
-            <p className="text-muted-foreground leading-relaxed">
-              <a href="https://jacarandahealth.org/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+            <p className="text-black leading-relaxed">
+              <a href="https://jacarandahealth.org/" className="text-taf-blue hover:underline" target="_blank" rel="noopener noreferrer">
                 Jacaranda Health (JH)
               </a> is pioneering the use of generative AI to transform how underserved mothers in Sub-Saharan Africa 
               access, understand, and act on vital maternal and newborn health information. They are adding voice 
@@ -119,8 +119,8 @@ const CaseStudies = () => {
             </p>
             
             <div className="bg-gray-50 rounded-lg p-6">
-              <h4 className="font-semibold mb-3 text-gray-900">Challenge & Solution</h4>
-              <p className="text-gray-700 leading-relaxed">
+              <h4 className="font-semibold mb-3 text-black">Challenge & Solution</h4>
+              <p className="text-black leading-relaxed">
                 Jacaranda Health set out to bring voice-based maternal care to women who struggle with text. They 
                 recorded a balanced Swahili-English voice corpus from rural and urban mothers across Kenya, then 
                 fine-tuned OpenAI's Whisper model on that data. Over successive iterations they drove Word Error 
@@ -131,7 +131,7 @@ const CaseStudies = () => {
 
             <div>
               <h4 className="font-semibold mb-3">Evaluation Innovation</h4>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-black leading-relaxed">
                 Standard WER simply tallies substitutions, insertions and deletions without regard for meaning. 
                 That metric penalizes Swahili's flexible word order and complex verb forms even when the intent 
                 is clear. To get a truer picture of how well mothers can follow advice, Jacaranda now measures 
@@ -140,8 +140,8 @@ const CaseStudies = () => {
               </p>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-blue-800 text-sm">
+            <div className="bg-taf-light-blue/10 border border-taf-light-blue/20 rounded-lg p-4">
+              <p className="text-taf-blue text-sm">
                 <strong>Key Learning:</strong> Sometimes you need to invent new metrics and stray from the 
                 standard to get AI working for your beneficiaries.
               </p>
@@ -157,13 +157,13 @@ const CaseStudies = () => {
               </div>
               <div>
                 <CardTitle className="text-2xl">Digital Green</CardTitle>
-                <p className="text-primary font-medium">Agricultural Extension Services in Ethiopia</p>
+                <p className="text-taf-blue font-medium">Agricultural Extension Services in Ethiopia</p>
               </div>
             </div>
           </CardHeader>
           <CardContent className="space-y-6">
-            <p className="text-muted-foreground leading-relaxed">
-              <a href="https://digitalgreen.org/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+            <p className="text-black leading-relaxed">
+              <a href="https://digitalgreen.org/" className="text-taf-blue hover:underline" target="_blank" rel="noopener noreferrer">
                 Digital Green (DG)
               </a> collaborates with public, private, and non-profit organizations to enhance small-scale farmers' 
               access to timely, actionable, and localized agricultural recommendations. In Ethiopia, partnerships 
@@ -171,8 +171,8 @@ const CaseStudies = () => {
             </p>
 
             <div className="bg-gray-50 rounded-lg p-6">
-              <h4 className="font-semibold mb-3 text-gray-900">Evaluation Framework</h4>
-              <p className="text-gray-700 leading-relaxed">
+              <h4 className="font-semibold mb-3 text-black">Evaluation Framework</h4>
+              <p className="text-black leading-relaxed">
                 To benchmark ASR models in agriculture, Digital Green used metrics such as WER, CER and MER but 
                 had to introduce a custom <strong>Agri-Weighted WER</strong> that penalizes errors in key 
                 agricultural terms more heavily. This evaluation framework helps identify which models are 
@@ -182,7 +182,7 @@ const CaseStudies = () => {
 
             <div>
               <h4 className="font-semibold mb-3">Multi-language Support</h4>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-black leading-relaxed">
                 Using weighted metrics, they track progress across Hindi, Telugu and Odiya datasets and tailor 
                 improvements to support scalable, farmer-focused advisory systems. Development Agents (DAs) use 
                 these digital tools to expand their reach and effectiveness.
@@ -257,7 +257,7 @@ const CaseStudies = () => {
       <div className="flex justify-between items-center mt-16">
         <div>
           <h3 className="text-lg font-semibold mb-2">Explore methods</h3>
-          <p className="text-muted-foreground">Dive into specific evaluation methods and tools</p>
+          <p className="text-black">Dive into specific evaluation methods and tools</p>
         </div>
         <Button asChild size="lg">
           <Link to="/methods">

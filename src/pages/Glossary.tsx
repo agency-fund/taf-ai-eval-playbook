@@ -227,7 +227,7 @@ const Glossary = () => {
     <div className="max-w-4xl mx-auto px-6 py-12">
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-6">Glossary</h1>
-        <p className="text-xl text-muted-foreground leading-relaxed">
+        <p className="text-xl text-black leading-relaxed">
           Key terms and concepts in AI evaluation for development contexts. Use the search and filters 
           to quickly find the definitions you need.
         </p>
@@ -235,7 +235,7 @@ const Glossary = () => {
 
       <div className="mb-8 space-y-4">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-black" />
           <Input
             placeholder="Search terms and definitions..."
             value={searchTerm}
@@ -252,7 +252,7 @@ const Glossary = () => {
               className={`px-4 py-2 rounded-full text-sm transition-colors ${
                 selectedCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  : "bg-muted text-black hover:bg-muted/80"
               }`}
             >
               {category}
@@ -273,7 +273,7 @@ const Glossary = () => {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground leading-relaxed">{item.definition}</p>
+              <p className="text-black leading-relaxed">{item.definition}</p>
             </CardContent>
           </Card>
         ))}
@@ -281,7 +281,7 @@ const Glossary = () => {
 
       {filteredTerms.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-muted-foreground">No terms found matching your search criteria.</p>
+          <p className="text-black">No terms found matching your search criteria.</p>
         </div>
       )}
 

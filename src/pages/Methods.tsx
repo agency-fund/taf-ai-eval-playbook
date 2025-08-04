@@ -115,7 +115,7 @@ const Methods = () => {
     <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-6">Evaluation Methods & Tools</h1>
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="text-xl text-black leading-relaxed max-w-3xl">
           Practical evaluation methods organized by the four-level framework. Choose the right 
           methods for your context, resources, and evaluation objectives.
         </p>
@@ -130,7 +130,7 @@ const Methods = () => {
               </div>
               <div>
                 <h2 className="text-2xl font-bold">{level.level}</h2>
-                <p className="text-lg text-muted-foreground italic">"{level.coreQuestion}"</p>
+                <p className="text-lg text-black italic">"{level.coreQuestion}"</p>
               </div>
             </div>
             
@@ -145,7 +145,7 @@ const Methods = () => {
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <div className="bg-muted rounded-lg p-3">
-                      <div className="text-xs font-medium text-muted-foreground mb-1">WHEN TO USE</div>
+                      <div className="text-xs font-medium text-black mb-1">WHEN TO USE</div>
                       <div className="text-sm">{method.when}</div>
                     </div>
                     {method.example && (
@@ -174,25 +174,25 @@ const Methods = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold mb-2">Resource Constraints</h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-black">
                   Prioritize methods that fit your team size, budget, and timeline
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold mb-2">Development Stage</h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-black">
                   Different methods are appropriate at different stages of development
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold mb-2">Risk Level</h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-black">
                   Higher-risk deployments require more comprehensive evaluation
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold mb-2">User Context</h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-black">
                   Adapt methods to your specific user population and environment
                 </p>
               </div>
@@ -204,7 +204,7 @@ const Methods = () => {
       <div className="flex justify-between items-center mt-16">
         <div>
           <h3 className="text-lg font-semibold mb-2">Need definitions?</h3>
-          <p className="text-muted-foreground">Check our comprehensive glossary of evaluation terms</p>
+          <p className="text-black">Check our comprehensive glossary of evaluation terms</p>
         </div>
         <Button asChild size="lg">
           <Link to="/glossary">

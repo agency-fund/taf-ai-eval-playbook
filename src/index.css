@@ -24,7 +24,7 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 0%;
 
     --accent: 209 100% 74%;
     --accent-foreground: 0 0% 0%;
@@ -37,6 +37,20 @@ All colors MUST be HSL.
     --ring: 218 100% 26%;
 
     --radius: 0.75rem;
+
+    /* TAF Brand Colors */
+    --taf-yellow: #FCCC43;
+    --taf-blue: #003087;
+    --taf-light-blue: #7AB9FF;
+    --taf-black: #000000;
+    
+    /* Semantic color mappings */
+    --primary: 218 100% 26%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 47 96% 63%;
+    --secondary-foreground: 0 0% 0%;
+    --accent: 209 100% 74%;
+    --accent-foreground: 0 0% 0%;
 
     /* Custom design tokens for the playbook */
     --playbook-blue: 218 100% 26%;
@@ -87,7 +101,7 @@ All colors MUST be HSL.
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted-foreground: 0 0% 0%;
 
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
@@ -116,5 +130,13 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  .prose a {
+    @apply text-taf-blue hover:underline;
+  }
+
+  .prose a:hover {
+    @apply text-taf-blue text-opacity-80;
   }
 }

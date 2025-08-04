@@ -438,7 +438,7 @@ ${knowledgeBase}`;
                 <h2 className="text-3xl font-bold text-gray-900">
                   Step {currentStep + 1}: {step.title}
                 </h2>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg text-black">
                   Configure your AI system with guardrails, knowledge base, and system prompts. 
                   This foundation ensures your AI assistant operates safely and effectively within defined boundaries.
                 </p>
@@ -449,7 +449,7 @@ ${knowledgeBase}`;
               <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
                 <CardHeader className="bg-gray-50">
                   <CardTitle className="flex items-center gap-2 text-gray-900">
-                    <Shield className="h-5 w-5 text-primary" />
+                    <Shield className="h-5 w-5 text-taf-blue" />
                     Safety Guardrails
                   </CardTitle>
                   <CardDescription>
@@ -469,7 +469,7 @@ ${knowledgeBase}`;
               <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
                 <CardHeader className="bg-gray-50">
                   <CardTitle className="flex items-center gap-2 text-gray-900">
-                    <Brain className="h-5 w-5 text-primary" />
+                    <Brain className="h-5 w-5 text-taf-blue" />
                     Knowledge Base
                   </CardTitle>
                   <CardDescription>
@@ -490,7 +490,7 @@ ${knowledgeBase}`;
             <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
               <CardHeader className="bg-gray-50">
                 <CardTitle className="flex items-center gap-2 text-gray-900">
-                  <Zap className="h-5 w-5 text-primary" />
+                  <Zap className="h-5 w-5 text-taf-blue" />
                   System Prompt
                 </CardTitle>
                 <CardDescription>
@@ -517,7 +517,7 @@ ${knowledgeBase}`;
                 <h2 className="text-3xl font-bold text-gray-900">
                   Step {currentStep + 1}: {step.title}
                 </h2>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg text-black">
                   Create a comprehensive test dataset with expected responses. Golden tests help you evaluate 
                   how well your AI performs across different scenarios - from basic knowledge to complex edge cases.
                 </p>
@@ -638,7 +638,7 @@ ${knowledgeBase}`;
             <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
               <CardHeader className="bg-gray-50">
                 <CardTitle className="flex items-center gap-2 text-gray-900">
-                  <MessageSquare className="h-5 w-5 text-primary" />
+                  <MessageSquare className="h-5 w-5 text-taf-blue" />
                   Interactive Chat Interface
                 </CardTitle>
                 <CardDescription>
@@ -735,7 +735,7 @@ ${knowledgeBase}`;
               }}>
                 <CardHeader className="bg-gray-50">
                   <CardTitle className="flex items-center gap-2 text-gray-900">
-                    <TrendingUp className="h-5 w-5 text-primary" />
+                    <TrendingUp className="h-5 w-5 text-taf-blue" />
                     Cosine Similarity
                   </CardTitle>
                   <CardDescription>
@@ -777,7 +777,7 @@ ${knowledgeBase}`;
               }}>
                 <CardHeader className="bg-gray-50">
                   <CardTitle className="flex items-center gap-2 text-gray-900">
-                    <Gauge className="h-5 w-5 text-primary" />
+                    <Gauge className="h-5 w-5 text-taf-blue" />
                     Contextual Precision
                   </CardTitle>
                   <CardDescription>
@@ -808,7 +808,7 @@ ${knowledgeBase}`;
             </div>
 
             <Alert>
-              <Info className="h-4 w-4 text-primary" />
+                              <Info className="h-4 w-4 text-taf-blue" />
               <AlertDescription>
                 <strong>Note:</strong> This demonstration focuses on two key metrics for simplicity. For comprehensive evaluation including 
                 human-as-a-judge, LLM-as-a-judge, and other advanced metrics, please refer to the{' '}
@@ -839,7 +839,7 @@ ${knowledgeBase}`;
             <Card className="border border-gray-200 hover:border-gray-300 transition-all duration-300">
               <CardHeader className="bg-gray-50">
                 <CardTitle className="flex items-center gap-2 text-gray-900">
-                  <BarChart3 className="h-5 w-5 text-primary" />
+                  <BarChart3 className="h-5 w-5 text-taf-blue" />
                   Evaluation Dashboard
                 </CardTitle>
                 <CardDescription>
@@ -1055,7 +1055,7 @@ ${knowledgeBase}`;
           <Button
             onClick={nextStep}
             disabled={currentStep === steps.length - 1}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground flex items-center gap-2"
+            className="bg-taf-blue hover:bg-taf-blue/90 text-white flex items-center gap-2"
           >
             {currentStep < steps.length - 1 ? steps[currentStep + 1].title : 'Next'}
             <ChevronRight className="h-4 w-4" />

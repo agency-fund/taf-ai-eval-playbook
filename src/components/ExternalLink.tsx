@@ -8,7 +8,7 @@ type ExternalLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 export const ExternalLink: React.FC<ExternalLinkProps> = ({ href, children, className = "", ...props }) => (
   <a
     href={href}
-    className={`text-blue-600 hover:text-blue-800 transition-colors underline ${className}`}
+    className={`text-taf-blue hover:text-taf-blue/80 transition-colors underline ${className}`}
     target="_blank"
     rel="noopener noreferrer"
     {...props}
