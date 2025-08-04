@@ -137,14 +137,14 @@ const Authors = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-accent/5 rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Contribute to the Playbook</h2>
-          <p className="text-muted-foreground mb-6">
+        <div className="bg-gradient-accent rounded-2xl p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4 text-[#003087]">Contribute to the Playbook</h2>
+          <p className="text-[#003087] mb-6">
             Interested in contributing to this playbook? We welcome contributions 
             from the AI evaluation community. For questions, collaboration opportunities, 
             or to suggest improvements, please reach out to our team.
           </p>
-          <Button asChild size="lg">
+          <Button asChild size="lg" className="bg-[#003087] hover:bg-[#003087]/90">
             <a href="mailto:zezhen@agency.fund" className="flex items-center gap-2">
               <Mail className="w-5 h-5" />
               Contribute to the Playbook

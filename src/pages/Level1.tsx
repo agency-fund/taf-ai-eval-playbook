@@ -637,13 +637,13 @@ const Level1 = () => {
       <div className="mb-16">
         <Card className="border-0 shadow-card bg-gradient-accent">
           <CardHeader>
-            <CardTitle className="text-2xl">Best Practices</CardTitle>
+            <CardTitle className="text-2xl text-[#003087]">Best Practices</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-2">Evaluation Design</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-2 text-[#003087]">Evaluation Design</h4>
+                <ul className="space-y-2 text-sm text-[#003087]">
                   <li>• Use appropriate metrics for your specific use case</li>
                   <li>• Combine automated and human evaluation methods</li>
                   <li>• Consider domain-specific requirements</li>
@@ -651,8 +651,8 @@ const Level1 = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Implementation</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-2 text-[#003087]">Implementation</h4>
+                <ul className="space-y-2 text-sm text-[#003087]">
                   <li>• Start with generalized metrics, then add domain-specific ones</li>
                   <li>• Involve domain experts in evaluation design</li>
                   <li>• Document evaluation processes and results</li>

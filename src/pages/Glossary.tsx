@@ -288,14 +288,14 @@ const Glossary = () => {
       <div className="mt-16">
         <Card className="border-0 shadow-card bg-gradient-accent">
           <CardHeader>
-            <CardTitle className="text-xl">Suggest a Term</CardTitle>
-            <CardDescription className="text-base">
+            <CardTitle className="text-xl text-[#003087]">Suggest a Term</CardTitle>
+            <CardDescription className="text-base text-[#003087]">
               Missing a definition? Help us improve this glossary by suggesting new terms 
               relevant to AI evaluation in development contexts.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-[#003087]">
               This is a living glossary that grows with community input and evolving best practices.
             </div>
           </CardContent>

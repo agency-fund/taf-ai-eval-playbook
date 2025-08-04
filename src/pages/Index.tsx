@@ -142,7 +142,7 @@ const Index = () => {
                 <Link to={feature.link}>
                   <CardHeader className="pb-4">
                     <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <feature.icon className="w-6 h-6 text-primary" />
+                      <feature.icon className="w-6 h-6 text-[#003087]" />
                     </div>
                     <CardTitle className="text-lg group-hover:text-primary transition-colors">
                       {feature.title}

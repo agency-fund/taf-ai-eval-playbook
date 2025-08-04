@@ -91,23 +91,23 @@ const Framework = () => {
       <div className="mb-16">
         <Card className="border-0 shadow-card bg-gradient-accent">
           <CardHeader>
-            <CardTitle className="text-2xl">Framework Implementation</CardTitle>
-            <CardDescription className="text-base">
+            <CardTitle className="text-2xl text-[#003087]">Framework Implementation</CardTitle>
+            <CardDescription className="text-base text-[#003087]">
               The four levels build upon each other, creating a comprehensive evaluation approach
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-2">Progressive Assessment</h4>
-                <p className="text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-2 text-[#003087]">Progressive Assessment</h4>
+                <p className="text-sm text-[#003087]">
                   Each level provides the foundation for the next, ensuring comprehensive evaluation 
                   from technical performance to real-world impact.
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Cross-Functional Collaboration</h4>
-                <p className="text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-2 text-[#003087]">Cross-Functional Collaboration</h4>
+                <p className="text-sm text-[#003087]">
                   Different stakeholders bring expertise to different levels, requiring coordination 
                   and shared understanding across teams.
                 </p>

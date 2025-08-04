@@ -83,6 +83,8 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',
+			},
+			backgroundColor: {
 				'gradient-accent': 'var(--gradient-accent)'
 			},
 			boxShadow: {

@@ -384,13 +384,13 @@ const Level2 = () => {
       <div className="mb-16">
         <Card className="border-0 shadow-card bg-gradient-accent">
           <CardHeader>
-            <CardTitle className="text-2xl">Best Practices</CardTitle>
+            <CardTitle className="text-2xl text-[#003087]">Best Practices</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-2">User-Centered Design</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-2 text-[#003087]">User-Centered Design</h4>
+                <ul className="space-y-2 text-sm text-[#003087]">
                   <li>• Design for actual user workflows and needs</li>
                   <li>• Test with representative users early and often</li>
                   <li>• Measure both quantitative and qualitative outcomes</li>
@@ -398,8 +398,8 @@ const Level2 = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Technical Integration</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-2 text-[#003087]">Technical Integration</h4>
+                <ul className="space-y-2 text-sm text-[#003087]">
                   <li>• Ensure seamless integration with existing systems</li>
                   <li>• Monitor performance impact on overall product</li>
                   <li>• Plan for scalability and maintenance</li>

@@ -48,7 +48,7 @@ All colors MUST be HSL.
     --playbook-gray-light: 0 0% 96%;
 
     --gradient-hero: linear-gradient(135deg, hsl(var(--playbook-blue)), hsl(var(--playbook-blue-light)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--playbook-yellow)), hsl(var(--playbook-blue-light)));
+    --gradient-accent: #FCCC43;
     
     --shadow-card: 0 4px 12px -4px hsl(var(--playbook-blue) / 0.15);
     --shadow-float: 0 8px 32px -8px hsl(var(--playbook-blue) / 0.2);

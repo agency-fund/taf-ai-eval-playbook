@@ -518,13 +518,13 @@ const Level3 = () => {
       <div className="mb-16">
         <Card className="border-0 shadow-card bg-gradient-accent">
           <CardHeader>
-            <CardTitle className="text-2xl">Best Practices</CardTitle>
+            <CardTitle className="text-2xl text-[#003087]">Best Practices</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-2">Data Collection</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-2 text-[#003087]">Data Collection</h4>
+                <ul className="space-y-2 text-sm text-[#003087]">
                   <li>• Validate behavioral proxies against intended outcomes</li>
                   <li>• Combine multiple measurement approaches</li>
                   <li>• Ensure continuous, real-time data collection</li>
@@ -532,8 +532,8 @@ const Level3 = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Analysis & Interpretation</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-2 text-[#003087]">Analysis & Interpretation</h4>
+                <ul className="space-y-2 text-sm text-[#003087]">
                   <li>• Distinguish productive engagement from confusion</li>
                   <li>• Track trends over time rather than single points</li>
                   <li>• Consider cultural and contextual factors</li>

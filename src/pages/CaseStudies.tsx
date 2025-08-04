@@ -100,7 +100,7 @@ const CaseStudies = () => {
           <CardHeader>
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center">
-                <Target className="w-6 h-6 text-primary" />
+                <Target className="w-6 h-6 text-[#003087]" />
               </div>
               <div>
                 <CardTitle className="text-2xl">Jacaranda Health</CardTitle>
@@ -153,7 +153,7 @@ const CaseStudies = () => {
           <CardHeader>
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center">
-                <Users className="w-6 h-6 text-primary" />
+                <Users className="w-6 h-6 text-[#003087]" />
               </div>
               <div>
                 <CardTitle className="text-2xl">Digital Green</CardTitle>
