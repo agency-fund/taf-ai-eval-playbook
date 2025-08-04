@@ -108,7 +108,7 @@ export function AppSidebar() {
                       className={({ isActive }) => getNavCls({ isActive })}
                     >
                       <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
+                      <span className="font-bold font-montserrat">{item.title}</span>
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -126,7 +126,7 @@ export function AppSidebar() {
                     }`}
                   >
                     <Target className="h-4 w-4 transition-transform duration-300" />
-                    <span>Four-Level Framework</span>
+                    <span className="font-bold font-montserrat">Four-Level Framework</span>
                     <div className="ml-auto transition-all duration-300 ease-in-out">
                       {isFrameworkExpanded ? (
                         <ChevronDown className="h-4 w-4 transform rotate-180 transition-transform duration-300" />
@@ -156,7 +156,7 @@ export function AppSidebar() {
                               to={level.url} 
                               className={({ isActive }) => getSubNavCls({ isActive })}
                             >
-                              <span>{level.title}</span>
+                              <span className="font-bold font-montserrat">{level.title}</span>
                             </NavLink>
                           </SidebarMenuButton>
                         </div>
@@ -175,7 +175,7 @@ export function AppSidebar() {
                       className={({ isActive }) => getNavCls({ isActive })}
                     >
                       <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
+                      <span className="font-bold font-montserrat">{item.title}</span>
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -196,7 +196,7 @@ export function AppSidebar() {
                       className={({ isActive }) => getNavCls({ isActive })}
                     >
                       <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
+                      <span className="font-bold font-montserrat">{item.title}</span>
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
