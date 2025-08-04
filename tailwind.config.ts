@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Montserrat', 'ui-sans-serif', 'system-ui'],
+				'montserrat': ['Montserrat', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -56,7 +60,8 @@ export default {
 					blue: 'hsl(var(--playbook-blue))',
 					'blue-light': 'hsl(var(--playbook-blue-light))',
 					'blue-dark': 'hsl(var(--playbook-blue-dark))',
-					teal: 'hsl(var(--playbook-teal))',
+					yellow: 'hsl(var(--playbook-yellow))',
+					black: 'hsl(var(--playbook-black))',
 					gray: 'hsl(var(--playbook-gray))',
 					'gray-light': 'hsl(var(--playbook-gray-light))'
 				},
