@@ -127,9 +127,9 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
                         <span className="text-2xl font-mono font-bold text-taf-blue/70">{motion.number}</span>
-                        <CardTitle className="text-2xl leading-tight text-taf-blue">{motion.title}</CardTitle>
+                        <CardTitle className="text-2xl leading-tight text-black">{motion.title}</CardTitle>
                       </div>
-                      <CardDescription className="text-lg text-taf-blue/80">
+                      <CardDescription className="text-lg text-black">
                         {motion.description}
                       </CardDescription>
                     </div>
@@ -139,7 +139,7 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
                 <CardContent className="space-y-6">
                   <div className="bg-gradient-to-br from-taf-yellow/5 to-taf-yellow/10 rounded-xl p-6 border border-taf-yellow/20">
                     <div className="prose prose-sm max-w-none">
-                      <div className="text-taf-blue leading-relaxed space-y-4">
+                      <div className="text-black leading-relaxed space-y-4">
                         {motion.fullContent.split('\n\n').map((paragraph, index) => {
                           if (paragraph.includes('•')) {
                             const lines = paragraph.split('\n');
