@@ -43,8 +43,14 @@ const Index = () => {
       </Alert>
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero text-white">
-        <div className="absolute inset-0 bg-black/10" />
+      <section className="relative overflow-hidden text-white">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/lovable-uploads/788062f4-0122-4cde-9d5e-89c816ba3e27.png)'
+          }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-7xl mx-auto px-6 py-16 lg:py-20">
           <div className="max-w-3xl">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
