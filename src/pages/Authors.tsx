@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Mail } from "lucide-react";
+import { ExternalLink, Mail, Github } from "lucide-react";
 
 const Authors = () => {
   const authors = [
@@ -157,8 +157,13 @@ const Authors = () => {
             or to suggest improvements, please reach out to our team.
           </p>
           <Button asChild size="lg" className="bg-[#003087] hover:bg-[#003087]/90">
-            <a href="mailto:zezhen@agency.fund" className="flex items-center gap-2">
-              <Mail className="w-5 h-5" />
+            <a 
+              href="https://github.com/agency-fund/taf-ai-eval-playbook" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <Github className="w-5 h-5" />
               Contribute to the Playbook
             </a>
           </Button>
