@@ -42,12 +42,12 @@ const Introduction = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
+    <div className="max-w-6xl mx-auto px-6 py-12">
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-6">Introduction</h1>
       </div>
 
-      <div className="mb-12">
+      <div className="mb-12 -mx-6 px-6">
         <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
           Continuous evaluation is a critical tool for AI product developers. Generative AI (GenAI) is a relatively new technology, and as a result product development today is more of an art than a science. By rapidly iterating through different AI models, architectures, prompts, and knowledge bases, GenAI developers can steadily improve a product or workflow. So it is no surprise that AI evaluation tools have gained significant attention from software companies, investors, and academics alike.
@@ -92,9 +92,11 @@ const Introduction = () => {
         </div>
       </div>
 
-          <div className="my-8">
+          <div className="my-8 flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-4 text-center">Interactive Framework Diagram</h3>
-            <InteractiveFramework />
+            <div className="w-full max-w-4xl">
+              <InteractiveFramework />
+            </div>
             <p className="text-sm text-black mt-4 text-center">
               Drag to explore • Click and zoom • Use controls to navigate the framework
             </p>
