@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
-import { Home } from "lucide-react";
+import { Home, Github } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -36,6 +36,17 @@ export function Layout({ children }: LayoutProps) {
                 className="h-8 w-auto"
               />
               <h1 className="text-lg font-semibold">AI Evaluation in the Social Sector</h1>
+              
+              <div className="ml-auto">
+                <a 
+                  href="https://github.com/agency-fund/taf-ai-eval-playbook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity text-muted-foreground hover:text-foreground"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </header>
 
