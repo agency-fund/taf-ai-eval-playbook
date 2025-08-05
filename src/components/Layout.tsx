@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
+import { Home } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,6 +24,12 @@ export function Layout({ children }: LayoutProps) {
           <header className="h-16 flex items-center border-b bg-background/80 backdrop-blur-sm sticky top-0 z-40">
             <SidebarTrigger className="ml-4" />
             <div className="flex-1 px-6 flex items-center gap-4">
+              <button 
+                onClick={() => navigate('/')}
+                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+              >
+                <Home className="h-5 w-5 text-taf-blue" />
+              </button>
               <img 
                 src="/agency-fund-logo.png" 
                 alt="The Agency Fund" 
