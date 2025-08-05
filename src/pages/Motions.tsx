@@ -107,7 +107,7 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
               <TabsTrigger 
                 key={index}
                 value={`step${index + 1}`}
-                className="text-sm font-medium px-4 py-3 data-[state=active]:bg-taf-yellow data-[state=active]:text-taf-blue data-[state=active]:shadow-md text-taf-blue/70 hover:text-taf-blue transition-all rounded-lg"
+                className="text-sm font-medium px-4 py-3 data-[state=active]:bg-taf-yellow data-[state=active]:text-black data-[state=active]:shadow-md text-black/70 hover:text-black transition-all rounded-lg"
               >
                 Step {index + 1}
               </TabsTrigger>
@@ -120,13 +120,13 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
                 <CardHeader className="pb-6">
                   <div className="flex items-start gap-6">
                     <div className="flex items-center justify-center w-16 h-16 bg-taf-yellow/20 rounded-2xl border border-taf-yellow/30">
-                      <div className="text-taf-blue">
+                      <div className="text-black">
                         {motion.icon}
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
-                        <span className="text-2xl font-mono font-bold text-taf-blue/70">{motion.number}</span>
+                        <span className="text-2xl font-mono font-bold text-black/70">{motion.number}</span>
                         <CardTitle className="text-2xl leading-tight text-black">{motion.title}</CardTitle>
                       </div>
                       <CardDescription className="text-lg text-black">
@@ -149,7 +149,7 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
                                   if (line.trim().startsWith('•')) {
                                     return (
                                       <div key={lineIndex} className="flex items-start gap-3">
-                                        <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mt-2 flex-shrink-0"></div>
+                                        <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
                                         <p className="text-sm leading-relaxed">{line.replace('•', '').trim()}</p>
                                       </div>
                                     );
@@ -175,80 +175,64 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
       </div>
 
       <div className="mb-16">
-        <Card className="border-0 shadow-lg bg-gradient-to-br from-taf-yellow/5 to-taf-yellow/10 border-taf-yellow/20">
-          <CardHeader>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-taf-yellow rounded-xl flex items-center justify-center">
-                <Database className="w-6 h-6 text-taf-blue" />
-              </div>
-              <div>
-                <CardTitle className="text-2xl text-taf-blue">Building Repeatable Motions through an AI Evaluation Platform</CardTitle>
-                <CardDescription className="text-taf-blue/80">Creating unified infrastructure for systematic evaluation</CardDescription>
-              </div>
+        <h2 className="text-3xl font-bold mb-6">Building Repeatable Motions through an AI Evaluation Platform</h2>
+        <p className="text-lg text-black/80 mb-8">Creating unified infrastructure for systematic evaluation</p>
+        
+        <div className="prose prose-lg max-w-none text-black leading-relaxed space-y-6">
+          <p>
+            To host the essential repeatable motions, we are creating a <strong>unified platform</strong> that can systematically <strong>instrument, track, and optimize</strong> evaluation across all four levels. Specifically, this <strong>AI evaluation platform</strong> allows teams to track changes to models (e.g., prompt tweaks, fine-tuning), measure their downstream impact on engagement (Level 2), user cognition, emotion, and behavior (Level 3), and development outcomes (Level 4), and close the loop through integrated feedback and versioning tools. This would enable organizations to make evidence-based decisions at every stage of AI product development and deployment.
+          </p>
+          
+          <p>
+            Unlike traditional development interventions, generative AI systems offer two key advantages:
+          </p>
+          
+          <div className="space-y-2">
+            <div className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
+              <p>Passive, high-resolution data capture of on-platform interactions and behavior, and</p>
             </div>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="bg-white/70 rounded-xl p-6 border border-taf-yellow/20">
-              <div className="prose prose-sm max-w-none">
-                <div className="text-taf-blue leading-relaxed space-y-4">
-                  <p className="text-sm leading-relaxed">
-                    To host the essential repeatable motions, we are creating a <strong>unified platform</strong> that can systematically <strong>instrument, track, and optimize</strong> evaluation across all four levels. Specifically, this <strong>AI evaluation platform</strong> allows teams to track changes to models (e.g., prompt tweaks, fine-tuning), measure their downstream impact on engagement (Level 2), user cognition, emotion, and behavior (Level 3), and development outcomes (Level 4), and close the loop through integrated feedback and versioning tools. This would enable organizations to make evidence-based decisions at every stage of AI product development and deployment.
-                  </p>
-                  
-                  <p className="text-sm leading-relaxed">
-                    Unlike traditional development interventions, generative AI systems offer two key advantages:
-                  </p>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm leading-relaxed">Passive, high-resolution data capture of on-platform interactions and behavior, and</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm leading-relaxed">Precise, version-controlled deployment of models and product features.</p>
-                    </div>
-                  </div>
-
-                  <p className="text-sm leading-relaxed">
-                    These properties respectively map to outcomes and interventions allowing for a <strong>rigorous, tech-enabled approach</strong> to continuous evaluation. But today, most social sector organizations lack the tools to make use of that potential. Evaluation often happens in silos – spread across spreadsheets, analytics dashboards, user interviews, and research reports – without a central system to connect the dots or guide action.
-                  </p>
-
-                  <p className="text-sm leading-relaxed">
-                    We envision building an <strong>AI evaluation platform</strong> that supports:
-                  </p>
-
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm leading-relaxed">Version-aware evaluation pipelines, where each model change (e.g., new prompt, fine-tuned model, updated retrieval source) is logged, compared, and tested across all evaluation levels.</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm leading-relaxed">Real-time metric tracking from model performance (Level 1) through to user retention (Level 2), changes in cognition, emotion, and behavior (Level 3), and development outcomes – where feasible (Level 4).</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm leading-relaxed">Integrated experiment frameworks that allow teams to run A/B tests, holdout studies, or pragmatic RCTs on product variations and their effects on user behavior or impact metrics.</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm leading-relaxed">Custom metric builders that let teams define what matters in their context (e.g., empathy in a mental health bot, or cultural relevance in a chatbot using low-resource languages).</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-sm leading-relaxed">Safety auditing tools that flag hallucinations, toxicity, or failures in grounding across both automated and human-in-the-loop evaluations.</p>
-                    </div>
-                  </div>
-
-                  <p className="text-sm leading-relaxed">
-                    The platform would ideally integrate with existing tools such as <strong>Langfuse</strong>, <strong>Helicone</strong>, <strong>Traceloop</strong>, and <strong>Evidential</strong>, combining model observability with behavioral analytics, survey pipelines, and impact reporting. It would enable organizations to track how a model tweak made today propagates through user behavior in a month and potentially improves outcomes a year from now.
-                  </p>
-                </div>
-              </div>
+            <div className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
+              <p>Precise, version-controlled deployment of models and product features.</p>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+
+          <p>
+            These properties respectively map to outcomes and interventions allowing for a <strong>rigorous, tech-enabled approach</strong> to continuous evaluation. But today, most social sector organizations lack the tools to make use of that potential. Evaluation often happens in silos – spread across spreadsheets, analytics dashboards, user interviews, and research reports – without a central system to connect the dots or guide action.
+          </p>
+
+          <p>
+            We envision building an <strong>AI evaluation platform</strong> that supports:
+          </p>
+
+          <div className="space-y-2">
+            <div className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
+              <p>Version-aware evaluation pipelines, where each model change (e.g., new prompt, fine-tuned model, updated retrieval source) is logged, compared, and tested across all evaluation levels.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
+              <p>Real-time metric tracking from model performance (Level 1) through to user retention (Level 2), changes in cognition, emotion, and behavior (Level 3), and development outcomes – where feasible (Level 4).</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
+              <p>Integrated experiment frameworks that allow teams to run A/B tests, holdout studies, or pragmatic RCTs on product variations and their effects on user behavior or impact metrics.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
+              <p>Custom metric builders that let teams define what matters in their context (e.g., empathy in a mental health bot, or cultural relevance in a chatbot using low-resource languages).</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
+              <p>Safety auditing tools that flag hallucinations, toxicity, or failures in grounding across both automated and human-in-the-loop evaluations.</p>
+            </div>
+          </div>
+
+          <p>
+            The platform would ideally integrate with existing tools such as <strong>Langfuse</strong>, <strong>Helicone</strong>, <strong>Traceloop</strong>, and <strong>Evidential</strong>, combining model observability with behavioral analytics, survey pipelines, and impact reporting. It would enable organizations to track how a model tweak made today propagates through user behavior in a month and potentially improves outcomes a year from now.
+          </p>
+        </div>
       </div>
 
 
