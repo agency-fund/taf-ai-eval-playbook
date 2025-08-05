@@ -337,7 +337,7 @@ const Level4 = () => {
             </ul>
             <p>
               In this section, we do not replicate that guidance. Instead, we focus on what is <em>distinctive</em> when 
-              evaluating AI-based products in the development sector.
+              evaluating AI-based products in the social sector.
             </p>
           </div>
         </div>

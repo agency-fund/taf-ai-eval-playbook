@@ -290,7 +290,7 @@ const Level1 = () => {
           </p>
           <p>
             We believe the tools discussed in this section are relevant to the following important use cases of 
-            GenAI in the development sector:
+            GenAI in the social sector:
           </p>
         </div>
       </div>
@@ -496,7 +496,7 @@ const Level1 = () => {
           <div className="prose prose-lg max-w-none text-black space-y-6 mb-8">
             <p>
               Off-the-shelf metrics are not enough for high-stakes, context-specific applications in the global 
-              development sector. <strong>Domain-specific metrics</strong> help ensure that model performance is 
+              social sector. <strong>Domain-specific metrics</strong> help ensure that model performance is 
               judged not only by general accuracy, but by what matters most in a given domain.
             </p>
           </div>

@@ -50,10 +50,13 @@ const Introduction = () => {
       <div className="mb-12">
         <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
-            Evaluation is a critical tool for AI product developers. Generative AI (GenAI) is a relatively new technology, and product development today seems more of an art than a science. By rapidly iterating through different models, architectures, prompts, and knowledge bases, developers can steadily improve a product or workflow. So it is no surprise that AI evaluation has gained significant attention from companies, investors, and academics alike.
+          Continuous evaluation is a critical tool for AI product developers. Generative AI (GenAI) is a relatively new technology, and as a result product development today is more of an art than a science. By rapidly iterating through different AI models, architectures, prompts, and knowledge bases, GenAI developers can steadily improve a product or workflow. So it is no surprise that AI evaluation tools have gained significant attention from software companies, investors, and academics alike.
           </p>
           <p>
-            But what should evaluation look like in the development sector? One of the most compelling use cases for AI in the social sector is its potential to cost-effectively deliver personalized support for millions of people. Done right, this technology can help individuals exercise greater agency and improve their lives in meaningful, measurable ways.
+          But what should evaluations look like in the social sector? One of the most compelling use cases for AI in the social sector is its potential to cost-effectively deliver personalized decision-making support for millions of people. Done right, this technology can help individuals exercise greater agency over their lives and improve outcomes in meaningful, measurable ways.
+          </p>
+          <p>
+          To bring clarity and structure to the evaluation of AI services in the social sector for <em>both</em> the funders <em>and</em> the implementers, we introduced a four-level framework. We first shared the framework at the AI4GD accelerator launch in Bangalore in March 2025. We later wrote about it in a <ExternalLink href="https://theagencyfund.substack.com/p/an-ai-evaluation-framework-for-the">blog post</ExternalLink> co-authored with the Center for Global Development (CGD) and J-PAL. This framework lays out four core questions to guide AI evaluation in development contexts:
           </p>
         </div>
       </div>
@@ -61,7 +64,7 @@ const Introduction = () => {
       <div className="mb-12">
         <div className="prose prose-lg max-w-none text-black space-y-6">
           <p>
-            In 2025, <ExternalLink href="https://www.agency.fund/">The Agency Fund</ExternalLink> (TAF) launched an <ExternalLink href="https://agencyfund.notion.site/ai-for-global-development">AI for Global Development (AI4GD) accelerator</ExternalLink> in collaboration with our partners at <ExternalLink href="https://openai.com/">OpenAI</ExternalLink> and <ExternalLink href="https://www.cgdev.org/">Center for Global Development (CGD)</ExternalLink>. With an investment of $5 million, the accelerator represents an effort to not only identify successful use cases for the development sector, but also learn how to appropriately evaluate AI-assisted social services.
+            In 2025, <ExternalLink href="https://www.agency.fund/">The Agency Fund</ExternalLink> (TAF) launched an <ExternalLink href="https://agencyfund.notion.site/ai-for-global-development">AI for Global Development (AI4GD) accelerator</ExternalLink> in collaboration with our partners at <ExternalLink href="https://openai.com/">OpenAI</ExternalLink> and <ExternalLink href="https://www.cgdev.org/">Center for Global Development (CGD)</ExternalLink>. With an investment of $5 million, the accelerator represents an effort to not only identify successful use cases for the social sector, but also learn how to appropriately evaluate AI-assisted social services.
           </p>
           <p>
             Through the accelerator, we have supported eight organizations building GenAI products and services across three critical sectors: education (e.g., learning support for students, parents, and teachers), health (e.g., personalized medical advice), and agriculture (e.g., agriculture and business advice). As part of the process, we have engaged with funders, policymakers, and AI practitioners as well to understand how to scale new tools responsibly.
@@ -80,9 +83,6 @@ const Introduction = () => {
       <div className="mb-12">
         <h2 className="text-2xl font-bold mb-6">The Four-Level Framework</h2>
         <div className="prose prose-lg max-w-none text-black space-y-6">
-          <p>
-            To bring clarity and structure to the evaluation of AI services in the development sector for both the funders and the implementers, we introduced a four-level framework. We first shared the framework at the AI4GD accelerator launch in Bangalore in March 2025. We later wrote about it in a <ExternalLink href="https://theagencyfund.substack.com/p/an-ai-evaluation-framework-for-the">blog post</ExternalLink> co-authored with the Center for Global Development (CGD) and J-PAL. This framework lays out four core questions to guide AI evaluation in development contexts:
-          </p>
           <div className="bg-playbook-gray-light rounded-lg p-6 my-8">
             <ul className="space-y-3 text-foreground">
               <li><strong>Level 1 – Model evaluation:</strong> Does the AI model produce the desired responses?</li>
@@ -102,7 +102,7 @@ const Introduction = () => {
           </div>
           
           <p>
-            While these four levels of evaluation are interconnected and iterative, they often follow a natural progression. A model is first built and benchmarked (Level 1), then tested for usability and engagement (Level 2). If the tool sees consistent use, we need to understand how it affects users' thoughts, feelings, and short-term behaviors (Level 3), before assessing whether it drives long-term improvements in development outcomes (Level 4). In the tech sector, evaluation of AI tools typically stops at Levels 1 and 2, where user engagement is often a predictor of product success. But in the development sector, our bar is higher. We're not just asking whether people use a tool – we're asking whether it improves their lives in meaningful, measurable, and cost-effective ways.
+            While these four levels of evaluation are interconnected and iterative, they often follow a natural progression. A model is first built and benchmarked (Level 1), then tested for usability and engagement (Level 2). If the tool sees consistent use, we need to understand how it affects users' thoughts, feelings, and short-term behaviors (Level 3), before assessing whether it drives long-term improvements in development outcomes (Level 4). In the tech sector, evaluation of AI tools typically stops at Levels 1 and 2, where user engagement is often a predictor of product success. But in the social sector, our bar is higher. We're not just asking whether people use a tool – we're asking whether it improves their lives in meaningful, measurable, and cost-effective ways.
           </p>
         </div>
       </div>

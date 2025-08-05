@@ -1,4 +1,4 @@
-# AI Evaluation in the Development Sector  
+# AI Evaluation in the Social Sector  
 *A Living Playbook by The Agency Fund*  
 **🚧 Draft in Progress – Open Source 🚧**
 
@@ -11,7 +11,7 @@
 
 We agree — **but only if we’re clear on what “evaluation” really means.**
 
-This playbook is designed for practitioners, funders, and policymakers working at the frontier of **Generative AI (GenAI)** in the development sector. It offers a practical, structured approach to AI evaluation that goes beyond model performance — focusing instead on **real, measurable impact on people’s lives**.
+This playbook is designed for practitioners, funders, and policymakers working at the frontier of **Generative AI (GenAI)** in the social sector. It offers a practical, structured approach to AI evaluation that goes beyond model performance — focusing instead on **real, measurable impact on people’s lives**.
 
 This resource is maintained by [The Agency Fund](https://agencyfund.org) as part of our broader effort to make AI more equitable, effective, and accountable in global development.
 

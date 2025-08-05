@@ -87,7 +87,7 @@ const Roles = () => {
             Building effective AI evaluation practices is fundamentally a team sport. No single role can cover all four evaluation levels – success comes from a cross-functional team in which each member understands their responsibilities and how they complement others.
           </p>
           <p className="text-xl mb-6">
-            In leading tech companies, AI product teams are deliberately cross-functional: AI engineers focus on model development, data scientists on analytics, user researchers on human factors, and product managers tie everything together. Adopting this approach in the development sector helps avoid silos and ensures that improvements at one level translate into progress at others.
+            In leading tech companies, AI product teams are deliberately cross-functional: AI engineers focus on model development, data scientists on analytics, user researchers on human factors, and product managers tie everything together. Adopting this approach in the social sector helps avoid silos and ensures that improvements at one level translate into progress at others.
           </p>
           <p className="text-xl font-medium">
             Below, we outline the typical roles at each level, how they collaborate, the tools that support them, and ways to align team goals with evaluation outcomes.

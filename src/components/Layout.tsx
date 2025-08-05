@@ -27,7 +27,7 @@ export function Layout({ children }: LayoutProps) {
                 alt="The Agency Fund" 
                 className="h-8 w-auto"
               />
-              <h1 className="text-lg font-semibold">AI Evaluation in Development Sector</h1>
+              <h1 className="text-lg font-semibold">AI Evaluation in Social Sector</h1>
             </div>
           </header>
 
