@@ -56,11 +56,23 @@ const Authors = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-left mb-12">
           <h1 className="text-4xl font-bold mb-4">Authors and Contributors</h1>
-          <p className="text-lg text-black">
+          <p className="text-lg text-black mb-8">
             This AI Evaluation Playbook was created by the team at Agency Fund, 
             bringing together expertise in AI development, evaluation frameworks, 
-            and social impact measurement.
+            and social impact measurement. The content is drafted based on our 
+            experience working with many NGOs in the social sector developing AI tools.
           </p>
+          
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/b9f4f807-9529-43f8-9b6a-515216823f99.png" 
+              alt="Agency Fund team at Nairobi AI4GD Sprint" 
+              className="w-full rounded-lg shadow-lg"
+            />
+            <p className="text-sm text-gray-600 mt-2 text-center">
+              The Agency Fund June 2025 Nairobi AI4GD Sprint
+            </p>
+          </div>
         </div>
 
         <div className="mb-12">
