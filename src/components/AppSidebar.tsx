@@ -83,7 +83,7 @@ export function AppSidebar() {
         <div className="p-6 border-b">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
-              <Home className="w-6 h-6 text-white" />
+              <BookOpen className="w-6 h-6 text-white" />
             </div>
             <div>
               <h2 className="font-bold text-lg">AI Evaluation</h2>
