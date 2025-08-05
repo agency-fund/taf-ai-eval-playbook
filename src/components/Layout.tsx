@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTheme } from "next-themes";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
-import { Home, Github } from "lucide-react";
+import { Home, Github, Sun, Moon } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const navigate = useNavigate();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,7 +39,13 @@ export function Layout({ children }: LayoutProps) {
               />
               <h1 className="text-lg font-semibold">AI Evaluation in the Social Sector</h1>
               
-              <div className="ml-auto">
+              <div className="ml-auto flex items-center gap-3">
+                <button
+                  onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity text-muted-foreground hover:text-foreground"
+                >
+                  {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+                </button>
                 <a 
                   href="https://github.com/agency-fund/taf-ai-eval-playbook"
                   target="_blank"
