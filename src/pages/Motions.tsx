@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, Database, Target, Zap, GitBranch, AlertTriangle, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -100,61 +101,77 @@ Across AI4GD teams, we've seen experimentation work best when it's integrated in
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Four Concrete, Actionable Steps</h2>
 
-        <div className="space-y-12">
+        <Tabs defaultValue="step1" className="w-full">
+          <TabsList className="grid w-full grid-cols-4 h-14 p-1 bg-taf-yellow/10 border border-taf-yellow/20 rounded-xl">
+            {motions.map((motion, index) => (
+              <TabsTrigger 
+                key={index}
+                value={`step${index + 1}`}
+                className="text-sm font-medium px-4 py-3 data-[state=active]:bg-taf-yellow data-[state=active]:text-taf-blue data-[state=active]:shadow-md text-taf-blue/70 hover:text-taf-blue transition-all rounded-lg"
+              >
+                Step {index + 1}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
           {motions.map((motion, index) => (
-            <Card key={index} className="border-0 shadow-lg bg-gradient-to-br from-background to-background/80 backdrop-blur-sm">
-              <CardHeader className="pb-6">
-                <div className="flex items-start gap-6">
-                  <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20">
-                    {motion.icon}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-2xl font-mono font-bold text-primary/70">{motion.number}</span>
-                      <CardTitle className="text-2xl leading-tight">{motion.title}</CardTitle>
+            <TabsContent key={index} value={`step${index + 1}`} className="mt-8">
+              <Card className="border-0 shadow-lg bg-gradient-to-br from-background to-background/80 backdrop-blur-sm">
+                <CardHeader className="pb-6">
+                  <div className="flex items-start gap-6">
+                    <div className="flex items-center justify-center w-16 h-16 bg-taf-yellow/20 rounded-2xl border border-taf-yellow/30">
+                      <div className="text-taf-blue">
+                        {motion.icon}
+                      </div>
                     </div>
-                    <CardDescription className="text-lg text-black">
-                      {motion.description}
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              
-              <CardContent className="space-y-6">
-                <div className="bg-gradient-to-br from-muted/20 to-muted/40 rounded-xl p-6 border border-border/30">
-                  <div className="prose prose-sm max-w-none">
-                    <div className="text-foreground/90 leading-relaxed space-y-4">
-                      {motion.fullContent.split('\n\n').map((paragraph, index) => {
-                        if (paragraph.includes('•')) {
-                          const lines = paragraph.split('\n');
-                          return (
-                            <div key={index} className="space-y-2">
-                              {lines.map((line, lineIndex) => {
-                                if (line.trim().startsWith('•')) {
-                                  return (
-                                    <div key={lineIndex} className="flex items-start gap-3">
-                                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                                      <p className="text-sm leading-relaxed">{line.replace('•', '').trim()}</p>
-                                    </div>
-                                  );
-                                } else if (line.trim()) {
-                                  return <p key={lineIndex} className="text-sm leading-relaxed">{line}</p>;
-                                }
-                                return null;
-                              })}
-                            </div>
-                          );
-                        } else {
-                          return <p key={index} className="text-sm leading-relaxed">{paragraph}</p>;
-                        }
-                      })}
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-2xl font-mono font-bold text-taf-blue/70">{motion.number}</span>
+                        <CardTitle className="text-2xl leading-tight text-taf-blue">{motion.title}</CardTitle>
+                      </div>
+                      <CardDescription className="text-lg text-taf-blue/80">
+                        {motion.description}
+                      </CardDescription>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                
+                <CardContent className="space-y-6">
+                  <div className="bg-gradient-to-br from-taf-yellow/5 to-taf-yellow/10 rounded-xl p-6 border border-taf-yellow/20">
+                    <div className="prose prose-sm max-w-none">
+                      <div className="text-taf-blue leading-relaxed space-y-4">
+                        {motion.fullContent.split('\n\n').map((paragraph, index) => {
+                          if (paragraph.includes('•')) {
+                            const lines = paragraph.split('\n');
+                            return (
+                              <div key={index} className="space-y-2">
+                                {lines.map((line, lineIndex) => {
+                                  if (line.trim().startsWith('•')) {
+                                    return (
+                                      <div key={lineIndex} className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mt-2 flex-shrink-0"></div>
+                                        <p className="text-sm leading-relaxed">{line.replace('•', '').trim()}</p>
+                                      </div>
+                                    );
+                                  } else if (line.trim()) {
+                                    return <p key={lineIndex} className="text-sm leading-relaxed">{line}</p>;
+                                  }
+                                  return null;
+                                })}
+                              </div>
+                            );
+                          } else {
+                            return <p key={index} className="text-sm leading-relaxed">{paragraph}</p>;
+                          }
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
           ))}
-        </div>
+        </Tabs>
       </div>
 
       <div className="mb-16">
