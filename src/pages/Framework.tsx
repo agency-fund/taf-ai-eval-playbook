@@ -117,17 +117,6 @@ const Framework = () => {
         </Card>
       </div>
 
-      <div className="mb-16">
-                  <div className="prose prose-lg max-w-none text-black space-y-6">
-          <p>
-            In conclusion, this current playbook is designed to <strong>make the necessary evaluation questions explicit</strong>. 
-            It lays out a shared vocabulary for AI evaluation that implementers and funders alike can use to communicate 
-            clearly and align expectations. It also introduces practical tools and methods for each evaluation level, and 
-            offers guidance tailored to the needs of engineers, data scientists, behavioral researchers, economists, and policymakers.
-          </p>
-        </div>
-      </div>
-
       <div className="flex justify-between items-center">
         <div>
           <h3 className="text-lg font-semibold mb-2">Ready to dive deeper?</h3>
