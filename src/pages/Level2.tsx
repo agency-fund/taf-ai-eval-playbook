@@ -7,67 +7,18 @@ const Level2 = () => {
   const evaluationMethods = [
     {
       title: "A/B Testing",
-      description: "Feature A vs. Feature B comparison",
+      description: "Feature A vs. Feature B",
       icon: BarChart3
     },
     {
       title: "Multi-armed Bandit",
-      description: "Performance-based adaptive allocations. Contextual bandits for allocation based on user characteristics",
+      description: "Performance-based adaptive allocations. Contextual bandits for allocation based on user characteristics.",
       icon: Activity
     },
     {
       title: "Holdout Testing",
       description: "e.g., AI vs. non-AI; status quo (default engagement) vs. an accumulation of a/b tests + rollouts (higher dosage engagement)",
       icon: Settings
-    }
-  ];
-
-  const retentionMetrics = [
-    {
-      title: "User-Level Retention",
-      description: "Measures continued, active usage of the chatbot over time. Indicates sustained value or habit formation.",
-      examples: ["DAU/MAU uplift after introducing a new feature (e.g., personalized summaries)", "Session count increase post fine-tuning on tone/style"]
-    }
-  ];
-
-  const engagementMetrics = [
-    {
-      title: "Action-Based Engagement",
-      description: "Measures user actions directly taken during interactions, including response rate, clicks, prompt rewrites, emoji reactions, etc.",
-      examples: ["% of conversations with user-initiated follow-up after AI output", "Increase in prompt rewrites with new UI button"]
-    },
-    {
-      title: "Interaction Duration",
-      description: "Measures depth of interaction, such as number of back-and-forth turns or average session duration.",
-      examples: ["Longer session length after updating LLM to a more empathetic version", "More conversational turns post tone-tuning"]
-    },
-    {
-      title: "Feature Uptake",
-      description: "Measures usage of optional or advanced features (e.g., exporting content, feedback buttons, reference links).",
-      examples: ["Higher click-through to source links after adding citations", "Greater use of 'ask follow-up' option after UI tweak"]
-    }
-  ];
-
-  const nonEngagementMetrics = [
-    {
-      title: "Quality Scores",
-      description: "Content-level scores assigned by automated systems or human review. Higher or lower scores reflect desired/undesired characteristics.",
-      examples: ["Decrease in toxicity score after safety fine-tuning", "Higher informativeness score after system prompt update"]
-    },
-    {
-      title: "Item-Level Surveys",
-      description: "User feedback tied to specific chatbot responses, often collected after interaction.",
-      examples: ["Increase in % 'helpful' responses rated 4+ stars in variant B", "More 'want to see more like this' votes after grounding the model"]
-    },
-    {
-      title: "User-Level Surveys",
-      description: "User feedback on the chatbot or platform experience overall. Measures general satisfaction, trust, or usability.",
-      examples: ["More users rate the chatbot 9/10 in variant with memory feature", "Lower dropout rate when onboarding includes clear expectations"]
-    },
-    {
-      title: "User Control",
-      description: "Features that allow users to shape or filter their experience. A measure of user agency and satisfaction with platform control options.",
-      examples: ["More users engage 'see less of this topic' in B variant", "Increased topic subscriptions with better topic surfacing in UI"]
     }
   ];
 
@@ -90,7 +41,7 @@ const Level2 = () => {
         <Card className="border-0 shadow-card bg-taf-yellow/10">
           <CardHeader>
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-orange-100 text-orange-700 border-orange-200 rounded-lg flex items-center justify-center">
+              <div className="w-16 h-16 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
                 <Package className="w-8 h-8" />
               </div>
               <div>
@@ -120,10 +71,10 @@ const Level2 = () => {
             Then, they can compare how different web or app experiences affect browsing time or user satisfaction. 
             This rapid, iterative process is enabled by two factors unique to digital interventions:
           </p>
-          <ul className="space-y-2">
-            <li>• Iterations of the product can be precisely and efficiently deployed to different users</li>
-            <li>• On-platform engagement outcomes are costless to collect and transform into meaningful engagement metrics</li>
-          </ul>
+          <ol className="space-y-2">
+            <li>1. iterations of the product can be precisely and efficiently deployed to different users and</li>
+            <li>2. on-platform engagement outcomes are costless to collect and transform into meaningful engagement metrics.</li>
+          </ol>
         </div>
       </div>
 
@@ -188,11 +139,9 @@ const Level2 = () => {
       </div>
 
       <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-8">Evaluation Methods</h2>
+        <h2 className="text-3xl font-bold mb-8">Evaluation method</h2>
         <div className="prose prose-lg max-w-none text-black mb-8">
-          <p>
-            For detailed guidance on evaluation methods, please refer to:
-          </p>
+          <p>For details, please see</p>
           <ul className="space-y-2">
             <li>
               <a 
@@ -232,9 +181,9 @@ const Level2 = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                                  <CardDescription className="text-base text-black">
-                    {method.description}
-                  </CardDescription>
+                <CardDescription className="text-base text-black">
+                  {method.description}
+                </CardDescription>
               </CardContent>
             </Card>
           ))}
@@ -242,11 +191,9 @@ const Level2 = () => {
       </div>
 
       <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-8">Measurement Tools</h2>
+        <h2 className="text-3xl font-bold mb-8">Measurement tools</h2>
         <div className="prose prose-lg max-w-none text-black mb-8">
-          <p>
-            <strong>References:</strong>
-          </p>
+          <p><strong>Reference:</strong></p>
           <ul className="space-y-2">
             <li>
               <a 
@@ -261,7 +208,7 @@ const Level2 = () => {
             </li>
             <li>
               <a 
-                href="https://arxiv.org/abs/2402.06831" 
+                href="https://arxiv.org/abs/2402.06831#:~:text=What%20We%20Know%20About%20Using%20Non%2DEngagement%20Signals%20in%20Content%20Ranking,-Tom%20Cunningham%2C%20Sana&text=Many%20online%20platforms%20predominantly%20rank,for%20society%20as%20a%20whole." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2"
@@ -272,93 +219,103 @@ const Level2 = () => {
             </li>
           </ul>
         </div>
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-2xl font-bold mb-6">Retention Metrics</h3>
-            <div className="grid md:grid-cols-1 gap-6">
-              {retentionMetrics.map((metric, index) => (
-                <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{metric.title}</CardTitle>
-                    <CardDescription className="text-base text-black">
-                      {metric.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-black">Examples (in A/B Tests):</h4>
-                      <ul className="space-y-1">
-                        {metric.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-black flex items-center">
-                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
-                            {example}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold mb-6">Engagement Metrics</h3>
-            <div className="grid md:grid-cols-1 gap-6">
-              {engagementMetrics.map((metric, index) => (
-                <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{metric.title}</CardTitle>
-                    <CardDescription className="text-base text-black">
-                      {metric.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-black">Examples (in A/B Tests):</h4>
-                      <ul className="space-y-1">
-                        {metric.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-black flex items-center">
-                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
-                            {example}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold mb-6">Non-Engagement Metrics</h3>
-            <div className="grid md:grid-cols-1 gap-6">
-              {nonEngagementMetrics.map((metric, index) => (
-                <Card key={index} className="border-0 shadow-card hover:shadow-float transition-all duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{metric.title}</CardTitle>
-                    <CardDescription className="text-base text-black">
-                      {metric.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-black">Examples (in A/B Tests):</h4>
-                      <ul className="space-y-1">
-                        {metric.examples.map((example, idx) => (
-                          <li key={idx} className="text-sm text-black flex items-center">
-                            <div className="w-1.5 h-1.5 bg-taf-blue rounded-full mr-3" />
-                            {example}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+        
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Category</th>
+                <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Metric Type</th>
+                <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Definition</th>
+                <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Examples (in A/B Tests)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-3 font-semibold" rowSpan={1}>Retention Metrics</td>
+                <td className="border border-gray-300 px-4 py-3">User-Level Retention</td>
+                <td className="border border-gray-300 px-4 py-3">Measures continued, active usage of the chatbot over time. Indicates sustained value or habit formation.</td>
+                <td className="border border-gray-300 px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>DAU/MAU uplift after introducing a new feature (e.g., personalized summaries)</li>
+                    <li>Session count increase post fine-tuning on tone/style</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-3 font-semibold" rowSpan={3}>Engagement Metrics</td>
+                <td className="border border-gray-300 px-4 py-3">Action-Based Engagement</td>
+                <td className="border border-gray-300 px-4 py-3">Measures user actions directly taken during interactions, including response rate, clicks, prompt rewrites, emoji reactions, etc.</td>
+                <td className="border border-gray-300 px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>% of conversations with user-initiated follow-up after AI output</li>
+                    <li>Increase in prompt rewrites with new UI button</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-3">Interaction Duration</td>
+                <td className="border border-gray-300 px-4 py-3">Measures depth of interaction, such as number of back-and-forth turns or average session duration.</td>
+                <td className="border border-gray-300 px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>Longer session length after updating LLM to a more empathetic version</li>
+                    <li>More conversational turns post tone-tuning</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-3">Feature Uptake</td>
+                <td className="border border-gray-300 px-4 py-3">Measures usage of optional or advanced features (e.g., exporting content, feedback buttons, reference links).</td>
+                <td className="border border-gray-300 px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>Higher click-through to source links after adding citations</li>
+                    <li>Greater use of "ask follow-up" option after UI tweak</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-3 font-semibold" rowSpan={4}>Non-Engagement Metrics</td>
+                <td className="border border-gray-300 px-4 py-3">Quality Scores</td>
+                <td className="border border-gray-300 px-4 py-3">Content-level scores assigned by automated systems or human review. Higher or lower scores reflect desired/undesired characteristics.</td>
+                <td className="border border-gray-300 px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>Decrease in toxicity score after safety fine-tuning</li>
+                    <li>Higher informativeness score after system prompt update</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-3">Item-Level Surveys</td>
+                <td className="border border-gray-300 px-4 py-3">User feedback tied to specific chatbot responses, often collected after interaction.</td>
+                <td className="border border-gray-300 px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>Increase in % "helpful" responses rated 4+ stars in variant B</li>
+                    <li>More "want to see more like this" votes after grounding the model</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-3">User-Level Surveys</td>
+                <td className="border border-gray-300 px-4 py-3">User feedback on the chatbot or platform experience overall. Measures general satisfaction, trust, or usability.</td>
+                <td className="border border-gray-300 px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>More users rate the chatbot 9/10 in variant with memory feature</li>
+                    <li>Lower dropout rate when onboarding includes clear expectations</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-3">User Control</td>
+                <td className="border border-gray-300 px-4 py-3">Features that allow users to shape or filter their experience. A measure of user agency and satisfaction with platform control options.</td>
+                <td className="border border-gray-300 px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>More users engage "see less of this topic" in B variant</li>
+                    <li>Increased topic subscriptions with better topic surfacing in UI</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -379,36 +336,6 @@ const Level2 = () => {
             </ul>
           </div>
         </div>
-      </div>
-
-      <div className="mb-16">
-        <Card className="border-0 shadow-card bg-gradient-accent">
-          <CardHeader>
-            <CardTitle className="text-2xl text-[#003087]">Best Practices</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold mb-2 text-[#003087]">User-Centered Design</h4>
-                <ul className="space-y-2 text-sm text-[#003087]">
-                  <li>• Design for actual user workflows and needs</li>
-                  <li>• Test with representative users early and often</li>
-                  <li>• Measure both quantitative and qualitative outcomes</li>
-                  <li>• Iterate based on user feedback and behavior</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-2 text-[#003087]">Technical Integration</h4>
-                <ul className="space-y-2 text-sm text-[#003087]">
-                  <li>• Ensure seamless integration with existing systems</li>
-                  <li>• Monitor performance impact on overall product</li>
-                  <li>• Plan for scalability and maintenance</li>
-                  <li>• Document integration requirements and constraints</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
 
       <div className="flex justify-between items-center">

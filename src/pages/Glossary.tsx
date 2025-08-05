@@ -91,13 +91,48 @@ const Glossary = () => {
       category: "Product Evaluation"
     },
     {
+      term: "Interaction Duration",
+      definition: "Measures depth of interaction, such as number of back-and-forth turns or average session duration, indicating user engagement and satisfaction.",
+      category: "Product Evaluation"
+    },
+    {
       term: "Feature Uptake",
       definition: "Measures usage of optional or advanced features like exporting content, feedback buttons, or reference links to assess product value.",
       category: "Product Evaluation"
     },
     {
+      term: "User-Level Retention",
+      definition: "Measures continued, active usage of the chatbot over time. Indicates sustained value or habit formation.",
+      category: "Product Evaluation"
+    },
+    {
       term: "Non-Engagement Metrics",
       definition: "Quality indicators beyond user clicks and time spent, including content quality scores, user surveys, and user control features.",
+      category: "Product Evaluation"
+    },
+    {
+      term: "Quality Scores",
+      definition: "Content-level scores assigned by automated systems or human review. Higher or lower scores reflect desired/undesired characteristics like toxicity or informativeness.",
+      category: "Product Evaluation"
+    },
+    {
+      term: "Item-Level Surveys",
+      definition: "User feedback tied to specific chatbot responses, often collected after interaction to measure satisfaction with individual outputs.",
+      category: "Product Evaluation"
+    },
+    {
+      term: "User-Level Surveys",
+      definition: "User feedback on the chatbot or platform experience overall. Measures general satisfaction, trust, or usability across the entire product.",
+      category: "Product Evaluation"
+    },
+    {
+      term: "User Control",
+      definition: "Features that allow users to shape or filter their experience. A measure of user agency and satisfaction with platform control options.",
+      category: "Product Evaluation"
+    },
+    {
+      term: "Digital Trace Data",
+      definition: "Automatically collected interaction data that provides a picture of user progress and behavior patterns over time.",
       category: "Product Evaluation"
     },
 
@@ -118,6 +153,11 @@ const Glossary = () => {
       category: "User Evaluation"
     },
     {
+      term: "Frequency and Depth of Queries",
+      definition: "Measures how often and how deeply users engage via queries. Increased frequency and complexity of interactions can signal greater curiosity and learning gains.",
+      category: "User Evaluation"
+    },
+    {
       term: "Follow-up Question Rate",
       definition: "Percentage of interactions where users ask new questions related to previous answers, indicating sustained engagement and intellectual curiosity.",
       category: "User Evaluation"
@@ -128,8 +168,23 @@ const Glossary = () => {
       category: "User Evaluation"
     },
     {
+      term: "Session Duration & Return Rate",
+      definition: "How long a user spends in a learning session and how frequently users come back for new sessions. Widely used behavioral proxies for engagement and motivation.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Feature Utilization Rate",
+      definition: "Whether users actually use suggested tools or follow the AI's advice. Reveals much about user trust and motivation.",
+      category: "User Evaluation"
+    },
+    {
       term: "Sentiment Analysis",
       definition: "Automatically scoring the sentiment of user utterances over time to detect whether words used are becoming more positive or less anxious.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Topic Modeling",
+      definition: "Analyzing the content of conversations to see what themes emerge. Can track progression from fundamental concepts to more advanced ones, indicating cognitive growth.",
       category: "User Evaluation"
     },
     {
@@ -138,8 +193,33 @@ const Glossary = () => {
       category: "User Evaluation"
     },
     {
+      term: "LLM-Based Text Analysis",
+      definition: "Using large language models to analyze and score text in nuanced ways. Can detect various psychological constructs with high reliability across multiple languages.",
+      category: "User Evaluation"
+    },
+    {
       term: "Validated Scales",
       definition: "Research-backed psychological questionnaires that measure latent constructs like self-efficacy, motivation, or emotional state with proven reliability.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Micro-Surveys",
+      definition: "Brief, contextually-timed surveys with only a handful of well-chosen questions to avoid survey fatigue and interruptions with AI conversations.",
+      category: "User Evaluation"
+    },
+    {
+      term: "AI Psychometrics",
+      definition: "Using AI to generate user-level survey items that have good construct validity, enabling seamless survey assessment within conversations.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Observer Reports",
+      definition: "External perspectives from teachers, parents, or other stakeholders reporting on user changes, validating self-reported and trace data.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Objective Performance Data",
+      definition: "Tying AI usage to objective outcomes like exam scores, writing assessments, or task completion rates for credible measurement of improvements.",
       category: "User Evaluation"
     },
 
@@ -189,6 +269,71 @@ const Glossary = () => {
       definition: "Objective data from official records (schools, hospitals, government) used for credible measurement of development outcomes that can't be gamed by AI output.",
       category: "Impact Evaluation"
     },
+    {
+      term: "Contextual Sensitivity",
+      definition: "The marginal benefit of an AI product often depends on what other sources of support users currently have access to, varying by geography, institution, or digital access.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Product Dynamism",
+      definition: "AI systems are rarely static - models may be continuously retrained, outputs may adjust as data changes, and product features may evolve during evaluation.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Model Drift",
+      definition: "When AI models are periodically retrained or training datasets are updated, potentially affecting outcome measures and requiring version tracking.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Version Tagging",
+      definition: "Recording exactly which users are exposed to which model versions, maintaining detailed audit trails of model updates for analysis.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Adaptive Randomization",
+      definition: "When AI systems use A/B testing, multi-armed bandits, or contextual bandits during studies, requiring documentation of assignment algorithms.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Randomized Encouragement Design",
+      definition: "Evaluation design where only some users are actively invited or incentivized to engage with a publicly available product, reducing contamination risk.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Contamination Risk",
+      definition: "Risk that treatment effects spread beyond intended recipients in RCTs, particularly relevant for freely accessible AI products designed for scale.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Stratified Randomization",
+      definition: "Randomization strategy that ensures adequate representation of subgroups (e.g., gender, baseline ability, region) for heterogeneous effect analysis.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Pre-registration",
+      definition: "Publishing study design, hypotheses, and analysis plans before conducting research to ensure transparency and prevent selective reporting of results.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "External Validity",
+      definition: "The extent to which study results can be generalized to broader populations or different contexts, a core concern for funders considering scale.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Meta-Analytic Synthesis",
+      definition: "Statistical methods to combine results from multiple studies or trials to assess generalizability to broader populations.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Attrition",
+      definition: "Loss of participants during a study, whether through disengagement or lost follow-up, which can undermine study power and interpretability.",
+      category: "Impact Evaluation"
+    },
+    {
+      term: "Evaluability",
+      definition: "The extent to which a product or intervention can be rigorously evaluated, often requiring early design decisions like holdout groups or embedded randomization.",
+      category: "Impact Evaluation"
+    },
 
     // Cross-cutting Terms
     {
@@ -207,9 +352,34 @@ const Glossary = () => {
       category: "Impact Evaluation"
     },
     {
-      term: "Pre-registration",
-      definition: "Publishing study design, hypotheses, and analysis plans before conducting research to ensure transparency and prevent selective reporting of results.",
-      category: "Impact Evaluation"
+      term: "Independent Evaluator",
+      definition: "Third-party evaluator such as an academic partner, research NGO (e.g., J-PAL, IPA), or M&E firm that enhances both technical quality and perceived credibility of evaluations.",
+      category: "Framework"
+    },
+    {
+      term: "Digital Interventions",
+      definition: "Technology-based solutions that can be precisely deployed to different users with costless collection of engagement outcomes, enabling rapid iterative evaluation cycles.",
+      category: "Framework"
+    },
+    {
+      term: "Continuous Evaluation",
+      definition: "Ongoing assessment process rather than one-off evaluations, particularly important for AI products that evolve and improve over time.",
+      category: "Framework"
+    },
+    {
+      term: "Behavioral Proxies",
+      definition: "Indirect measures of user outcomes that can be continuously collected and analyzed in real-time, though requiring validation against intended outcomes.",
+      category: "Framework"
+    },
+    {
+      term: "Psychometrically-Sound",
+      definition: "Survey instruments with proven reliability and validity for measuring psychological constructs like self-efficacy, motivation, or emotional state.",
+      category: "User Evaluation"
+    },
+    {
+      term: "Scalable Qualitative Analysis",
+      definition: "Using AI to analyze text in nuanced ways across multiple languages, enabling large-scale qualitative assessment of user conversations and feedback.",
+      category: "User Evaluation"
     }
   ];
 

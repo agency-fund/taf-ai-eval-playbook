@@ -157,7 +157,7 @@ const Introduction = () => {
               <div>
                 <h4 className="font-semibold mb-2 text-[#003087]">Practical Application</h4>
                 <p className="text-sm text-[#003087]">
-                  We'll refine methodologies and support their practical use in real-world settings across the development sector.
+                  We'll refine methodologies and support their practical use in real-world settings across the social sector.
                 </p>
               </div>
             </div>

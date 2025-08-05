@@ -48,10 +48,7 @@ const frameworkLevels = [
 ];
 
 const tools = [
-  { title: "Framework Builder", url: "/tools/framework-builder", icon: Target },
-  { title: "Planning Templates", url: "/tools/planning", icon: Map },
-  { title: "Metric Libraries", url: "/tools/metrics", icon: Wrench },
-  { title: "Model Evaluation", url: "/tools/model-evaluation", icon: BarChart3 },
+  { title: "Model Evaluation Workshop", url: "/tools/model-evaluation", icon: BarChart3 },
 ];
 
 export function AppSidebar() {

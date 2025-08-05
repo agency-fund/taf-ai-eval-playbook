@@ -16,9 +16,6 @@ import Roles from "./pages/Roles";
 import CaseStudies from "./pages/CaseStudies";
 import Methods from "./pages/Methods";
 import Glossary from "./pages/Glossary";
-import FrameworkBuilder from "./pages/tools/FrameworkBuilder";
-import Planning from "./pages/tools/Planning";
-import Metrics from "./pages/tools/Metrics";
 import ModelEvaluation from "./pages/tools/ModelEvaluation";
 import NotFound from "./pages/NotFound";
 import Authors from "./pages/Authors";
@@ -45,9 +42,6 @@ const App = () => (
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/methods" element={<Methods />} />
             <Route path="/glossary" element={<Glossary />} />
-            <Route path="/tools/framework-builder" element={<FrameworkBuilder />} />
-            <Route path="/tools/planning" element={<Planning />} />
-            <Route path="/tools/metrics" element={<Metrics />} />
             <Route path="/tools/model-evaluation" element={<ModelEvaluation />} />
             <Route path="/authors" element={<Authors />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
