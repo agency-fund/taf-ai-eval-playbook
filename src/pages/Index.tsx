@@ -70,7 +70,7 @@ const Index = () => {
             <div className="mt-8 pt-6 border-t border-white/20">
               <div className="text-left">
                 <p className="text-sm text-white/70">
-                  This playbook is created by the Agency Fund.
+                  This playbook is created by <a href="https://www.agency.fund/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors underline">the Agency Fund</a>.
                   <br />
                   <br />
                   If you have any questions or feedback, please contact the authors {" "}
