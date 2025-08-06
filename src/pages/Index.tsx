@@ -28,7 +28,7 @@ const Index = () => {
       icon: Wrench,
       title: "Interactive Tools",
       description: "Framework builders, planning templates, and metric libraries",
-      link: "/tools/framework-builder"
+      link: "/tools"
     }
   ];
 
@@ -66,7 +66,7 @@ const Index = () => {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 border-white/20 text-white hover:bg-white/20">
-                <Link to="/tools/model-evaluation">
+                <Link to="/tools">
                   Try Interactive Tools
                 </Link>
               </Button>

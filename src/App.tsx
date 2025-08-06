@@ -17,6 +17,7 @@ import CaseStudies from "./pages/CaseStudies";
 import Methods from "./pages/Methods";
 import Glossary from "./pages/Glossary";
 import ModelEvaluation from "./pages/tools/ModelEvaluation";
+import InteractiveTools from "./pages/tools/InteractiveTools";
 import UserEvaluationIntroduction from "./pages/tools/UserEvaluationIntroduction";
 import UserEvaluationBehavioral from "./pages/tools/UserEvaluationBehavioral";
 import UserEvaluationMetrics from "./pages/tools/UserEvaluationMetrics";
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/methods" element={<Methods />} />
             <Route path="/glossary" element={<Glossary />} />
+            <Route path="/tools" element={<InteractiveTools />} />
             <Route path="/tools/model-evaluation" element={<ModelEvaluation />} />
             <Route path="/tools/user-evaluation-introduction" element={<UserEvaluationIntroduction />} />
             <Route path="/tools/user-evaluation-behavioral" element={<UserEvaluationBehavioral />} />
