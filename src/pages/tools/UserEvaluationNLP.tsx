@@ -14,7 +14,9 @@ import {
   MessageSquare,
   TrendingUp,
   Users,
-  FileCode
+  FileCode,
+  ChevronDown,
+  ChevronRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -29,13 +31,20 @@ interface AnalysisResult {
     collectiveAgency: string[];
   };
   summary: string;
+  agencyScores?: {
+    self: number;
+    proxy: number;
+    collective: number;
+  };
+  linePredictions?: [string, string][];
 }
 
 const UserEvaluationNLP = () => {
   const [chatHistory, setChatHistory] = useState("");
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [activeTab, setActiveTab] = useState("sentiment");
+  const [activeTab, setActiveTab] = useState("agency-scores");
+  const [isPythonScriptExpanded, setIsPythonScriptExpanded] = useState(false);
 
   // Sample chat histories for demonstration
   const sampleChatHistories = {
@@ -81,8 +90,8 @@ ChatSEL: Perfect! We can start with a simple pattern and let students add their 
     setIsAnalyzing(true);
 
     try {
-      // Call the Python analysis through Supabase function
-      const { data, error } = await supabase.functions.invoke('nlp-analysis', {
+      // Call the agency classification through Supabase function
+      const { data, error } = await supabase.functions.invoke('agency-classifier', {
         body: {
           chat_history: chatHistory
         }
@@ -97,91 +106,123 @@ ChatSEL: Perfect! We can start with a simple pattern and let students add their 
         .filter(line => line.trim().startsWith('Teacher:'))
         .map(line => line.replace('Teacher:', '').trim());
 
-      const sentimentScores = data.sentiment_scores || [];
-      const topics = data.topics || [];
-      const agencyIndicators = {
-        selfAgency: data.self_agency || [],
-        proxyAgency: data.proxy_agency || [],
-        collectiveAgency: data.collective_agency || []
+      const agencyResults = data.aggregated_results || {};
+      const linePredictions = data.line_predictions || [];
+
+      // Create agency scores for visualization
+      const agencyScores = {
+        self: agencyResults.self?.share || 0,
+        proxy: agencyResults.proxy?.share || 0,
+        collective: agencyResults.collective?.share || 0
       };
 
+      // Generate agency indicators from predictions
+      const agencyIndicators = {
+        selfAgency: linePredictions.filter(([msg, label]) => label === 'self').map(([msg]) => msg),
+        proxyAgency: linePredictions.filter(([msg, label]) => label === 'proxy').map(([msg]) => msg),
+        collectiveAgency: linePredictions.filter(([msg, label]) => label === 'collective').map(([msg]) => msg)
+      };
+
+      // Determine dominant agency type
+      const dominantAgency = Object.entries(agencyScores).reduce((a, b) => a[1] > b[1] ? a : b)[0];
+
       const summary = `Analysis of ${teacherMessages.length} teacher messages shows:
-• Sentiment trend: ${sentimentScores.length > 1 && sentimentScores[0] < sentimentScores[sentimentScores.length - 1] ? 'Increasing' : 'Decreasing'} positivity
-• Primary topics: ${topics.slice(0, 3).join(', ')}
-• Agency pattern: ${agencyIndicators.selfAgency.length > 0 ? 'Self-agency' : ''} ${agencyIndicators.collectiveAgency.length > 0 ? 'Collective agency' : ''} ${agencyIndicators.proxyAgency.length > 0 ? 'Proxy agency' : ''}`;
+• Dominant Agency: ${dominantAgency.charAt(0).toUpperCase() + dominantAgency.slice(1)} (${(agencyScores[dominantAgency as keyof typeof agencyScores] * 100).toFixed(1)}%)
+• Self-Agency: ${(agencyScores.self * 100).toFixed(1)}% (${agencyIndicators.selfAgency.length} messages)
+• Proxy Agency: ${(agencyScores.proxy * 100).toFixed(1)}% (${agencyIndicators.proxyAgency.length} messages)
+• Collective Agency: ${(agencyScores.collective * 100).toFixed(1)}% (${agencyIndicators.collectiveAgency.length} messages)`;
 
       setAnalysisResult({
-        sentiment: sentimentScores,
-        topics,
+        sentiment: [], // Not used for agency analysis
+        topics: [], // Not used for agency analysis
         agencyIndicators,
-        summary
+        summary,
+        agencyScores,
+        linePredictions
       });
     } catch (error) {
       console.error('Error running analysis:', error);
       
-      // Fallback to simulated analysis if API fails
+      // Fallback to JavaScript agency analysis
       const lines = chatHistory.split('\n').filter(line => line.trim());
       const teacherMessages = lines.filter(line => line.startsWith('Teacher:')).map(line => line.replace('Teacher:', '').trim());
       
-      // Simple sentiment analysis based on positive/negative words
-      const positiveWords = ['good', 'great', 'wonderful', 'perfect', 'excellent', 'love', 'like', 'want', 'think', 'will'];
-      const negativeWords = ['no idea', 'not sure', 'struggling', 'difficult', 'hard', 'confused', 'worried'];
-      
-      const sentimentScores = teacherMessages.map(message => {
-        const lowerMessage = message.toLowerCase();
-        let score = 0;
-        positiveWords.forEach(word => {
-          if (lowerMessage.includes(word)) score += 0.2;
-        });
-        negativeWords.forEach(word => {
-          if (lowerMessage.includes(word)) score -= 0.3;
-        });
-        return Math.min(1, Math.max(-1, score));
-      });
-
-      // Simple topic extraction
-      const allText = teacherMessages.join(' ').toLowerCase();
-      const words = allText.match(/\b\w+\b/g) || [];
-      const stopWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can', 'this', 'that', 'these', 'those', 'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them']);
-      const filteredWords = words.filter(word => !stopWords.has(word) && word.length > 3);
-      const wordCounts = {};
-      filteredWords.forEach(word => {
-        wordCounts[word] = (wordCounts[word] || 0) + 1;
-      });
-      const topics = Object.entries(wordCounts)
-        .sort(([,a], [,b]) => (b as number) - (a as number))
-        .slice(0, 5)
-        .map(([word]) => word);
-
-      // Agency indicators
-      const agencyIndicators = {
-        selfAgency: teacherMessages.filter(msg => 
-          msg.toLowerCase().includes('i think') || 
-          msg.toLowerCase().includes('i will') || 
-          msg.toLowerCase().includes('i want')
-        ),
-        proxyAgency: teacherMessages.filter(msg => 
-          msg.toLowerCase().includes('okay') || 
-          msg.toLowerCase().includes('sounds good') || 
-          msg.toLowerCase().includes('no idea')
-        ),
-        collectiveAgency: teacherMessages.filter(msg => 
-          msg.toLowerCase().includes('let\'s') || 
-          msg.toLowerCase().includes('we can') || 
-          msg.toLowerCase().includes('together')
-        )
+      // Enhanced agency classification with confidence scoring
+      const agencyPatterns = {
+        self: [
+          'i think', 'i will', 'i want', 'i need', 'i can', 'i should', 'i plan', 'i intend',
+          'i believe', 'i prefer', 'i chose', 'i adjusted', 'i added', 'i modified', 'i created',
+          'i feel confident', 'i can handle', 'i\'m going to', 'i just created', 'i\'ve been'
+        ],
+        proxy: [
+          'i have no idea', 'not sure', 'okay', 'sounds good', 'i\'ll go with', 'i\'ll stick with',
+          'i\'ll leave it up to', 'i\'ll rely on', 'i\'ll copy', 'i\'ll adopt', 'i\'ll default to',
+          'i\'ll trust', 'whatever you recommend', 'if you say so', 'fine', 'alright', 'sure'
+        ],
+        collective: [
+          'let\'s', 'we can', 'we could', 'we should', 'we might', 'we can work on',
+          'can we try', 'how about we', 'what if we', 'why don\'t we', 'shall we',
+          'together', 'collaboratively', 'jointly', 'as a team', 'co-create', 'co-design',
+          'co-plan', 'co-author', 'partner on', 'iterate together'
+        ]
       };
 
+      // Classify each message with confidence scores
+      const linePredictions: [string, string][] = teacherMessages.map(message => {
+        const lowerMessage = message.toLowerCase();
+        let maxScore = 0;
+        let bestLabel = 'self';
+
+        Object.entries(agencyPatterns).forEach(([label, patterns]) => {
+          const score = patterns.reduce((total, pattern) => {
+            return total + (lowerMessage.includes(pattern) ? 1 : 0);
+          }, 0);
+          
+          if (score > maxScore) {
+            maxScore = score;
+            bestLabel = label;
+          }
+        });
+
+        return [message, bestLabel] as [string, string];
+      });
+
+      // Calculate agency scores
+      const totalMessages = teacherMessages.length;
+      const agencyCounts = {
+        self: linePredictions.filter(([, label]) => label === 'self').length,
+        proxy: linePredictions.filter(([, label]) => label === 'proxy').length,
+        collective: linePredictions.filter(([, label]) => label === 'collective').length
+      };
+
+      const agencyScores = {
+        self: agencyCounts.self / totalMessages,
+        proxy: agencyCounts.proxy / totalMessages,
+        collective: agencyCounts.collective / totalMessages
+      };
+
+      // Generate agency indicators
+      const agencyIndicators = {
+        selfAgency: linePredictions.filter(([msg, label]) => label === 'self').map(([msg]) => msg),
+        proxyAgency: linePredictions.filter(([msg, label]) => label === 'proxy').map(([msg]) => msg),
+        collectiveAgency: linePredictions.filter(([msg, label]) => label === 'collective').map(([msg]) => msg)
+      };
+
+      const dominantAgency = Object.entries(agencyScores).reduce((a, b) => a[1] > b[1] ? a : b)[0];
+
       const summary = `Analysis of ${teacherMessages.length} teacher messages shows:
-• Sentiment trend: ${sentimentScores.length > 1 && sentimentScores[0] < sentimentScores[sentimentScores.length - 1] ? 'Increasing' : 'Decreasing'} positivity
-• Primary topics: ${topics.slice(0, 3).join(', ')}
-• Agency pattern: ${agencyIndicators.selfAgency.length > 0 ? 'Self-agency' : ''} ${agencyIndicators.collectiveAgency.length > 0 ? 'Collective agency' : ''} ${agencyIndicators.proxyAgency.length > 0 ? 'Proxy agency' : ''}`;
+• Dominant Agency: ${dominantAgency.charAt(0).toUpperCase() + dominantAgency.slice(1)} (${(agencyScores[dominantAgency as keyof typeof agencyScores] * 100).toFixed(1)}%)
+• Self-Agency: ${(agencyScores.self * 100).toFixed(1)}% (${agencyIndicators.selfAgency.length} messages)
+• Proxy Agency: ${(agencyScores.proxy * 100).toFixed(1)}% (${agencyIndicators.proxyAgency.length} messages)
+• Collective Agency: ${(agencyScores.collective * 100).toFixed(1)}% (${agencyIndicators.collectiveAgency.length} messages)`;
 
       setAnalysisResult({
-        sentiment: sentimentScores,
-        topics,
+        sentiment: [],
+        topics: [],
         agencyIndicators,
-        summary
+        summary,
+        agencyScores,
+        linePredictions
       });
     } finally {
       setIsAnalyzing(false);
@@ -397,92 +438,133 @@ ChatSEL: Perfect! We can start with a simple pattern and let students add their 
             {/* Results Section */}
             {analysisResult && (
               <div className="space-y-6">
-                <div className="flex gap-2">
-                  <Button
-                    variant={activeTab === "sentiment" ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setActiveTab("sentiment")}
-                  >
-                    <TrendingUp className="h-4 w-4 mr-2" />
-                    Sentiment Analysis
-                  </Button>
-                  <Button
-                    variant={activeTab === "topics" ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setActiveTab("topics")}
-                  >
-                    <Brain className="h-4 w-4 mr-2" />
-                    Topic Modeling
-                  </Button>
-                  <Button
-                    variant={activeTab === "agency" ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setActiveTab("agency")}
-                  >
-                    <Users className="h-4 w-4 mr-2" />
-                    Agency Indicators
-                  </Button>
-                </div>
+                                 <div className="flex gap-2">
+                   <Button
+                     variant={activeTab === "agency-scores" ? "default" : "outline"}
+                     size="sm"
+                     onClick={() => setActiveTab("agency-scores")}
+                   >
+                     <BarChart3 className="h-4 w-4 mr-2" />
+                     Agency Scores
+                   </Button>
+                   <Button
+                     variant={activeTab === "agency" ? "default" : "outline"}
+                     size="sm"
+                     onClick={() => setActiveTab("agency")}
+                   >
+                     <Users className="h-4 w-4 mr-2" />
+                     Agency Indicators
+                   </Button>
+                   <Button
+                     variant={activeTab === "predictions" ? "default" : "outline"}
+                     size="sm"
+                     onClick={() => setActiveTab("predictions")}
+                   >
+                     <MessageSquare className="h-4 w-4 mr-2" />
+                     Line Predictions
+                   </Button>
+                 </div>
 
-                {/* Sentiment Analysis Results */}
-                {activeTab === "sentiment" && (
-                  <Card className="border border-gray-200">
-                    <CardHeader>
-                      <CardTitle className="text-lg">Sentiment Trajectory</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-4">
-                          <div className="flex-1">
-                            <div className="flex justify-between text-sm text-gray-600 mb-2">
-                              <span>Negative</span>
-                              <span>Positive</span>
-                            </div>
-                            <div className="bg-gray-200 rounded-full h-4">
-                              {analysisResult.sentiment.map((score, index) => (
-                                <div
-                                  key={index}
-                                  className="bg-taf-blue h-4 rounded-full transition-all duration-300"
-                                  style={{
-                                    width: `${((score + 1) / 2) * 100}%`,
-                                    marginTop: `${index * 8}px`
-                                  }}
-                                />
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-2 gap-4 text-sm">
-                          <div>
-                            <strong>Average Sentiment:</strong> {(analysisResult.sentiment.reduce((a, b) => a + b, 0) / analysisResult.sentiment.length).toFixed(2)}
-                          </div>
-                          <div>
-                            <strong>Trend:</strong> {analysisResult.sentiment[0] < analysisResult.sentiment[analysisResult.sentiment.length - 1] ? 'Increasing' : 'Decreasing'}
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
+                                 {/* Agency Scores Results */}
+                 {activeTab === "agency-scores" && analysisResult.agencyScores && (
+                   <Card className="border border-gray-200">
+                     <CardHeader>
+                       <CardTitle className="text-lg">Agency Distribution</CardTitle>
+                     </CardHeader>
+                     <CardContent>
+                       <div className="space-y-6">
+                         {/* Agency Score Bars */}
+                         <div className="space-y-4">
+                           <div className="flex items-center justify-between">
+                             <span className="text-sm font-medium">🧠 Self-Agency</span>
+                             <span className="text-sm font-bold">{(analysisResult.agencyScores.self * 100).toFixed(1)}%</span>
+                           </div>
+                           <div className="w-full bg-gray-200 rounded-full h-3">
+                             <div 
+                               className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                               style={{ width: `${analysisResult.agencyScores.self * 100}%` }}
+                             />
+                           </div>
+                           
+                           <div className="flex items-center justify-between">
+                             <span className="text-sm font-medium">🤝 Proxy Agency</span>
+                             <span className="text-sm font-bold">{(analysisResult.agencyScores.proxy * 100).toFixed(1)}%</span>
+                           </div>
+                           <div className="w-full bg-gray-200 rounded-full h-3">
+                             <div 
+                               className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                               style={{ width: `${analysisResult.agencyScores.proxy * 100}%` }}
+                             />
+                           </div>
+                           
+                           <div className="flex items-center justify-between">
+                             <span className="text-sm font-medium">🌐 Collective Agency</span>
+                             <span className="text-sm font-bold">{(analysisResult.agencyScores.collective * 100).toFixed(1)}%</span>
+                           </div>
+                           <div className="w-full bg-gray-200 rounded-full h-3">
+                             <div 
+                               className="bg-purple-500 h-3 rounded-full transition-all duration-300"
+                               style={{ width: `${analysisResult.agencyScores.collective * 100}%` }}
+                             />
+                           </div>
+                         </div>
+                         
+                         {/* Dominant Agency */}
+                         <div className="p-4 bg-gray-50 rounded-lg">
+                           <h4 className="font-semibold mb-2">Dominant Agency Type</h4>
+                           <p className="text-sm">
+                             The teacher primarily exhibits <strong>
+                               {Object.entries(analysisResult.agencyScores).reduce((a, b) => a[1] > b[1] ? a : b)[0].charAt(0).toUpperCase() + 
+                               Object.entries(analysisResult.agencyScores).reduce((a, b) => a[1] > b[1] ? a : b)[0].slice(1)} Agency
+                             </strong> with {(Object.entries(analysisResult.agencyScores).reduce((a, b) => a[1] > b[1] ? a : b)[1] * 100).toFixed(1)}% of their messages.
+                           </p>
+                           
+                           {/* Agency Score Explanations */}
+                           <div className="mt-4 space-y-2 text-xs">
+                             <h5 className="font-semibold">Why these scores?</h5>
+                             {analysisResult.agencyScores.self > 0.3 && (
+                               <p><strong>Self-Agency:</strong> High score indicates teacher uses "I think", "I will", "I want" - showing independent decision-making.</p>
+                             )}
+                             {analysisResult.agencyScores.proxy > 0.3 && (
+                               <p><strong>Proxy Agency:</strong> High score shows reliance on ChatSEL with phrases like "okay", "sounds good", "no idea".</p>
+                             )}
+                             {analysisResult.agencyScores.collective > 0.3 && (
+                               <p><strong>Collective Agency:</strong> High score reflects collaborative language like "let's", "we can", "together".</p>
+                             )}
+                           </div>
+                         </div>
+                       </div>
+                     </CardContent>
+                   </Card>
+                 )}
 
-                {/* Topic Modeling Results */}
-                {activeTab === "topics" && (
-                  <Card className="border border-gray-200">
-                    <CardHeader>
-                      <CardTitle className="text-lg">Topic Clusters</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-3">
-                        {analysisResult.topics.map((topic, index) => (
-                          <div key={index} className="flex items-center gap-3">
-                            <Badge variant="secondary">{index + 1}</Badge>
-                            <span className="text-sm">{topic}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
+                 {/* Line Predictions Results */}
+                 {activeTab === "predictions" && analysisResult.linePredictions && (
+                   <Card className="border border-gray-200">
+                     <CardHeader>
+                       <CardTitle className="text-lg">Message-by-Message Analysis</CardTitle>
+                     </CardHeader>
+                     <CardContent>
+                       <div className="space-y-3">
+                         {analysisResult.linePredictions.map(([message, label], index) => (
+                           <div key={index} className="flex items-start gap-3 p-3 rounded-lg border">
+                             <Badge 
+                               variant="secondary" 
+                               className={`${
+                                 label === 'self' ? 'bg-green-100 text-green-800' :
+                                 label === 'proxy' ? 'bg-blue-100 text-blue-800' :
+                                 'bg-purple-100 text-purple-800'
+                               }`}
+                             >
+                               {label.toUpperCase()}
+                             </Badge>
+                             <span className="text-sm flex-1">{message}</span>
+                           </div>
+                         ))}
+                       </div>
+                     </CardContent>
+                   </Card>
+                 )}
 
                 {/* Agency Indicators Results */}
                 {activeTab === "agency" && (
@@ -527,100 +609,280 @@ ChatSEL: Perfect! We can start with a simple pattern and let students add their 
                   </Card>
                 )}
 
-                {/* Summary */}
-                <Card className="border border-gray-200">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Analysis Summary</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm whitespace-pre-wrap">{analysisResult.summary}</p>
-                  </CardContent>
-                                 </Card>
+                                         {/* Summary */}
+                         <Card className="border border-gray-200">
+                           <CardHeader>
+                             <CardTitle className="text-lg">Analysis Summary</CardTitle>
+                           </CardHeader>
+                           <CardContent>
+                             <div className="space-y-4">
+                               {/* Agency Distribution Chart */}
+                               <div className="grid grid-cols-3 gap-4">
+                                 <div className="text-center p-4 rounded-lg bg-green-50 border border-green-200">
+                                   <div className="text-2xl font-bold text-green-600">
+                                     {(analysisResult.agencyScores?.self * 100).toFixed(0)}%
+                                   </div>
+                                   <div className="text-sm font-medium text-green-700">Self-Agency</div>
+                                   <div className="text-xs text-green-600 mt-1">
+                                     {analysisResult.agencyIndicators.selfAgency.length} messages
+                                   </div>
+                                 </div>
+                                 <div className="text-center p-4 rounded-lg bg-blue-50 border border-blue-200">
+                                   <div className="text-2xl font-bold text-blue-600">
+                                     {(analysisResult.agencyScores?.proxy * 100).toFixed(0)}%
+                                   </div>
+                                   <div className="text-sm font-medium text-blue-700">Proxy Agency</div>
+                                   <div className="text-xs text-blue-600 mt-1">
+                                     {analysisResult.agencyIndicators.proxyAgency.length} messages
+                                   </div>
+                                 </div>
+                                 <div className="text-center p-4 rounded-lg bg-purple-50 border border-purple-200">
+                                   <div className="text-2xl font-bold text-purple-600">
+                                     {(analysisResult.agencyScores?.collective * 100).toFixed(0)}%
+                                   </div>
+                                   <div className="text-sm font-medium text-purple-700">Collective Agency</div>
+                                   <div className="text-xs text-purple-600 mt-1">
+                                     {analysisResult.agencyIndicators.collectiveAgency.length} messages
+                                   </div>
+                                 </div>
+                               </div>
+                               
+                               {/* Dominant Agency Highlight */}
+                               <div className="p-4 rounded-lg bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200">
+                                 <div className="flex items-center gap-3">
+                                   <div className="text-2xl">
+                                     {Object.entries(analysisResult.agencyScores || {}).reduce((a, b) => a[1] > b[1] ? a : b)[0] === 'self' ? '🧠' :
+                                      Object.entries(analysisResult.agencyScores || {}).reduce((a, b) => a[1] > b[1] ? a : b)[0] === 'proxy' ? '🤝' : '🌐'}
+                                   </div>
+                                   <div>
+                                     <h4 className="font-semibold text-gray-800">
+                                       Primary Agency Type: {Object.entries(analysisResult.agencyScores || {}).reduce((a, b) => a[1] > b[1] ? a : b)[0].charAt(0).toUpperCase() + 
+                                       Object.entries(analysisResult.agencyScores || {}).reduce((a, b) => a[1] > b[1] ? a : b)[0].slice(1)} Agency
+                                     </h4>
+                                     <p className="text-sm text-gray-600">
+                                       This teacher primarily exhibits {(Object.entries(analysisResult.agencyScores || {}).reduce((a, b) => a[1] > b[1] ? a : b)[1] * 100).toFixed(1)}% {Object.entries(analysisResult.agencyScores || {}).reduce((a, b) => a[1] > b[1] ? a : b)[0]} agency patterns in their interactions.
+                                     </p>
+                                   </div>
+                                 </div>
+                               </div>
+                               
+                               {/* Key Insights */}
+                               <div className="space-y-2">
+                                 <h5 className="font-semibold text-gray-800">Key Insights:</h5>
+                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                   {analysisResult.agencyScores?.self > 0.3 && (
+                                     <div className="flex items-center gap-2 p-2 bg-green-50 rounded">
+                                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                       <span className="text-sm text-green-700">Shows independent decision-making</span>
+                                     </div>
+                                   )}
+                                   {analysisResult.agencyScores?.proxy > 0.3 && (
+                                     <div className="flex items-center gap-2 p-2 bg-blue-50 rounded">
+                                       <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                       <span className="text-sm text-blue-700">Relies on ChatSEL guidance</span>
+                                     </div>
+                                   )}
+                                   {analysisResult.agencyScores?.collective > 0.3 && (
+                                     <div className="flex items-center gap-2 p-2 bg-purple-50 rounded">
+                                       <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                                       <span className="text-sm text-purple-700">Collaborates with the AI system</span>
+                                     </div>
+                                   )}
+                                 </div>
+                               </div>
+                             </div>
+                           </CardContent>
+                         </Card>
                </div>
              )}
 
              {/* Python Script Panel */}
              <Card className="border border-gray-200">
                <CardHeader>
-                 <CardTitle className="flex items-center gap-2">
-                   <FileCode className="h-5 w-5" />
-                   Python Analysis Script
-                 </CardTitle>
-                 <CardDescription>
-                   The actual Python code that performs the NLP analysis
-                 </CardDescription>
-               </CardHeader>
-               <CardContent>
-                 <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                   <pre>{`import re
-from textblob import TextBlob
-from collections import Counter
-import numpy as np
-
-def analyze_chat_history(chat_text):
-    """Analyze chat history for sentiment, topics, and agency indicators."""
-    
-    # Extract teacher messages
-    teacher_messages = []
-    for line in chat_text.split('\\n'):
-        if line.strip().startswith('Teacher:'):
-            message = line.replace('Teacher:', '').strip()
-            if message:
-                teacher_messages.append(message)
-    
-    # Sentiment Analysis
-    sentiment_scores = []
-    for message in teacher_messages:
-        blob = TextBlob(message)
-        sentiment_scores.append(blob.sentiment.polarity)
-    
-    # Topic Modeling (simplified)
-    all_text = ' '.join(teacher_messages).lower()
-    words = re.findall(r'\\b\\w+\\b', all_text)
-    
-    # Remove common stop words
-    stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can', 'this', 'that', 'these', 'those', 'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them'}
-    filtered_words = [word for word in words if word not in stop_words and len(word) > 3]
-    
-    # Count word frequencies
-    word_counts = Counter(filtered_words)
-    topics = [word for word, count in word_counts.most_common(5)]
-    
-    # Agency Indicators
-    self_agency_indicators = []
-    proxy_agency_indicators = []
-    collective_agency_indicators = []
-    
-    for message in teacher_messages:
-        message_lower = message.lower()
-        
-        # Self-agency indicators
-        if any(phrase in message_lower for phrase in ['i think', 'i will', 'i want', 'i need', 'i can', 'i should']):
-            self_agency_indicators.append(message)
-        
-        # Proxy agency indicators
-        if any(phrase in message_lower for phrase in ['okay', 'sounds good', 'i\'ll go with', 'i have no idea', 'not sure']):
-            proxy_agency_indicators.append(message)
-        
-        # Collective agency indicators
-        if any(phrase in message_lower for phrase in ['let\'s', 'we can', 'what if we', 'together', 'co-create']):
-            collective_agency_indicators.append(message)
-    
-    return {
-        'sentiment_scores': sentiment_scores,
-        'topics': topics,
-        'self_agency': self_agency_indicators,
-        'proxy_agency': proxy_agency_indicators,
-        'collective_agency': collective_agency_indicators
-    }
-
-# Example usage:
-# result = analyze_chat_history(chat_history_text)
-# print(f"Sentiment scores: {result['sentiment_scores']}")
-# print(f"Topics: {result['topics']}")
-# print(f"Self-agency indicators: {result['self_agency']}")`}</pre>
+                 <div className="flex items-center justify-between">
+                   <div className="flex items-center gap-2">
+                     <FileCode className="h-5 w-5" />
+                     <div>
+                       <CardTitle>Python Analysis Script</CardTitle>
+                       <CardDescription>
+                         The machine learning code that performs agency classification
+                       </CardDescription>
+                     </div>
+                   </div>
+                   <Button
+                     variant="ghost"
+                     size="sm"
+                     onClick={() => setIsPythonScriptExpanded(!isPythonScriptExpanded)}
+                     className="p-2"
+                   >
+                     {isPythonScriptExpanded ? (
+                       <ChevronDown className="h-4 w-4" />
+                     ) : (
+                       <ChevronRight className="h-4 w-4" />
+                     )}
+                   </Button>
                  </div>
-               </CardContent>
+               </CardHeader>
+               {isPythonScriptExpanded && (
+                 <CardContent>
+                   <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-200 p-6 rounded-lg font-mono text-sm overflow-x-auto border border-slate-700 shadow-lg">
+                     <div className="flex items-center gap-2 mb-4 pb-2 border-b border-slate-600">
+                       <div className="flex gap-1">
+                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                       </div>
+                       <span className="text-xs text-slate-400">agency_classifier.py</span>
+                     </div>
+                     <pre className="text-slate-300 leading-relaxed">{`import random, re, os, numpy as np, pandas as pd
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+
+RSEED = 42
+random.seed(RSEED)
+
+# --------------------------- 1. TRAINING DATA ---------------------------------
+self_agency_examples = [
+    "I think I'll try a gratitude circle next week.",
+    "I've decided to adapt the activity for my class.",
+    "I want to integrate drawing into the breathing exercise.",
+    "I can handle the reflection session on my own.",
+    "I need to tweak the timing to fit my schedule.",
+    "I will experiment with shorter transitions tomorrow.",
+    "I feel confident introducing this SEL kernel today.",
+    "I plan to pair students for peer feedback.",
+    "I've been brainstorming ways to improve engagement.",
+    "I intend to track student mood daily.",
+    "I'm going to rewrite the lesson to suit my students.",
+    "I just created my own version of the chant.",
+    "I should record observations after each session.",
+    "I've set my goal to increase participation.",
+    "I'll modify the prompt to fit remote learning.",
+    "I believe this approach suits my classroom needs.",
+    "I prefer to lead the activity myself.",
+    "I chose to focus on empathy this week.",
+    "I adjusted the activity length to 10 minutes.",
+    "I added a drawing component for visualization."
+]
+
+proxy_agency_examples = [
+    "I have no idea what to do for SEL today.",
+    "Okay, I'll go with that.",
+    "Sure, sounds good.",
+    "Alright, I'll just use your suggestion.",
+    "I'll stick with whatever you think is best.",
+    "Not sure, maybe you can pick something for me.",
+    "I'll leave it up to ChatSEL.",
+    "Sounds fine, let's do that.",
+    "I'm uncertain; please decide for me.",
+    "I'll follow the template as is.",
+    "That works, I'll use it.",
+    "Fine, I'll take that approach.",
+    "I'll rely on your guidance.",
+    "I'll just copy the example provided.",
+    "If you say so, I'll do it.",
+    "Okay then, I'll implement it.",
+    "I'll adopt the plan unchanged.",
+    "Whatever you recommend is fine.",
+    "I'll default to your suggestion.",
+    "I'll trust your judgment on this."
+]
+
+collective_agency_examples = [
+    "Let's co-create a transition chant.",
+    "Can we try this together?",
+    "We could build a student-led routine.",
+    "How about we develop a shared checklist?",
+    "Let's brainstorm alternatives as a team.",
+    "We can refine the idea collaboratively.",
+    "What if we involve students in the design?",
+    "Let's iterate on the strategy together.",
+    "We should prototype this approach together.",
+    "Can we work on a script jointly?",
+    "Why don't we draft it together?",
+    "We might adapt the exercise collectively.",
+    "Could we co-design a reflection prompt?",
+    "Let's test this and revise as a team.",
+    "We can co-plan the next lesson.",
+    "Together, we can enhance engagement.",
+    "Shall we fine-tune the activity collaboratively?",
+    "Let's jointly create rubrics for assessment.",
+    "We could co-author the classroom rules.",
+    "Let's partner on setting learning goals."
+]
+
+texts = self_agency_examples + proxy_agency_examples + collective_agency_examples
+labels = (["self"] * len(self_agency_examples) +
+          ["proxy"] * len(proxy_agency_examples) +
+          ["collective"] * len(collective_agency_examples))
+
+# --------------------------- 2. MODEL PIPELINE --------------------------------
+pipe = Pipeline([
+    ("tfidf", TfidfVectorizer(lowercase=True,
+                              ngram_range=(1, 2),
+                              stop_words="english",
+                              min_df=1)),
+    ("clf", LogisticRegression(max_iter=1000,
+                              class_weight="balanced",
+                              multi_class="ovr"))
+])
+
+# --------------------------- 3. TRAIN MODEL ----------------------------------
+pipe.fit(texts, labels)
+
+# --------------------------- 4. ANALYSIS FUNCTIONS ---------------------------
+teacher_line_re = re.compile(r"Teacher:\\s*(.*)", flags=re.I)
+
+def extract_teacher_lines(chat: str):
+    """Return list of teacher utterances from raw ChatSEL log."""
+    return [m.group(1).strip() for m in teacher_line_re.finditer(chat)]
+
+def analyze_chat_agency(chat: str):
+    """Return (aggregate_stats, line-level list[(msg, label)])."""
+    lines = extract_teacher_lines(chat)
+    if not lines:
+        return {"error": "No teacher messages found."}, []
+
+    line_preds = pipe.predict(lines)
+    line_probs = pipe.predict_proba(lines)
+
+    # Aggregate counts + mean confidence per class
+    agg = {"total_teacher_msgs": len(lines)}
+    for class_idx, class_name in enumerate(pipe.classes_):
+        mask = line_preds == class_name
+        agg[class_name] = {
+            "count": int(mask.sum()),
+            "share": float(mask.mean()),  # proportion of teacher lines
+            "avg_confidence": float(line_probs[mask, class_idx].mean() if mask.any() else 0.)
+        }
+
+    return agg, list(zip(lines, line_preds))
+
+# --------------------------- 5. EXAMPLE USAGE --------------------------------
+if __name__ == "__main__":
+    demo_chat = """
+    Teacher: I have no idea what to do for SEL today.
+    ChatSEL: How about a mindfulness breathing exercise?
+    Teacher: Okay, I'll go with that.
+    ChatSEL: Great! Here's how to do it...
+    Teacher: That sounds good. I think I'll try it next week.
+    ChatSEL: Wonderful idea!
+    Teacher: Let's co-create one now!
+    """
+
+    agg, lines = analyze_chat_agency(demo_chat)
+    print("=== Aggregated Results ===")
+    for k, v in agg.items():
+        print(f"{k}: {v}")
+    print("\\n=== Line-level Predictions ===")
+    for msg, lab in lines:
+        print(f"[{lab.upper():9}] {msg}")`}</pre>
+                   </div>
+                 </CardContent>
+               )}
              </Card>
            </CardContent>
          </Card>
