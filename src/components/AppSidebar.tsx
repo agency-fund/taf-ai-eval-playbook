@@ -12,7 +12,9 @@ import {
   Home,
   ChevronDown,
   ChevronRight,
-  BarChart3
+  BarChart3,
+  BarChart,
+  Activity
 } from "lucide-react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
@@ -48,7 +50,14 @@ const frameworkLevels = [
 ];
 
 const tools = [
-  { title: "Model Evaluation Workshop", url: "/tools/model-evaluation", icon: BarChart3 },
+  { title: "Model Evaluation", url: "/tools/model-evaluation", icon: BarChart3 },
+];
+
+const userEvaluationTools = [
+  { title: "Introduction to Agency Measurement", url: "/tools/user-evaluation-introduction", icon: BookOpen },
+  { title: "Behavioral Proxies", url: "/tools/user-evaluation-behavioral", icon: Activity },
+  { title: "Building Survey Metrics", url: "/tools/user-evaluation-metrics", icon: FileText },
+  { title: "NLP Analysis", url: "/tools/user-evaluation-nlp", icon: BarChart },
 ];
 
 export function AppSidebar() {
@@ -56,9 +65,11 @@ export function AppSidebar() {
   const navigate = useNavigate();
   const currentPath = location.pathname;
   const [isFrameworkExpanded, setIsFrameworkExpanded] = useState(false);
+  const [isUserEvaluationExpanded, setIsUserEvaluationExpanded] = useState(false);
 
   const isActive = (path: string) => currentPath === path;
   const isFrameworkActive = currentPath === "/framework" || currentPath.startsWith("/level");
+  const isUserEvaluationActive = currentPath.startsWith("/tools/user-evaluation");
   
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
     isActive 
@@ -75,6 +86,13 @@ export function AppSidebar() {
     navigate("/framework");
     // Toggle the subpages
     setIsFrameworkExpanded(!isFrameworkExpanded);
+  };
+
+  const handleUserEvaluationClick = () => {
+    // Navigate to the main user evaluation introduction page
+    navigate("/tools/user-evaluation-introduction");
+    // Toggle the subpages
+    setIsUserEvaluationExpanded(!isUserEvaluationExpanded);
   };
 
   return (
@@ -195,6 +213,59 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+
+              {/* User Evaluation Tools Toggle */}
+              <SidebarMenuItem>
+                <div className="space-y-1">
+                  <SidebarMenuButton 
+                    onClick={handleUserEvaluationClick}
+                    className={`transition-all duration-300 ease-in-out ${
+                      isUserEvaluationActive 
+                        ? "bg-taf-blue/15 text-taf-blue font-semibold border-r-4 border-taf-blue shadow-sm" 
+                        : "hover:bg-muted/50 text-black hover:text-foreground transition-colors"
+                    }`}
+                  >
+                    <Users className="h-4 w-4 transition-transform duration-300" />
+                    <span>User Evaluation</span>
+                    <div className="ml-auto transition-all duration-300 ease-in-out">
+                      {isUserEvaluationExpanded ? (
+                        <ChevronDown className="h-4 w-4 transform rotate-180 transition-transform duration-300" />
+                      ) : (
+                        <ChevronRight className="h-4 w-4 transform rotate-0 transition-transform duration-300" />
+                      )}
+                    </div>
+                  </SidebarMenuButton>
+                  
+                  {/* User Evaluation Subpages with Animation */}
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isUserEvaluationExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}>
+                    <div className="space-y-1 pt-1">
+                      {userEvaluationTools.map((tool, index) => (
+                        <div
+                          key={tool.title}
+                          className="transition-all duration-300 ease-in-out"
+                          style={{
+                            animationDelay: `${index * 100}ms`,
+                            transform: isUserEvaluationExpanded ? 'translateX(0)' : 'translateX(-10px)',
+                            opacity: isUserEvaluationExpanded ? 1 : 0
+                          }}
+                        >
+                          <SidebarMenuButton asChild>
+                            <NavLink 
+                              to={tool.url} 
+                              className={({ isActive }) => getSubNavCls({ isActive })}
+                            >
+                              <tool.icon className="h-4 w-4" />
+                              <span>{tool.title}</span>
+                            </NavLink>
+                          </SidebarMenuButton>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
