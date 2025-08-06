@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useLocation } from "react-router-dom";
 import InteractiveTools from "./InteractiveTools";
 import ModelEvaluation from "./ModelEvaluation";
 import UserEvaluationIntroduction from "./UserEvaluationIntroduction";
@@ -9,7 +9,19 @@ import UserEvaluationNLP from "./UserEvaluationNLP";
 
 const InteractiveToolsContainer = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeTab = searchParams.get("tab") || "overview";
+  const location = useLocation();
+  
+  // Map route paths to tab values
+  const getTabFromPath = (pathname: string) => {
+    if (pathname === "/tools/model-evaluation") return "model-evaluation";
+    if (pathname === "/tools/user-evaluation-introduction") return "user-intro";
+    if (pathname === "/tools/user-evaluation-behavioral") return "user-behavioral";
+    if (pathname === "/tools/user-evaluation-metrics") return "user-metrics";
+    if (pathname === "/tools/user-evaluation-nlp") return "user-nlp";
+    return "overview";
+  };
+
+  const activeTab = searchParams.get("tab") || getTabFromPath(location.pathname);
 
   const handleTabChange = (value: string) => {
     setSearchParams({ tab: value });
