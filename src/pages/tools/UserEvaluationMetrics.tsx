@@ -141,8 +141,7 @@ Always respond in a helpful, constructive manner. If the user's input is not a s
       {/* Section Goal */}
       <div className="mb-12">
         <div className="prose prose-lg max-w-none text-black space-y-6">
-          <h2 className="text-2xl font-bold mb-6">Section 3: Designing Short Self-Report Surveys to Measure Agency</h2>
-          <h3 className="text-xl font-bold mb-4">Section Goal</h3>
+          <h2 className="text-2xl font-bold mb-6">Section Goal</h2>
           <p>
             This section explains how to design concise, direct self-report survey items to measure psychological agency in AI-supported interactions, particularly with ChatSEL. You will learn how to write short micro-surveys that capture key aspects of user experience, fit naturally into chatbot workflows, and minimize respondent burden. You will also have the opportunity to draft and refine your own survey items based on these guidelines.
           </p>
@@ -188,10 +187,6 @@ Always respond in a helpful, constructive manner. If the user's input is not a s
           <h3 className="text-xl font-bold mb-4">Sample Survey Items by Type of Agency</h3>
           <p>
             Each form of psychological agency—self, proxy, and collective—has theoretical roots in social and cognitive psychology. Below are example survey items tailored to each type, many of which are adapted from validated psychological scales or existing literature on AI trust and user autonomy.
-          </p>
-          <p className="text-sm text-gray-600">
-            Emoji slider (e.g., passive 😐 to empowered 💪)<br/>
-            Disagree to Agree
           </p>
         </div>
       </div>
@@ -372,36 +367,19 @@ Always respond in a helpful, constructive manner. If the user's input is not a s
 
       {/* Footer Navigation */}
       <div className="border-t pt-8">
-        <div className="flex flex-wrap justify-between items-center gap-4">
-          <div className="flex gap-4">
-            <Button asChild variant="outline">
-              <Link to="/tools/user-evaluation-behavioral">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back: Behavioral Proxies
-              </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/tools/user-evaluation-nlp">
-                Next: NLP Analysis
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
-          </div>
-          
-          <div className="flex gap-4">
-            <Button asChild variant="outline" size="sm">
-              <Link to="/framework">
-                <BookOpen className="w-4 h-4 mr-2" />
-                Full AI Evaluation Playbook
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="sm">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Chong et al. (2021)
-              </a>
-            </Button>
-          </div>
+        <div className="flex justify-between items-center">
+          <Button asChild className="bg-taf-blue hover:bg-taf-blue/90 text-white">
+            <Link to="/tools/user-evaluation-behavioral">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back: Behavioral Proxies
+            </Link>
+          </Button>
+          <Button asChild className="bg-taf-blue hover:bg-taf-blue/90 text-white">
+            <Link to="/tools/user-evaluation-nlp">
+              Next: NLP Analysis
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

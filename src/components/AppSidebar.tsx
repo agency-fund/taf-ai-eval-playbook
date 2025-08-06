@@ -54,9 +54,9 @@ const tools = [
 ];
 
 const userEvaluationTools = [
-  { title: "Introduction to Agency Measurement", url: "/tools/user-evaluation-introduction", icon: BookOpen },
+  { title: "Agency Measurement", url: "/tools/user-evaluation-introduction", icon: BookOpen },
   { title: "Behavioral Proxies", url: "/tools/user-evaluation-behavioral", icon: Activity },
-  { title: "Building Survey Metrics", url: "/tools/user-evaluation-metrics", icon: FileText },
+  { title: "Survey Metrics", url: "/tools/user-evaluation-metrics", icon: FileText },
   { title: "NLP Analysis", url: "/tools/user-evaluation-nlp", icon: BarChart },
 ];
 

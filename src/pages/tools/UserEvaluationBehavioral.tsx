@@ -147,7 +147,7 @@ const UserEvaluationBehavioral = () => {
             ← Back to Tools
           </Link>
         </div>
-        <h1 className="text-4xl font-bold mb-4">On-Platform Behavioral Proxies</h1>
+        <h1 className="text-4xl font-bold mb-4">Understanding On-Platform Behavioral Proxies</h1>
         <p className="text-xl text-black leading-relaxed max-w-4xl">
           Exploring how observable behavior in ChatSEL can indicate different forms of psychological agency.
         </p>
@@ -411,36 +411,19 @@ const UserEvaluationBehavioral = () => {
 
       {/* Footer Navigation */}
       <div className="border-t pt-8">
-        <div className="flex flex-wrap justify-between items-center gap-4">
-          <div className="flex gap-4">
-            <Button asChild variant="outline">
-              <Link to="/tools/user-evaluation-introduction">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back: Introduction to Agency Measurement
-              </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/tools/user-evaluation-metrics">
-                Next: Building Survey Metrics
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
-          </div>
-          
-          <div className="flex gap-4">
-            <Button asChild variant="outline" size="sm">
-              <Link to="/framework">
-                <BookOpen className="w-4 h-4 mr-2" />
-                Full AI Evaluation Playbook
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="sm">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Chong et al. (2021)
-              </a>
-            </Button>
-          </div>
+        <div className="flex justify-between items-center">
+          <Button asChild className="bg-taf-blue hover:bg-taf-blue/90 text-white">
+            <Link to="/tools/user-evaluation-introduction">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back: Agency Measurement
+            </Link>
+          </Button>
+          <Button asChild className="bg-taf-blue hover:bg-taf-blue/90 text-white">
+            <Link to="/tools/user-evaluation-metrics">
+              Next: Survey Metrics
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

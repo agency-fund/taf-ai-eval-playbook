@@ -251,8 +251,7 @@ ChatSEL: Perfect! We can start with a simple pattern and let students add their 
       {/* Section Goal */}
       <div className="mb-12">
         <div className="prose prose-lg max-w-none text-black space-y-6">
-          <h2 className="text-2xl font-bold mb-6">Section 4: Using Natural Language Processing (NLP) to Analyze Chat Histories for Signs of Teacher Agency</h2>
-          <h3 className="text-xl font-bold mb-4">Section Goal</h3>
+          <h2 className="text-2xl font-bold mb-6">Section Goal</h2>
           <p>
             This section introduces methods for using natural language processing (NLP) to analyze conversation logs between teachers and AI tools like ChatSEL. The goal is to identify psychological agency—such as confidence, reliance, or collaboration—by examining the words users choose, rather than relying solely on behavioral data or survey responses.
           </p>
@@ -900,36 +899,19 @@ if __name__ == "__main__":
 
       {/* Footer Navigation */}
       <div className="border-t pt-8">
-        <div className="flex flex-wrap justify-between items-center gap-4">
-          <div className="flex gap-4">
-            <Button asChild variant="outline">
-              <Link to="/tools/user-evaluation-metrics">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back: Building Survey Metrics
-              </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/level4">
-                Next: Level 4 - Impact Evaluation
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
-          </div>
-          
-          <div className="flex gap-4">
-            <Button asChild variant="outline" size="sm">
-              <Link to="/framework">
-                <BookOpen className="w-4 h-4 mr-2" />
-                Full AI Evaluation Playbook
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="sm">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Chong et al. (2021)
-              </a>
-            </Button>
-          </div>
+        <div className="flex justify-between items-center">
+          <Button asChild className="bg-taf-blue hover:bg-taf-blue/90 text-white">
+            <Link to="/tools/user-evaluation-metrics">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back: Survey Metrics
+            </Link>
+          </Button>
+          <Button asChild className="bg-taf-blue hover:bg-taf-blue/90 text-white">
+            <Link to="/level4">
+              Next: Level 4 - Impact Evaluation
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
         </div>
       </div>
     </div>
