@@ -32,7 +32,7 @@ const InteractiveToolsContainer = () => {
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
           <TabsList className="grid w-full grid-cols-6 mb-8">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
+            <TabsTrigger value="overview">Interactive Tools</TabsTrigger>
             <TabsTrigger value="model-evaluation">Model Evaluation</TabsTrigger>
             <TabsTrigger value="user-intro">User Intro</TabsTrigger>
             <TabsTrigger value="user-behavioral">User Behavioral</TabsTrigger>
