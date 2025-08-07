@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/components/ui/use-toast";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import {
   BarChart3,
   Beaker,
@@ -15,6 +16,7 @@ import {
   LineChart,
   Shuffle,
   Target,
+  Info,
 } from "lucide-react";
 import {
   ResponsiveContainer,
@@ -202,6 +204,46 @@ const ABExperiments: React.FC = () => {
         </p>
       </header>
 
+      <section className="mb-8">
+        <Card>
+          <CardHeader>
+            <CardTitle>Hypotheses and Variants</CardTitle>
+            <CardDescription>What each step tests and how variants differ</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <div className="font-semibold">Step 1 — Engagement hypothesis</div>
+              <p className="text-sm text-muted-foreground">
+                Variant B (domain‑tagged, metacognitive prompts) will increase teacher engagement in ChatSEL compared to
+                Variant A (current prompting) by at least your MDE (minimum detectable effect) in percentage points.
+              </p>
+            </div>
+            <div>
+              <div className="font-semibold">Step 2 — SEL practice hypothesis</div>
+              <p className="text-sm text-muted-foreground">
+                Variant B will improve teachers’ self‑reported SEL pedagogical practices across the five domains (Modeling,
+                Practice Promotion, Transfer Promotion, Elaboration, Validation) versus Variant A.
+              </p>
+            </div>
+            <div>
+              <div className="font-semibold">Variants</div>
+              <ul className="list-disc pl-5 text-sm text-muted-foreground">
+                <li><span className="font-medium">Variant A</span>: Current ChatSEL prompting and recommendations without explicit domain tags.</li>
+                <li><span className="font-medium">Variant B</span>: Recommendations are explicitly tagged by SEL pedagogy to support teacher metacognition.</li>
+              </ul>
+            </div>
+            <Alert>
+              <Info className="h-4 w-4" />
+              <AlertTitle>About attrition vs. engagement data</AlertTitle>
+              <AlertDescription>
+                Engagement outcomes use on‑platform telemetry, so no survey attrition is expected. SEL practice outcomes rely on
+                self‑report surveys—plan for attrition (e.g., 10–30%) in sample size and duration.
+              </AlertDescription>
+            </Alert>
+          </CardContent>
+        </Card>
+      </section>
+
       <main>
         <Tabs value={tab} onValueChange={setTab}>
           <TabsList className="grid w-full grid-cols-4">
@@ -303,6 +345,16 @@ const ABExperiments: React.FC = () => {
                         <Badge variant="secondary">Outcome: Engagement</Badge>
                       </div>
                     </div>
+                  </div>
+                  <div className="mt-4">
+                    <Alert>
+                      <Info className="h-4 w-4" />
+                      <AlertTitle>No attrition expected</AlertTitle>
+                      <AlertDescription>
+                        Engagement is measured from on‑platform data (e.g., sessions, return rate), so you typically will not see
+                        survey‑related attrition.
+                      </AlertDescription>
+                    </Alert>
                   </div>
                   <div className="mt-6 flex items-center justify-between">
                     <div className="text-sm text-muted-foreground">
@@ -484,6 +536,17 @@ const ABExperiments: React.FC = () => {
                     </div>
                   </div>
 
+                  <div className="mt-4">
+                    <Alert>
+                      <Info className="h-4 w-4" />
+                      <AlertTitle>Expect survey attrition</AlertTitle>
+                      <AlertDescription>
+                        SEL practice outcomes depend on self‑report surveys. Plan for attrition (e.g., 10–30%) when choosing sample size
+                        and duration.
+                      </AlertDescription>
+                    </Alert>
+                  </div>
+
                   <div className="mt-6 flex items-center justify-between">
                     <div className="text-sm text-muted-foreground">
                       Variant A: Standard recommendations • Variant B: Domain‑tagged, metacognitive prompts
@@ -507,8 +570,8 @@ const ABExperiments: React.FC = () => {
                     <div className="h-72">
                       <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={selResults.data}>
-                          <XAxis dataKey="domain" />
-                          <YAxis domain={[1, 5]} />
+                          <XAxis dataKey="domain" label={{ value: "Domain", position: "insideBottom", offset: -5 }} />
+                          <YAxis domain={[1, 5]} label={{ value: "Score (1–5)", angle: -90, position: "insideLeft" }} />
                           <Tooltip />
                           <Legend />
                           <Bar dataKey="A" name="Variant A" fill="hsl(var(--muted-foreground))" radius={[6,6,0,0]} />
