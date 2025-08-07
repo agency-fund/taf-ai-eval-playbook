@@ -26,6 +26,7 @@ import {
   YAxis,
   Tooltip,
   Legend,
+  ErrorBar,
 } from "recharts";
 
 const DOMAINS = [
@@ -103,7 +104,7 @@ const ABExperiments: React.FC = () => {
   }>(null);
   const [gateOverride, setGateOverride] = useState(false);
   const [selResults, setSelResults] = useState<null | {
-    data: { domain: Domain; A: number; B: number }[];
+    data: { domain: Domain; A: number; B: number; A_err: number; B_err: number }[];
     avgDiff: number;
   }>(null);
 
@@ -178,7 +179,9 @@ const ABExperiments: React.FC = () => {
       const randomBump = (seededRandom(seed + idx) - 0.3) * 0.5; // -0.15 to +0.35 approx
       const targetedBonus = emphasize ? 0.25 : 0.05; // emphasize domains get more lift
       const B = Math.max(1, Math.min(5, A + targetedBonus + randomBump));
-      return { domain, A: +A.toFixed(2), B: +B.toFixed(2) };
+      const A_err = +(0.12 + seededRandom(seed + 100 + idx) * 0.15).toFixed(2);
+      const B_err = +(0.12 + seededRandom(seed + 200 + idx) * 0.15).toFixed(2);
+      return { domain, A: +A.toFixed(2), B: +B.toFixed(2), A_err, B_err };
     });
 
     const avgDiff =
@@ -581,8 +584,12 @@ const ABExperiments: React.FC = () => {
                           <YAxis domain={[1, 5]} label={{ value: "Score (1–5)", angle: -90, position: "insideLeft" }} />
                           <Tooltip />
                           <Legend />
-                          <Bar dataKey="A" name="Variant A" fill="hsl(var(--muted-foreground))" radius={[6,6,0,0]} />
-                          <Bar dataKey="B" name="Variant B" fill="hsl(var(--primary))" radius={[6,6,0,0]} />
+                          <Bar dataKey="A" name="Variant A" fill="hsl(var(--muted-foreground))" radius={[6,6,0,0]}>
+                            <ErrorBar dataKey="A_err" width={6} stroke="hsl(var(--muted-foreground))" />
+                          </Bar>
+                          <Bar dataKey="B" name="Variant B" fill="hsl(var(--primary))" radius={[6,6,0,0]}>
+                            <ErrorBar dataKey="B_err" width={6} stroke="hsl(var(--primary))" />
+                          </Bar>
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
