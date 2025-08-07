@@ -168,25 +168,26 @@ const L3MeasurePractice: React.FC = () => {
     <div className="max-w-6xl mx-auto px-6 py-12">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-4 text-black">L3: Measure Practice</h1>
+        <h1 className="text-4xl font-bold mb-4 text-black">Measuring SEL Practices</h1>
         <p className="text-xl text-black mb-6">
           Measuring Teacher Pedagogical Practices as a result of using ChatSEL
         </p>
         
         {/* Citation Card */}
-        <Card className="mb-8 bg-gradient-to-r from-blue-50 to-blue-100 border-blue-200">
+        <Card className="mb-8 bg-gradient-to-r from-taf-yellow/20 to-taf-yellow/10 border-taf-yellow/30">
           <CardContent className="pt-6">
             <div className="flex items-start space-x-3">
-              <FileText className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
-              <div>
-                <p className="text-sm text-black">
+              <FileText className="w-5 h-5 text-taf-blue mt-1 flex-shrink-0" />
+              <div className="flex-1">
+                <p className="text-sm text-black mb-2">
                   <strong>Citation:</strong> Zieher, A. K., Bailey, C. S., Cipriano, C., McNaboe, T., Smith, K., & Strambler, M. J. (2024). 
-                  <a href="https://www.sciencedirect.com/science/article/pii/S2773233924000044" 
-                     className="text-blue-600 hover:text-blue-800 underline">
-                    Considering the "How" of SEL: A framework for the pedagogies of social and emotional learning
-                  </a>. 
+                  <em>Considering the "How" of SEL: A framework for the pedagogies of social and emotional learning</em>. 
                   <em>Social and Emotional Learning: Research, Practice, and Policy</em>, <em>3</em>, 100030.
                 </p>
+                <a href="https://www.sciencedirect.com/science/article/pii/S2773233924000044" 
+                   className="inline-flex items-center text-taf-blue hover:text-taf-blue/80 font-medium text-sm transition-colors">
+                  View Paper →
+                </a>
               </div>
             </div>
           </CardContent>
@@ -264,20 +265,18 @@ const L3MeasurePractice: React.FC = () => {
               
               return (
                 <Card key={pedagogy.id} className={`${pedagogy.color} border-2`}>
-                  <CardHeader>
+                  <CardHeader 
+                    className="cursor-pointer hover:bg-opacity-80 transition-colors"
+                    onClick={() => toggleSection(pedagogy.id)}
+                  >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <IconComponent className="w-6 h-6 text-taf-blue" />
                         <CardTitle className="text-xl text-black">{pedagogy.title}</CardTitle>
                       </div>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => toggleSection(pedagogy.id)}
-                        className="text-taf-blue hover:text-taf-blue/80"
-                      >
+                      <div className="text-taf-blue transition-transform duration-200">
                         {isExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-                      </Button>
+                      </div>
                     </div>
                     <CardDescription className="text-black">
                       {pedagogy.description}
@@ -329,20 +328,18 @@ const L3MeasurePractice: React.FC = () => {
               
               return (
                 <Card key={pedagogy.id} className={`${pedagogy.color} border-2`}>
-                  <CardHeader>
+                  <CardHeader 
+                    className="cursor-pointer hover:bg-opacity-80 transition-colors"
+                    onClick={() => toggleSection(pedagogy.id)}
+                  >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <IconComponent className="w-6 h-6 text-taf-blue" />
                         <CardTitle className="text-xl text-black">{pedagogy.title} Measures</CardTitle>
                       </div>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => toggleSection(pedagogy.id)}
-                        className="text-taf-blue hover:text-taf-blue/80"
-                      >
+                      <div className="text-taf-blue transition-transform duration-200">
                         {isExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-                      </Button>
+                      </div>
                     </div>
                   </CardHeader>
                   
@@ -378,7 +375,7 @@ const L3MeasurePractice: React.FC = () => {
       {/* Navigation Footer */}
       <div className="flex justify-between mt-12">
         <Button variant="outline" className="border-taf-blue text-taf-blue hover:bg-taf-blue hover:text-white">
-          ← Back to User Evaluation Workshop
+          ← Back to L3: Measuring Agency
         </Button>
         <Button className="bg-taf-blue hover:bg-taf-blue/90 text-white">
           Next: Implementation Guide →

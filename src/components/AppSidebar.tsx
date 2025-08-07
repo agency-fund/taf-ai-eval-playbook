@@ -50,8 +50,8 @@ const frameworkLevels = [
 ];
 
 const tools = [
-  { title: "L1: Evaluate AI Models", url: "/tools/model-evaluation", icon: BarChart3 },
-  { title: "L3: Measure Practice", url: "/tools/l3-measure-practice", icon: Target },
+  { title: "L1: Evaluating AI Models", url: "/tools/model-evaluation", icon: BarChart3 },
+  { title: "L3: Measuring SEL Practice", url: "/tools/l3-measure-practice", icon: Target },
 ];
 
 const userEvaluationTools = [
@@ -209,7 +209,7 @@ export function AppSidebar() {
                     className={({ isActive }) => getNavCls({ isActive })}
                   >
                     <BarChart3 className="h-4 w-4" />
-                    <span>L1: Evaluate AI Models</span>
+                    <span>L1: Evaluating AI Models</span>
                   </NavLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -226,7 +226,7 @@ export function AppSidebar() {
                     }`}
                   >
                     <Users className="h-4 w-4 transition-transform duration-300" />
-                    <span>L3: Measure Agency</span>
+                    <span>L3: Measuring Agency</span>
                     <div className="ml-auto transition-all duration-300 ease-in-out">
                       {isUserEvaluationExpanded ? (
                         <ChevronDown className="h-4 w-4 transform rotate-180 transition-transform duration-300" />
@@ -275,7 +275,7 @@ export function AppSidebar() {
                     className={({ isActive }) => getNavCls({ isActive })}
                   >
                     <Target className="h-4 w-4" />
-                    <span>L3: Measure Practice</span>
+                    <span>L3: Measuring SEL Practice</span>
                   </NavLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
