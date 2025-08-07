@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Brain, Users, Target, BarChart3 } from "lucide-react";
+import { ArrowRight, Brain, Users, Target, BarChart3, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const InteractiveTools = () => {
@@ -39,6 +39,13 @@ const InteractiveTools = () => {
       description: "Evaluate natural language processing capabilities and analyze text-based interactions within your AI application.",
       link: "/tools/user-evaluation-nlp",
       category: "User Level"
+    },
+    {
+      icon: Wrench,
+      title: "A/B Experiments Workshop",
+      description: "Plan and simulate A/B tests for ChatSEL: engagement and teacher SEL practice across Modeling, Practice, Transfer, Elaboration, Validation.",
+      link: "/tools/ab-experiments",
+      category: "Workshop"
     }
   ];
 

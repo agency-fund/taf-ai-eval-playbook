@@ -23,6 +23,7 @@ import UserEvaluationBehavioral from "./pages/tools/UserEvaluationBehavioral";
 import UserEvaluationMetrics from "./pages/tools/UserEvaluationMetrics";
 import UserEvaluationNLP from "./pages/tools/UserEvaluationNLP";
 import L3MeasurePractice from "./pages/tools/L3MeasurePractice";
+import ABExperiments from "./pages/tools/ABExperiments";
 import NotFound from "./pages/NotFound";
 import Authors from "./pages/Authors";
 
@@ -55,6 +56,7 @@ const App = () => (
             <Route path="/tools/user-evaluation-metrics" element={<UserEvaluationMetrics />} />
             <Route path="/tools/user-evaluation-nlp" element={<UserEvaluationNLP />} />
             <Route path="/tools/l3-measure-practice" element={<L3MeasurePractice />} />
+            <Route path="/tools/ab-experiments" element={<ABExperiments />} />
             <Route path="/authors" element={<Authors />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

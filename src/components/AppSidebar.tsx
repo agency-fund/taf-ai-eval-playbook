@@ -279,6 +279,19 @@ export function AppSidebar() {
                   </NavLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
+
+              {/* A/B Experiments Workshop */}
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <NavLink 
+                    to="/tools/ab-experiments" 
+                    className={({ isActive }) => getNavCls({ isActive })}
+                  >
+                    <Wrench className="h-4 w-4" />
+                    <span>A/B Experiments Workshop</span>
+                  </NavLink>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
