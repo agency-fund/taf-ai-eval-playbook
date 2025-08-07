@@ -51,6 +51,7 @@ const frameworkLevels = [
 
 const tools = [
   { title: "L1: Evaluate AI Models", url: "/tools/model-evaluation", icon: BarChart3 },
+  { title: "L3: Measure Practice", url: "/tools/l3-measure-practice", icon: Target },
 ];
 
 const userEvaluationTools = [
@@ -200,19 +201,18 @@ export function AppSidebar() {
           <SidebarGroupLabel>Interactive Tools</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {tools.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <NavLink 
-                      to={item.url} 
-                      className={({ isActive }) => getNavCls({ isActive })}
-                    >
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
-                    </NavLink>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {/* L1: Evaluate AI Models */}
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <NavLink 
+                    to="/tools/model-evaluation" 
+                    className={({ isActive }) => getNavCls({ isActive })}
+                  >
+                    <BarChart3 className="h-4 w-4" />
+                    <span>L1: Evaluate AI Models</span>
+                  </NavLink>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
 
               {/* User Evaluation Tools Toggle */}
               <SidebarMenuItem>
@@ -265,6 +265,19 @@ export function AppSidebar() {
                     </div>
                   </div>
                 </div>
+              </SidebarMenuItem>
+
+              {/* L3: Measure Practice */}
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <NavLink 
+                    to="/tools/l3-measure-practice" 
+                    className={({ isActive }) => getNavCls({ isActive })}
+                  >
+                    <Target className="h-4 w-4" />
+                    <span>L3: Measure Practice</span>
+                  </NavLink>
+                </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
