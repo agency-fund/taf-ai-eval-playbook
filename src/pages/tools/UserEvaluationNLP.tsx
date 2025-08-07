@@ -887,10 +887,10 @@ if __name__ == "__main__":
          </Card>
        </div>
 
-      {/* Final Takeaway */}
+      {/* Summary */}
       <div className="mb-12">
         <div className="prose prose-lg max-w-none text-black space-y-6">
-          <h3 className="text-xl font-bold mb-4">Final Takeaway</h3>
+          <h3 className="text-xl font-bold mb-4">Summary</h3>
           <p>
             NLP allows researchers and designers to move beyond surface-level metrics and directly examine how users express psychological agency through language. While these methods are not definitive on their own, they offer a valuable complement to behavioral data and surveys. By combining these approaches, we can develop a more nuanced and real-time understanding of how tools like ChatSEL shape—and respond to—teacher agency in practice.
           </p>

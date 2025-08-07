@@ -50,7 +50,7 @@ const frameworkLevels = [
 ];
 
 const tools = [
-  { title: "Model Evaluation", url: "/tools/model-evaluation", icon: BarChart3 },
+  { title: "L1: Evaluate AI Models", url: "/tools/model-evaluation", icon: BarChart3 },
 ];
 
 const userEvaluationTools = [
@@ -226,7 +226,7 @@ export function AppSidebar() {
                     }`}
                   >
                     <Users className="h-4 w-4 transition-transform duration-300" />
-                    <span>User Evaluation</span>
+                    <span>L3: Measure Agency</span>
                     <div className="ml-auto transition-all duration-300 ease-in-out">
                       {isUserEvaluationExpanded ? (
                         <ChevronDown className="h-4 w-4 transform rotate-180 transition-transform duration-300" />
