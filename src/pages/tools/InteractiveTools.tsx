@@ -42,10 +42,10 @@ const InteractiveTools = () => {
     },
     {
       icon: Wrench,
-      title: "A/B Experiments Workshop",
+      title: "Product and User Evaluation - Testing the Impact of ChatSEL Features on Teacher Engagement and SEL Practices",
       description: "Plan and simulate A/B tests for ChatSEL: engagement and teacher SEL practice across Modeling, Practice, Transfer, Elaboration, Validation.",
       link: "/tools/ab-experiments",
-      category: "Workshop"
+      category: "Product and User Level"
     }
   ];
 

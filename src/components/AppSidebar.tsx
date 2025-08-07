@@ -288,7 +288,7 @@ export function AppSidebar() {
                     className={({ isActive }) => getNavCls({ isActive })}
                   >
                     <Wrench className="h-4 w-4" />
-                    <span>A/B Experiments Workshop</span>
+                    <span>L2-L3: A/B Experiments</span>
                   </NavLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>

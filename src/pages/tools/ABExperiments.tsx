@@ -200,8 +200,8 @@ const ABExperiments: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto px-6 py-10">
       <header className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight">A/B Experiments Workshop</h1>
-        <p className="text-muted-foreground mt-2">
+        <h1 className="text-4xl font-bold mb-4 text-black">Testing the Impact of ChatSEL Features on Teacher Engagement and SEL Practices through A/B Experiments</h1>
+        <p className="text-xl text-black mb-6">
           Plan and simulate two experiment series for ChatSEL: first optimize user engagement,
           then focus on teacher SEL pedagogical practices across Modeling, Practice, Transfer, Elaboration, and Validation.
         </p>
