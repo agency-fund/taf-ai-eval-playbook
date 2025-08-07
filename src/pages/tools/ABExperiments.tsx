@@ -569,8 +569,15 @@ const ABExperiments: React.FC = () => {
                   {selResults ? (
                     <div className="h-72">
                       <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={selResults.data}>
-                          <XAxis dataKey="domain" label={{ value: "Domain", position: "insideBottom", offset: -5 }} />
+                        <BarChart data={selResults.data} margin={{ top: 10, right: 16, bottom: 32, left: 16 }}>
+                          <XAxis
+                            dataKey="domain"
+                            interval={0}
+                            tick={{ fontSize: 12 }}
+                            angle={-12}
+                            tickMargin={10}
+                            height={50}
+                          />
                           <YAxis domain={[1, 5]} label={{ value: "Score (1–5)", angle: -90, position: "insideLeft" }} />
                           <Tooltip />
                           <Legend />
