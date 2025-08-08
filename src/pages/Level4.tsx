@@ -44,7 +44,7 @@ const Level4 = () => {
         <Card className="border-0 shadow-card bg-taf-yellow/10">
           <CardHeader>
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
+              <div className="w-16 h-16 bg-green-100 text-green-700 rounded-lg flex items-center justify-center">
                 <BarChart3 className="w-8 h-8" />
               </div>
               <div>
