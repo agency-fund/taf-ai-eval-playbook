@@ -51,7 +51,7 @@ const frameworkLevels = [
 
 const tools = [
   { title: "L1: Evaluating AI Models", url: "/tools/model-evaluation", icon: BarChart3 },
-  { title: "L3: Measuring SEL Practice", url: "/tools/l3-measure-practice", icon: Target },
+  { title: "L3: Measuring Behavior", url: "/tools/l3-measure-practice", icon: Target },
 ];
 
 const userEvaluationTools = [
@@ -275,7 +275,7 @@ export function AppSidebar() {
                     className={({ isActive }) => getNavCls({ isActive })}
                   >
                     <Target className="h-4 w-4" />
-                    <span>L3: Measuring SEL Practice</span>
+                    <span>L3: Measuring Behavior</span>
                   </NavLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
