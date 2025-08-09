@@ -9,9 +9,9 @@
 > "Evals are surprisingly often all you need."  
 > — *Greg Brockman, Co-founder of OpenAI*
 
-We agree — **but only if we’re clear on what “evaluation” really means.**
+We agree — **but only if we're clear on what "evaluation" really means.**
 
-This playbook is designed for practitioners, funders, and policymakers working at the frontier of **Generative AI (GenAI)** in the social sector. It offers a practical, structured approach to AI evaluation that goes beyond model performance — focusing instead on **real, measurable impact on people’s lives**.
+This playbook is designed for practitioners, funders, and policymakers working at the frontier of **Generative AI (GenAI)** in the social sector. It offers a practical, structured approach to AI evaluation that goes beyond model performance — focusing instead on **real, measurable impact on people's lives**.
 
 This resource is maintained by [The Agency Fund](https://agencyfund.org) as part of our broader effort to make AI more equitable, effective, and accountable in global development.
 
@@ -21,7 +21,7 @@ This resource is maintained by [The Agency Fund](https://agencyfund.org) as part
 
 In 2025, The Agency Fund launched the **AI for Global Development (AI4GD)** accelerator in collaboration with [OpenAI](https://openai.com) and the [Center for Global Development (CGD)](https://cgdev.org). The goal: support high-impact GenAI solutions across **education, health, and agriculture** — and learn how to evaluate them meaningfully.
 
-Despite strong interest in “evaluation,” we found no shared playbook. Social sector actors are using a patchwork of evaluation tools — often defaulting to RCTs when they may not be appropriate. Our playbook addresses this gap with a structured, adaptable framework.
+Despite strong interest in "evaluation," we found no shared playbook. Social sector actors are using a patchwork of evaluation tools — often defaulting to RCTs when they may not be appropriate. Our playbook addresses this gap with a structured, adaptable framework.
 
 ---
 
@@ -48,7 +48,7 @@ Each level builds on the last — but requires **distinct methods, skillsets, an
 
 ---
 
-## 📚 What’s in the Playbook?
+## 📚 What's in the Playbook?
 
 - A detailed explanation of the four levels
 - Examples from the AI4GD accelerator
@@ -66,7 +66,7 @@ This playbook is a **living document**. Current content is based on:
 - Field insights from AI4GD implementation
 - Ongoing input from behavioral researchers, economists, and technical experts
 
-🔄 **Next steps:** We’re working to co-develop shared evaluation tools, refine methods, and publish field-tested guidance.
+🔄 **Next steps:** We're working to co-develop shared evaluation tools, refine methods, and publish field-tested guidance.
 
 ---
 
@@ -94,6 +94,37 @@ npm install
 # Start development server
 npm run dev
 ```
+
+### Google Analytics Configuration
+
+This project includes Google Analytics 4 (GA4) tracking for all pages. To configure Google Analytics:
+
+1. **Get your GA4 Measurement ID**:
+   - Go to [Google Analytics](https://analytics.google.com/)
+   - Create a new property or use an existing one
+   - Copy your Measurement ID (format: `G-XXXXXXXXXX`)
+
+2. **Update the configuration**:
+   - Replace `G-XXXXXXXXXX` in `src/hooks/useGoogleAnalytics.ts` (line 12)
+   - Replace `G-XXXXXXXXXX` in `index.html` (lines 30 and 33)
+
+3. **Verify tracking**:
+   - Open your browser's developer tools
+   - Check the Network tab for requests to `googletagmanager.com`
+   - Use the Google Analytics Real-Time reports to confirm page views are being tracked
+
+**Features included**:
+- Automatic page view tracking on route changes
+- Custom event tracking capability via the `trackEvent` function
+- SEO-friendly script loading in the HTML head
+- React Router integration for SPA navigation tracking
+
+**Privacy considerations**:
+- The implementation respects user privacy and follows GDPR guidelines
+- Consider adding a cookie consent banner for EU users
+- Review your privacy policy to include analytics tracking
+
+---
 
 ## 📬 Contact
 
