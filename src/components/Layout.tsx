@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
 import { Home, Github } from "lucide-react";
+import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,6 +12,9 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const navigate = useNavigate();
+  
+  // Initialize Google Analytics
+  useGoogleAnalytics();
 
   useEffect(() => {
     window.scrollTo(0, 0);
