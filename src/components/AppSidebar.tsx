@@ -49,28 +49,25 @@ const frameworkLevels = [
   { title: "Level 4: Impact Evaluation", url: "/level4", icon: Target },
 ];
 
-const tools = [
+const interactiveTools = [
   { title: "L1: Evaluating AI Models", url: "/tools/model-evaluation", icon: BarChart3 },
+  { title: "L3: Measuring Agency", url: "/tools/user-evaluation-introduction", icon: Users },
   { title: "L3: Measuring Behavior", url: "/tools/l3-measure-practice", icon: Target },
+  { title: "L2-L3: A/B Experiments", url: "/tools/ab-experiments", icon: Wrench },
 ];
 
-const userEvaluationTools = [
-  { title: "Agency Measurement", url: "/tools/user-evaluation-introduction", icon: BookOpen },
-  { title: "Behavioral Proxies", url: "/tools/user-evaluation-behavioral", icon: Activity },
-  { title: "Survey Metrics", url: "/tools/user-evaluation-metrics", icon: FileText },
-  { title: "NLP Analysis", url: "/tools/user-evaluation-nlp", icon: BarChart },
-];
+// userEvaluationTools array removed as it's no longer needed
 
 export function AppSidebar() {
   const location = useLocation();
   const navigate = useNavigate();
   const currentPath = location.pathname;
   const [isFrameworkExpanded, setIsFrameworkExpanded] = useState(false);
-  const [isUserEvaluationExpanded, setIsUserEvaluationExpanded] = useState(false);
+  const [isInteractiveToolsExpanded, setIsInteractiveToolsExpanded] = useState(true);
 
   const isActive = (path: string) => currentPath === path;
   const isFrameworkActive = currentPath === "/framework" || currentPath.startsWith("/level");
-  const isUserEvaluationActive = currentPath.startsWith("/tools/user-evaluation");
+  const isInteractiveToolsActive = currentPath.startsWith("/tools/");
   
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
     isActive 
@@ -89,11 +86,11 @@ export function AppSidebar() {
     setIsFrameworkExpanded(!isFrameworkExpanded);
   };
 
-  const handleUserEvaluationClick = () => {
-    // Navigate to the main user evaluation introduction page
-    navigate("/tools/user-evaluation-introduction");
+  const handleInteractiveToolsClick = () => {
+    // Navigate to the interactive tools page
+    navigate("/tools");
     // Toggle the subpages
-    setIsUserEvaluationExpanded(!isUserEvaluationExpanded);
+    setIsInteractiveToolsExpanded(!isInteractiveToolsExpanded);
   };
 
   return (
@@ -201,34 +198,21 @@ export function AppSidebar() {
           <SidebarGroupLabel>Interactive Tools</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {/* L1: Evaluate AI Models */}
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <NavLink 
-                    to="/tools/model-evaluation" 
-                    className={({ isActive }) => getNavCls({ isActive })}
-                  >
-                    <BarChart3 className="h-4 w-4" />
-                    <span>L1: Evaluating AI Models</span>
-                  </NavLink>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-
-              {/* User Evaluation Tools Toggle */}
+              {/* Interactive Tools Toggle */}
               <SidebarMenuItem>
                 <div className="space-y-1">
                   <SidebarMenuButton 
-                    onClick={handleUserEvaluationClick}
+                    onClick={handleInteractiveToolsClick}
                     className={`transition-all duration-300 ease-in-out ${
-                      isUserEvaluationActive 
+                      isInteractiveToolsActive 
                         ? "bg-taf-blue/15 text-taf-blue font-semibold border-r-4 border-taf-blue shadow-sm" 
                         : "hover:bg-muted/50 text-black hover:text-foreground transition-colors"
                     }`}
                   >
-                    <Users className="h-4 w-4 transition-transform duration-300" />
-                    <span>L3: Measuring Agency</span>
+                    <Wrench className="h-4 w-4 transition-transform duration-300" />
+                    <span>Interactive Tools</span>
                     <div className="ml-auto transition-all duration-300 ease-in-out">
-                      {isUserEvaluationExpanded ? (
+                      {isInteractiveToolsExpanded ? (
                         <ChevronDown className="h-4 w-4 transform rotate-180 transition-transform duration-300" />
                       ) : (
                         <ChevronRight className="h-4 w-4 transform rotate-0 transition-transform duration-300" />
@@ -236,19 +220,19 @@ export function AppSidebar() {
                     </div>
                   </SidebarMenuButton>
                   
-                  {/* User Evaluation Subpages with Animation */}
+                  {/* Interactive Tools Subpages with Animation */}
                   <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isUserEvaluationExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    isInteractiveToolsExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   }`}>
                     <div className="space-y-1 pt-1">
-                      {userEvaluationTools.map((tool, index) => (
+                      {interactiveTools.map((tool, index) => (
                         <div
                           key={tool.title}
                           className="transition-all duration-300 ease-in-out"
                           style={{
                             animationDelay: `${index * 100}ms`,
-                            transform: isUserEvaluationExpanded ? 'translateX(0)' : 'translateX(-10px)',
-                            opacity: isUserEvaluationExpanded ? 1 : 0
+                            transform: isInteractiveToolsExpanded ? 'translateX(0)' : 'translateX(-10px)',
+                            opacity: isInteractiveToolsExpanded ? 1 : 0
                           }}
                         >
                           <SidebarMenuButton asChild>
@@ -265,32 +249,6 @@ export function AppSidebar() {
                     </div>
                   </div>
                 </div>
-              </SidebarMenuItem>
-
-              {/* L3: Measure Practice */}
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <NavLink 
-                    to="/tools/l3-measure-practice" 
-                    className={({ isActive }) => getNavCls({ isActive })}
-                  >
-                    <Target className="h-4 w-4" />
-                    <span>L3: Measuring Behavior</span>
-                  </NavLink>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-
-              {/* A/B Experiments Workshop */}
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <NavLink 
-                    to="/tools/ab-experiments" 
-                    className={({ isActive }) => getNavCls({ isActive })}
-                  >
-                    <Wrench className="h-4 w-4" />
-                    <span>L2-L3: A/B Experiments</span>
-                  </NavLink>
-                </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
