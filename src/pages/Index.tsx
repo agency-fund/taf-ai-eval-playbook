@@ -95,14 +95,14 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 via-blue-400/5 to-purple-400/5" />
         <div className="relative max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-6 gap-12 items-center">
-            <div className="lg:col-span-2 order-2 lg:order-1">
+            <div className="lg:col-span-3 order-2 lg:order-1">
               <a 
                 href="https://x.com/gdb/status/1733553161884127435" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <div className="bg-white/90 backdrop-blur rounded-2xl shadow-card p-2 max-w-2xl mx-auto lg:mx-0 relative group-hover:shadow-float transition-shadow border border-cyan-200/50">
+                <div className="bg-white/90 backdrop-blur rounded-2xl shadow-card p-2 max-w-3xl mx-auto lg:mx-0 relative group-hover:shadow-float transition-shadow border border-cyan-200/50">
                   <img 
                     src="/lovable-uploads/402503cb-15e8-45c4-aff5-a795f2eb860a.png" 
                     alt="Greg Brockman tweet about evals"
@@ -116,7 +116,7 @@ const Index = () => {
                 </div>
               </a>
             </div>
-            <div className="lg:col-span-4 order-1 lg:order-2">
+            <div className="lg:col-span-3 order-1 lg:order-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-md leading-relaxed text-slate-700 dark:text-slate-200 mb-6">
                 Greg Brockman, co-founder of OpenAI, famously said, “<strong>evals are surprisingly often all you need.</strong>” We agree that continuous evaluation and iteration is the only way to develop a successful GenAI product. However, <strong>we need to be clear about what evaluation means.</strong> In the social sector, AI evals aren’t just about model accuracy. We must assess whether a GenAI product or service drives positive, measurable change in people’s lives. 
