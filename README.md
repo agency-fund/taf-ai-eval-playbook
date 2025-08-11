@@ -104,11 +104,17 @@ This project includes Google Analytics 4 (GA4) tracking for all pages. To config
    - Create a new property or use an existing one
    - Copy your Measurement ID (format: `G-XXXXXXXXXX`)
 
-2. **Update the configuration**:
-   - Replace `G-XXXXXXXXXX` in `src/hooks/useGoogleAnalytics.ts` (line 12)
-   - Replace `G-XXXXXXXXXX` in `index.html` (lines 30 and 33)
+2. **Set up environment variables**:
+   - Create a `.env` file in the project root
+   - Add: `VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX`
+   - Replace `G-XXXXXXXXXX` with your actual Measurement ID
 
-3. **Verify tracking**:
+3. **Environment-specific configuration**:
+   - **Development**: Use `.env` file
+   - **Staging**: Use `.env.staging` file
+   - **Production**: Use `.env.production` file or server environment variables
+
+4. **Verify tracking**:
    - Open your browser's developer tools
    - Check the Network tab for requests to `googletagmanager.com`
    - Use the Google Analytics Real-Time reports to confirm page views are being tracked

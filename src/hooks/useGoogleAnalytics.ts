@@ -9,8 +9,8 @@ declare global {
   }
 }
 
-// Google Analytics Measurement ID - replace with your actual GA4 ID
-const GA_MEASUREMENT_ID = 'G-Z5GPQG6G7R'; // Replace with your actual GA4 Measurement ID
+// Google Analytics Measurement ID from environment variable
+const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-Z5GPQG6G7R';
 
 /**
  * Custom hook for Google Analytics 4 (GA4) tracking
@@ -44,33 +44,16 @@ export const useGoogleAnalytics = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Initialize Google Analytics if not already loaded
-    if (!window.gtag) {
-      // Load the Google Analytics script
-      const script1 = document.createElement('script');
-      script1.async = true;
-      script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-      document.head.appendChild(script1);
-
-      // Initialize gtag
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function() {
-        window.dataLayer.push(arguments);
-      };
-      window.gtag('js', new Date());
-      window.gtag('config', GA_MEASUREMENT_ID, {
-        page_title: document.title,
-        page_location: window.location.href,
-      });
-    }
-
     // Track page view when location changes
     if (window.gtag) {
+      console.log(`[Google Analytics] Tracking page view: ${location.pathname}`);
       window.gtag('config', GA_MEASUREMENT_ID, {
         page_title: document.title,
         page_location: window.location.href,
         page_path: location.pathname + location.search,
       });
+    } else {
+      console.log('[Google Analytics] gtag not loaded yet');
     }
   }, [location]);
 
