@@ -27,7 +27,7 @@ const Index = () => {
     {
       icon: Wrench,
       title: "Interactive Tools",
-      description: "Framework builders, planning templates, and metric libraries",
+      description: "Interactive tools to help you evaluate AI models, products, and user agency and behavior",
       link: "/tools"
     }
   ];

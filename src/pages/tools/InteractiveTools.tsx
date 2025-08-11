@@ -1,51 +1,63 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Brain, Users, Target, BarChart3, Wrench } from "lucide-react";
+import { ArrowRight, Cog, Package, User, BarChart3, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const InteractiveTools = () => {
   const tools = [
     {
-      icon: Brain,
+      icon: Cog,
       title: "Model Evaluation",
       description: "Configure AI systems, create golden test cases, and run comprehensive evaluations to analyze model performance with detailed metrics and insights.",
       link: "/tools/model-evaluation",
-      category: "Model Level"
+      category: "Model Level",
+      level: 1,
+      color: "bg-red-100 text-red-700 border-red-200"
     },
     {
-      icon: Users,
+      icon: User,
       title: "User Evaluation - Introduction", 
       description: "Learn the fundamentals of user evaluation and understand how to assess the user experience and adoption of your AI product.",
       link: "/tools/user-evaluation-introduction",
-      category: "User Level"
+      category: "User Level",
+      level: 3,
+      color: "bg-blue-100 text-blue-700 border-blue-200"
     },
     {
-      icon: BarChart3,
+      icon: User,
       title: "User Evaluation - Behavioral",
       description: "Analyze user behavior patterns, engagement metrics, and interaction data to understand how users interact with your AI system.",
       link: "/tools/user-evaluation-behavioral", 
-      category: "User Level"
+      category: "User Level",
+      level: 3,
+      color: "bg-blue-100 text-blue-700 border-blue-200"
     },
     {
-      icon: Target,
+      icon: User,
       title: "User Evaluation - Metrics",
       description: "Define and track key performance indicators and success metrics for measuring the effectiveness of your AI product.",
       link: "/tools/user-evaluation-metrics",
-      category: "User Level" 
+      category: "User Level",
+      level: 3,
+      color: "bg-blue-100 text-blue-700 border-blue-200"
     },
     {
-      icon: Brain,
+      icon: User,
       title: "User Evaluation - NLP",
       description: "Evaluate natural language processing capabilities and analyze text-based interactions within your AI application.",
       link: "/tools/user-evaluation-nlp",
-      category: "User Level"
+      category: "User Level",
+      level: 3,
+      color: "bg-blue-100 text-blue-700 border-blue-200"
     },
     {
       icon: Wrench,
       title: "Product and User Evaluation - Testing the Impact of ChatSEL Features on Teacher Engagement and SEL Practices",
       description: "Plan and simulate A/B tests for ChatSEL: engagement and teacher SEL practice across Modeling, Practice, Transfer, Elaboration, Validation.",
       link: "/tools/ab-experiments",
-      category: "Product and User Level"
+      category: "Product and User Level",
+      levels: [2, 3],
+      colors: ["bg-orange-100 text-orange-700 border-orange-200", "bg-blue-100 text-blue-700 border-blue-200"]
     }
   ];
 
@@ -60,16 +72,24 @@ const InteractiveTools = () => {
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
               Hands-on tools to help you implement and practice the evaluation frameworks outlined in this playbook. 
-              These interactive resources provide practical experience with model evaluation, user testing, and metric collection.
+              These interactive resources provide practical experience with evaluating evaluate AI models, products, and user agency and behavior.
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <Brain className="w-4 h-4 mr-2" />
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-red-100 text-red-700 text-sm font-medium border border-red-200">
+                <Cog className="w-4 h-4 mr-2" />
                 Model Evaluation
               </div>
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 text-sm font-medium">
-                <Users className="w-4 h-4 mr-2" />
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-sm font-medium border border-orange-200">
+                <Package className="w-4 h-4 mr-2" />
+                Product Evaluation
+              </div>
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium border border-blue-200">
+                <User className="w-4 h-4 mr-2" />
                 User Evaluation
+              </div>
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium border border-green-200">
+                <BarChart3 className="w-4 h-4 mr-2" />
+                Impact Evaluation
               </div>
             </div>
           </div>
@@ -92,8 +112,33 @@ const InteractiveTools = () => {
                 <Link to={tool.link} className="block h-full">
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <tool.icon className="w-6 h-6 text-primary" />
+                      <div className="flex items-center gap-2">
+                        {tool.levels ? (
+                          // Show multiple level icons for tools that span multiple levels
+                          tool.levels.map((level, idx) => {
+                            const levelIcons = [Cog, Package, User, BarChart3];
+                            const levelColors = [
+                              "bg-red-100 text-red-700",
+                              "bg-orange-100 text-orange-700", 
+                              "bg-blue-100 text-blue-700",
+                              "bg-green-100 text-green-700"
+                            ];
+                            const IconComponent = levelIcons[level - 1];
+                            return (
+                              <div key={idx} className={`w-12 h-12 rounded-lg flex items-center justify-center ${levelColors[level - 1]}`}>
+                                <IconComponent className="w-6 h-6" />
+                              </div>
+                            );
+                          })
+                        ) : (
+                          // Show single level icon
+                          <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${tool.color}`}>
+                            {tool.level === 1 && <Cog className="w-6 h-6" />}
+                            {tool.level === 2 && <Package className="w-6 h-6" />}
+                            {tool.level === 3 && <User className="w-6 h-6" />}
+                            {tool.level === 4 && <BarChart3 className="w-6 h-6" />}
+                          </div>
+                        )}
                       </div>
                       <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">
                         {tool.category}
