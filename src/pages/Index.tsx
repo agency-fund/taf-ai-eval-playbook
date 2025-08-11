@@ -104,8 +104,8 @@ const Index = () => {
               >
                 <div className="bg-white/90 backdrop-blur rounded-2xl shadow-card p-2 max-w-3xl mx-auto lg:mx-0 relative group-hover:shadow-float transition-shadow border border-cyan-200/50 lg:origin-right lg:scale-[1.15] lg:-ml-12">
                   <img 
-                    src="/lovable-uploads/402503cb-15e8-45c4-aff5-a795f2eb860a.png" 
-                    alt="Greg Brockman tweet about evals"
+                    src="/lovable-uploads/3da3ccde-b885-477e-8ee8-01328de60316.png" 
+                    alt="Screenshot of a tweet about AI evaluation"
                     className="w-full h-auto rounded-xl"
                   />
                   <div className="absolute top-4 right-4 bg-black rounded-full p-2 opacity-80 group-hover:opacity-100 transition-opacity">
