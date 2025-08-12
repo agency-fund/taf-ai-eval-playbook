@@ -376,12 +376,12 @@ const Level4 = () => {
 
       <div className="flex justify-between items-center">
         <div>
-          <h3 className="text-lg font-semibold mb-2">Ready to explore the framework?</h3>
-          <p className="text-black">Learn about the complete evaluation framework</p>
+          <h3 className="text-lg font-semibold mb-2">Ready to explore the framework further?</h3>
+          <p className="text-black">Learn about the repeatable motions around AI evaluation</p>
         </div>
         <Button asChild size="lg">
-          <Link to="/framework">
-            Back to Framework <ArrowRight className="ml-2 h-4 w-4" />
+          <Link to="/Motions">
+            Repeatable Motions <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       </div>
