@@ -577,15 +577,7 @@ const Level1 = () => {
         <h2 className="text-3xl font-bold mb-8">Case Studies</h2>
         <div className="prose prose-lg max-w-none text-black space-y-6 mb-8">
           <p>
-            <em>Expand on this report{" "}
-              <ExternalLink href="https://cdh.stanford.edu/generative-ai-health-low-middle-income-countries">
-                Generative AI for Health in Low & Middle Income Countries
-              </ExternalLink>
-            </em>
-          </p>
-          <p>
-            <em>Select 1-3 orgs and describe their evaluation method, metrics, and tech tools, and how they 
-            learn from their AI evaluation efforts</em>
+            <em>We will add more case studies in the future based on our learnings from the AI4GD accelerator.</em>
           </p>
         </div>
 
@@ -619,8 +611,8 @@ const Level1 = () => {
               <h4 className="font-semibold mb-2">Evaluation Frameworks</h4>
                                   <ul className="space-y-2 text-sm text-black">
                       <li>• <ExternalLink href="https://cdh.stanford.edu/generative-ai-health-low-middle-income-countries">Evaluation framework of PROMPTS at Jacaranda Health</ExternalLink></li>
-                      <li>• <ExternalLink href="https://precisiondev.org/evaluating-ai-for-learning-a-framework/">Evaluation framework at Precision Development</ExternalLink></li>
-                      <li>• <ExternalLink href="https://docs.google.com/presentation/d/1agCgpDWNVWtbOFhdlDYUpLM3OxyHP5CxyzON_tn61x0/edit?slide=id.p#slide=id.p">[slide]</ExternalLink></li>
+                      <li>• <ExternalLink href="https://precisiondev.org/evaluating-ai-for-learning-a-framework/">Evaluation framework at Precision Development (post) </ExternalLink></li>
+                      <li>• <ExternalLink href="https://docs.google.com/presentation/d/1agCgpDWNVWtbOFhdlDYUpLM3OxyHP5CxyzON_tn61x0/edit?slide=id.p#slide=id.p">Evaluation framework at Precision Development (slides)</ExternalLink></li>
                     </ul>
             </div>
             <div>

@@ -73,7 +73,7 @@ const CaseStudies = () => {
         <div className="bg-taf-light-blue/10 border border-taf-light-blue/20 rounded-lg p-4 max-w-3xl">
           <p className="text-taf-blue text-sm">
             <strong>Looking for examples across all evaluation levels?</strong> Check out our 
-            <Link to="/tools/framework-builder" className="text-taf-blue hover:text-taf-blue/80 underline mx-1">
+            <Link to="/tools" className="text-taf-blue hover:text-taf-blue/80 underline mx-1">
               interactive tools
             </Link>
             which include hypothetical case studies covering Levels 2-4.

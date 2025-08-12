@@ -323,18 +323,8 @@ const Level2 = () => {
         <h2 className="text-3xl font-bold mb-8">Case Studies</h2>
         <div className="prose prose-lg max-w-none text-black">
           <p>
-            <em>Case studies to be added - examples from organizations like Rocket Learning and others demonstrating 
-            product evaluation methods, metrics, and success determination.</em>
+            <em>We will add more case studies in the future based on our learnings from the AI4GD accelerator.</em>
           </p>
-          <div className="mt-6 p-4 bg-taf-yellow/10 rounded-lg">
-            <h4 className="font-semibold mb-3">Guidance questions to address in case studies:</h4>
-            <ul className="space-y-2 text-sm">
-              <li>• What is the GenAI use case?</li>
-              <li>• How was the product evaluated, on what metrics?</li>
-              <li>• What methods and tools were used?</li>
-              <li>• How was success determined?</li>
-            </ul>
-          </div>
         </div>
       </div>
 

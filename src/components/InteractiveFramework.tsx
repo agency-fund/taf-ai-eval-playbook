@@ -413,7 +413,7 @@ const initialNodes: Node[] = [
     type: 'default',
     position: { x: 600, y: 460 },
     data: { 
-      label: 'Economists,\nPublic Health,\nPolicymakers' 
+      label: 'Economists, \nPolicymakers' 
     },
     style: {
       backgroundColor: '#E5E7EB',

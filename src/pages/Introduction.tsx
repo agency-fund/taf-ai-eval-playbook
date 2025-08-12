@@ -97,7 +97,7 @@ const Introduction = () => {
             <div className="w-full max-w-4xl">
               <InteractiveFramework />
             </div>
-            <p className="text-sm text-black mt-4 text-center">
+            <p className="text-sm text-gray-500 mt-4 text-center">
               Drag to explore • Click and zoom • Use controls to navigate the framework
             </p>
           </div>
