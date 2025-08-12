@@ -102,7 +102,7 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <div className="bg-white/90 backdrop-blur rounded-2xl shadow-card p-2 max-w-3xl mx-auto lg:mx-0 relative group-hover:shadow-float transition-shadow border border-cyan-200/50 lg:origin-right lg:scale-[1.15] lg:-ml-12">
+                <div className="bg-white/90 backdrop-blur rounded-2xl shadow-card p-2 max-w-3xl mx-auto lg:mx-0 relative group-hover:shadow-float transition-shadow border border-cyan-200/50 lg:origin-right lg:scale-[1.12] lg:-ml-4 xl:-ml-8">
                   <img 
                     src="/lovable-uploads/3da3ccde-b885-477e-8ee8-01328de60316.png" 
                     alt="Screenshot of a tweet about AI evaluation"
