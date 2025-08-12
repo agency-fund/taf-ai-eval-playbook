@@ -14,7 +14,7 @@ const Roles = () => {
         { name: "Domain Experts", icon: BookOpen, color: "from-green-500 to-green-600" }
       ],
       responsibilities: "Build and fine-tune models; run offline tests; ensure relevance and safety; log outputs for downstream use. Early domain input (e.g., educators for tutor bots) is essential.",
-      bgColor: "from-blue-50 to-indigo-50"
+      bgColor: "from-red-50 to-red-50"
     },
     {
       level: "Level 2",
@@ -24,7 +24,7 @@ const Roles = () => {
         { name: "Data Scientists", icon: TrendingUp, color: "from-teal-500 to-teal-600" }
       ],
       responsibilities: "Integrate AI into workflows; track engagement through A/B tests; maintain shared dashboards; align usage data with user behavior and product design.",
-      bgColor: "from-purple-50 to-pink-50"
+      bgColor: "from-orange-50 to-orange-50"
     },
     {
       level: "Level 3",
@@ -34,7 +34,7 @@ const Roles = () => {
         { name: "Psychologists", icon: User, color: "from-orange-500 to-orange-600" }
       ],
       responsibilities: "Measure user outcomes (cognitive, affective, and behavioral) and run A/B tests on these outcomes; run surveys and interviews; co-design metrics with end users; and integrate qualitative insights with usage data",
-      bgColor: "from-orange-50 to-amber-50"
+      bgColor: "from-blue-50 to-blue-50"
     },
     {
       level: "Level 4",
@@ -44,7 +44,7 @@ const Roles = () => {
         { name: "Policy Analysts", icon: FileText, color: "from-emerald-500 to-emerald-600" }
       ],
       responsibilities: "Evaluate long-term outcomes (e.g., learning, health, income); define theory of change; run RCTs;",
-      bgColor: "from-emerald-50 to-green-50"
+      bgColor: "from-green-50 to-green-50"
     }
   ];
 
@@ -149,15 +149,15 @@ const Roles = () => {
         </div>
         
         <div className="mt-8">
-          <Card className="border-0 shadow-lg bg-gradient-to-br from-amber-50 to-orange-50 border-amber-200/50">
+          <Card className="border-0 shadow-lg bg-taf-yellow border-taf-blue/20">
             <CardContent className="p-6">
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <FileText className="w-4 h-4 text-amber-600" />
+                <div className="w-8 h-8 bg-taf-blue rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <FileText className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-amber-900 mb-2">Important Note:</p>
-                  <p className="text-sm leading-relaxed text-amber-800">
+                  <p className="text-lg font-bold text-taf-blue mb-2">Important Note:</p>
+                  <p className="text-md leading-relaxed text-taf-blue">
                     In small teams, one person may wear multiple hats across these levels. What matters is that all four perspectives are represented. For instance, an AI engineer might initially also gather user feedback, but they should still seek input from a behavioral researcher or domain specialist to fill Level 3 considerations. Likewise, product managers should be conversant in model metrics, and researchers should understand product constraints. The team should collectively decide what "enough evaluation" looks like at each stage.
                   </p>
                 </div>
@@ -195,15 +195,15 @@ const Roles = () => {
 
       {/* Supporting Note */}
       <div className="mb-16">
-        <Card className="border-0 shadow-lg bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200/50">
+        <Card className="border-0 shadow-lg bg-taf-yellow border-taf-blue/20">
           <CardContent className="p-6">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                <FileText className="w-4 h-4 text-blue-600" />
+              <div className="w-8 h-8 bg-taf-blue rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                <FileText className="w-4 h-4 text-white" />
               </div>
               <div>
-                <p className="text-sm font-medium text-blue-900 mb-2">Note:</p>
-                <p className="text-sm leading-relaxed text-blue-800">
+                <p className="text-lg font-bold text-taf-blue mb-2">Note:</p>
+                <p className="text-md leading-relaxed text-taf-blue">
                   Besides tooling around repeatable motions, in the following sections of this introductory playbook, we'll also share an initial overview of the key resources and tools available for each phase.
                 </p>
               </div>

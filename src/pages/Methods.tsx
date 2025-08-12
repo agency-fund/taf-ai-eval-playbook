@@ -163,36 +163,36 @@ const Methods = () => {
       </div>
 
       <div className="mt-16">
-        <Card className="border-0 shadow-card bg-playbook-gray-light">
+        <Card className="border-0 shadow-card bg-taf-yellow border-taf-blue/20">
           <CardHeader>
-            <CardTitle className="text-2xl">Method Selection Guidelines</CardTitle>
-            <CardDescription className="text-base">
+            <CardTitle className="text-2xl text-taf-blue">Method Selection Guidelines</CardTitle>
+            <CardDescription className="text-base text-taf-blue">
               Choose evaluation methods based on your specific context and constraints
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-2">Resource Constraints</h4>
-                <p className="text-sm text-black">
+                <h4 className="font-semibold mb-2 text-taf-blue">Resource Constraints</h4>
+                <p className="text-sm text-taf-blue">
                   Prioritize methods that fit your team size, budget, and timeline
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Development Stage</h4>
-                <p className="text-sm text-black">
+                <h4 className="font-semibold mb-2 text-taf-blue">Development Stage</h4>
+                <p className="text-sm text-taf-blue">
                   Different methods are appropriate at different stages of development
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Risk Level</h4>
-                <p className="text-sm text-black">
+                <h4 className="font-semibold mb-2 text-taf-blue">Risk Level</h4>
+                <p className="text-sm text-taf-blue">
                   Higher-risk deployments require more comprehensive evaluation
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">User Context</h4>
-                <p className="text-sm text-black">
+                <h4 className="font-semibold mb-2 text-taf-blue">User Context</h4>
+                <p className="text-sm text-taf-blue">
                   Adapt methods to your specific user population and environment
                 </p>
               </div>

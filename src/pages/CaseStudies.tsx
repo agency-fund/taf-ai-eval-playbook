@@ -84,12 +84,12 @@ const CaseStudies = () => {
       <div className="mb-8">
         <Card className="border-0 shadow-card bg-gradient-accent">
           <CardHeader>
-            <CardTitle className="text-lg mb-2">Guidance Questions for Case Studies</CardTitle>
-            <div className="space-y-2 text-sm text-black">
-              <p>• What is the GenAI use case?</p>
-              <p>• How was the model evaluated, on what metrics?</p>
-              <p>• What methods and tools were used?</p>
-              <p>• How was success determined?</p>
+            <CardTitle className="text-lg text-taf-blue mb-2">Guidance Questions for Case Studies</CardTitle>
+            <div className="space-y-2 text-sm text-taf-blue">
+              <li> What is the GenAI use case?</li>
+              <li> How was the model evaluated, on what metrics?</li>
+              <li> What methods and tools were used?</li>
+              <li> How was success determined?</li>
             </div>
           </CardHeader>
         </Card>
@@ -189,8 +189,8 @@ const CaseStudies = () => {
               </p>
             </div>
 
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-              <p className="text-green-800 text-sm">
+            <div className="bg-white border border-taf-blue/20 rounded-lg p-4">
+              <p className="text-taf-blue text-sm">
                 <strong>Key Learning:</strong> Domain-specific weighted metrics provide better signals for 
                 production readiness than generic evaluation approaches.
               </p>
@@ -238,16 +238,16 @@ const CaseStudies = () => {
       </div>
 
       <div className="mt-16">
-        <Card className="border-0 shadow-card bg-gradient-accent">
+        <Card className="border-0 text-taf-blue shadow-card bg-gradient-accent">
           <CardHeader>
-            <CardTitle className="text-xl">Share Your Case Study</CardTitle>
-            <CardDescription className="text-base">
+            <CardTitle className="text-xl text-taf-blue">Share Your Case Study</CardTitle>
+            <CardDescription className="text-base text-taf-blue">
               Have experience implementing AI evaluation in development contexts? 
               We'd love to feature your case study in this living playbook.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button variant="secondary">
+            <Button variant="secondary" className="bg-taf-blue hover:bg-taf-blue/90 text-white">
               Submit Case Study
             </Button>
           </CardContent>

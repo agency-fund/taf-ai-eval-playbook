@@ -56,76 +56,61 @@ const Level3 = () => {
       </div>
 
       <div className="mb-16">
-        <Card className="border-0 shadow-card bg-gradient-to-br from-taf-blue/5 to-taf-yellow/5">
-          <CardHeader>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-taf-blue text-white rounded-lg flex items-center justify-center">
-                <Brain className="w-6 h-6" />
+        <h2 className="text-3xl font-bold mb-6">Why is this level of evaluation important?</h2>
+        <p className="text-black leading-relaxed mb-8">
+          Once an AI product is functioning correctly (Level 1) and engaging users as intended (Level 2), the next 
+          step is to ask: Is this product actually changing how users think, feel, or act in ways that are in line 
+          with the product's intended purpose? This level is essential because users' psychological and behavioral 
+          changes often serve as early indicators of whether a product is likely to achieve its long-term development 
+          goals (e.g., improving health outcomes or educational gains). Compared to full-scale impact evaluations, 
+          these user evaluations are faster and cheaper, and they allow product developers to iterate rapidly based 
+          on real-world feedback.
+        </p>
+        
+        <h3 className="text-xl font-semibold mb-4 text-taf-blue">At this stage, evaluations may focus on outcomes such as:</h3>
+        <div className="grid md:grid-cols-3 gap-4">
+          <Card className="border-0 shadow-sm bg-white/70">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-2">
+                <Brain className="w-5 h-5 text-taf-blue" />
+                <CardTitle className="text-lg">Cognitive Outcomes</CardTitle>
               </div>
-              <h2 className="text-3xl font-bold">Why is this level of evaluation important?</h2>
-            </div>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="bg-white/50 p-6 rounded-lg border-l-4 border-taf-blue">
-              <p className="text-black leading-relaxed">
-                Once an AI product is functioning correctly (Level 1) and engaging users as intended (Level 2), the next 
-                step is to ask: Is this product actually changing how users think, feel, or act in ways that are in line 
-                with the product's intended purpose? This level is essential because users' psychological and behavioral 
-                changes often serve as early indicators of whether a product is likely to achieve its long-term development 
-                goals (e.g., improving health outcomes or educational gains). Compared to full-scale impact evaluations, 
-                these user evaluations are faster and cheaper, and they allow product developers to iterate rapidly based 
-                on real-world feedback.
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-black">
+                Are users gaining new knowledge or correcting misconceptions? Do they demonstrate improved skills or decision-making ability as a result of using the AI?
               </p>
-            </div>
-            
-            <div className="bg-taf-yellow/10 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-taf-blue">At this stage, evaluations may focus on outcomes such as:</h3>
-              <div className="grid md:grid-cols-3 gap-4">
-                <Card className="border-0 shadow-sm bg-white/70">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-2">
-                      <Brain className="w-5 h-5 text-taf-blue" />
-                      <CardTitle className="text-lg">Cognitive Outcomes</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-black">
-                      Are users gaining new knowledge or correcting misconceptions? Do they demonstrate improved skills or decision-making ability as a result of using the AI?
-                    </p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-0 shadow-sm bg-white/70">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-2">
-                      <Heart className="w-5 h-5 text-taf-blue" />
-                      <CardTitle className="text-lg">Affective Outcomes</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-black">
-                      How does the product make users feel? Do users report feeling supported, motivated, and capable after interactions, or are there indications of frustration, confusion, or emotional distress?
-                    </p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-0 shadow-sm bg-white/70">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-2">
-                      <Activity className="w-5 h-5 text-taf-blue" />
-                      <CardTitle className="text-lg">Behavioral Outcomes</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-black">
-                      Are users taking small but meaningful actions (e.g., asking more questions, trying out recommended behaviors) that would predict their longer-term development?
-                    </p>
-                  </CardContent>
-                </Card>
+            </CardContent>
+          </Card>
+          
+          <Card className="border-0 shadow-sm bg-white/70">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-2">
+                <Heart className="w-5 h-5 text-taf-blue" />
+                <CardTitle className="text-lg">Affective Outcomes</CardTitle>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-black">
+                How does the product make users feel? Do users report feeling supported, motivated, and capable after interactions, or are there indications of frustration, confusion, or emotional distress?
+              </p>
+            </CardContent>
+          </Card>
+          
+          <Card className="border-0 shadow-sm bg-white/70">
+            <CardHeader className="pb-3">
+              <div className="flex items-center gap-2">
+                <Activity className="w-5 h-5 text-taf-blue" />
+                <CardTitle className="text-lg">Behavioral Outcomes</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-black">
+                Are users taking small but meaningful actions (e.g., asking more questions, trying out recommended behaviors) that would predict their longer-term development?
+              </p>
+            </CardContent>
+          </Card>
+        </div>
       </div>
 
       <div className="mb-16">
@@ -197,9 +182,6 @@ const Level3 = () => {
         <Card className="border-0 shadow-card bg-gradient-to-br from-taf-yellow/10 to-taf-blue/5">
           <CardHeader>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center">
-                <Settings className="w-6 h-6" />
-              </div>
               <h2 className="text-3xl font-bold">Measurement tools</h2>
             </div>
           </CardHeader>
@@ -230,7 +212,7 @@ const Level3 = () => {
               </div>
               
               <div className="space-y-6">
-                <Card className="border-l-4 border-taf-yellow bg-white/80">
+                <Card className="border-l-4 border-taf-blue bg-white/80">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <MessageSquare className="w-5 h-5 text-taf-blue" />
@@ -244,7 +226,7 @@ const Level3 = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-taf-yellow bg-white/80">
+                <Card className="border-l-4 border-taf-blue bg-white/80">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <Brain className="w-5 h-5 text-taf-blue" />
@@ -258,7 +240,7 @@ const Level3 = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-taf-yellow bg-white/80">
+                <Card className="border-l-4 border-taf-blue bg-white/80">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <MessageSquare className="w-5 h-5 text-taf-blue" />
@@ -272,7 +254,7 @@ const Level3 = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-taf-yellow bg-white/80">
+                <Card className="border-l-4 border-taf-blue bg-white/80">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <Clock className="w-5 h-5 text-taf-blue" />
@@ -286,7 +268,7 @@ const Level3 = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-taf-yellow bg-white/80">
+                <Card className="border-l-4 border-taf-blue bg-white/80">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <Target className="w-5 h-5 text-taf-blue" />
@@ -312,7 +294,7 @@ const Level3 = () => {
           <Card className="border-0 shadow-card bg-taf-yellow/5">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center text-lg font-bold">
+                <div className="w-10 h-10 bg-taf-blue text-white rounded-lg flex items-center justify-center text-lg font-bold">
                   2
                 </div>
                 <h3 className="text-2xl font-bold">Short Self-Report Surveys</h3>
@@ -399,7 +381,7 @@ const Level3 = () => {
               </div>
               
               <div className="space-y-4">
-                <Card className="border-l-4 border-taf-yellow bg-white/80">
+                <Card className="border-l-4 border-taf-blue bg-white/80">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <Heart className="w-5 h-5 text-taf-blue" />
@@ -413,7 +395,7 @@ const Level3 = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-taf-yellow bg-white/80">
+                <Card className="border-l-4 border-taf-blue bg-white/80">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <BarChart3 className="w-5 h-5 text-taf-blue" />
@@ -427,7 +409,7 @@ const Level3 = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-taf-yellow bg-white/80">
+                <Card className="border-l-4 border-taf-blue bg-white/80">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <Brain className="w-5 h-5 text-taf-blue" />
@@ -441,7 +423,7 @@ const Level3 = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-l-4 border-taf-yellow bg-white/80">
+                <Card className="border-l-4 border-taf-blue bg-white/80">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <Brain className="w-5 h-5 text-taf-blue" />
@@ -461,7 +443,7 @@ const Level3 = () => {
           <Card className="border-0 shadow-card bg-taf-yellow/5">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-taf-yellow text-taf-blue rounded-lg flex items-center justify-center text-lg font-bold">
+                <div className="w-10 h-10 bg-taf-blue text-white rounded-lg flex items-center justify-center text-lg font-bold">
                   4
                 </div>
                 <h3 className="text-2xl font-bold">Off-Platform Measures (Field studies and external data)</h3>
