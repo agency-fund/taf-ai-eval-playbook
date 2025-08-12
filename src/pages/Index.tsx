@@ -119,7 +119,7 @@ const Index = () => {
             <div className="lg:col-span-4 order-1 lg:order-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-md leading-relaxed text-slate-700 dark:text-slate-200 mb-6">
-                Greg Brockman, co-founder of OpenAI, famously said, “<strong>evals are surprisingly often all you need.</strong>” We agree that continuous evaluation and iteration is the only way to develop a successful GenAI product. However, <strong>we need to be clear about what evaluation means.</strong> In the social sector, AI evals aren’t just about model accuracy. We must assess whether a GenAI product or service drives positive, measurable change in people’s lives. 
+                Greg Brockman, co-founder of OpenAI, notably said, “<strong>evals are surprisingly often all you need.</strong>” We agree that continuous evaluation and iteration is the only way to develop a successful GenAI product. However, <strong>we need to be clear about what evaluation means.</strong> In the social sector, AI evals aren’t just about model accuracy. We must assess whether a GenAI product or service drives positive, measurable change in people’s lives. 
                 </p>
                 <p className="text-md leading-relaxed text-slate-700 dark:text-slate-200 mb-6">
                 That means <strong>rethinking how evaluation is done</strong>. In global development, programs are often judged by one-off experiments where evaluation is treated as the finish line. We believe that evaluation should instead be a rapid, ongoing cycle, where deployment, adaptation, and improvement happen in tandem. This is even more important given the fast pace of AI’s technological evolution. 
