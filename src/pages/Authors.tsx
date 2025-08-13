@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Mail, Github } from "lucide-react";
+import { ExternalLink, Mail, Github, FileText } from "lucide-react";
 
 const Authors = () => {
   const authors = [
@@ -156,17 +156,30 @@ const Authors = () => {
             from the AI evaluation community. For questions, collaboration opportunities, 
             or to suggest improvements, please reach out to our team.
           </p>
-          <Button asChild size="lg" className="bg-[#003087] hover:bg-[#003087]/90">
-            <a 
-              href="https://github.com/agency-fund/taf-ai-eval-playbook" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-              <Github className="w-5 h-5" />
-              Contribute to the Playbook
-            </a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-[#003087] hover:bg-[#003087]/90">
+              <a 
+                href="https://github.com/agency-fund/taf-ai-eval-playbook" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Github className="w-5 h-5" />
+                Contribute via GitHub
+              </a>
+            </Button>
+            <Button asChild size="lg" className="bg-[#003087] hover:bg-[#003087]/90">
+              <a 
+                href="https://forms.gle/oe9BCdhQyKgvCTaS9" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <FileText className="w-5 h-5" />
+                Contribute via Google Form
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
