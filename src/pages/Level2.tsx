@@ -296,7 +296,7 @@ const Level2 = () => {
               </tr>
               <tr>
                 <td className="border border-gray-300 px-4 py-3">User-Level Surveys</td>
-                <td className="border border-gray-300 px-4 py-3">User feedback on the chatbot or platform experience overall. Measures general satisfaction, trust, or usability.</td>
+                <td className="border border-gray-300 px-4 py-3">User feedback on the chatbot or platform experience overall. Measures general satisfaction or usability.</td>
                 <td className="border border-gray-300 px-4 py-3">
                   <ul className="list-disc list-inside space-y-1 text-sm">
                     <li>More users rate the chatbot 9/10 in variant with memory feature</li>
@@ -306,7 +306,7 @@ const Level2 = () => {
               </tr>
               <tr>
                 <td className="border border-gray-300 px-4 py-3">User Control</td>
-                <td className="border border-gray-300 px-4 py-3">Features that allow users to shape or filter their experience. A measure of user agency and satisfaction with platform control options.</td>
+                <td className="border border-gray-300 px-4 py-3">Features that allow users to shape or filter their experience. A measure of user satisfaction with platform control options.</td>
                 <td className="border border-gray-300 px-4 py-3">
                   <ul className="list-disc list-inside space-y-1 text-sm">
                     <li>More users engage "see less of this topic" in B variant</li>

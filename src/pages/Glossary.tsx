@@ -122,12 +122,12 @@ const Glossary = () => {
     },
     {
       term: "User-Level Surveys",
-      definition: "User feedback on the chatbot or platform experience overall. Measures general satisfaction, trust, or usability across the entire product.",
+      definition: "User feedback on the chatbot or platform experience overall. Measures general satisfaction or usability across the entire product.",
       category: "Product Evaluation"
     },
     {
       term: "User Control",
-      definition: "Features that allow users to shape or filter their experience. A measure of user agency and satisfaction with platform control options.",
+      definition: "Features that allow users to shape or filter their experience. A measure of user satisfaction with platform control options.",
       category: "Product Evaluation"
     },
     {
