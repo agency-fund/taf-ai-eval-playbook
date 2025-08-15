@@ -41,7 +41,7 @@ const Roles = () => {
       title: "Impact Evaluation",
       stakeholders: [
         { name: "Economists", icon: TrendingUp, color: "from-emerald-500 to-emerald-600" },
-        { name: "Policy Analysts", icon: FileText, color: "from-emerald-500 to-emerald-600" }
+        { name: "Policy Researchers", icon: FileText, color: "from-emerald-500 to-emerald-600" }
       ],
       responsibilities: "Evaluate long-term outcomes (e.g., learning, health, income); define theory of change; run RCTs;",
       bgColor: "from-green-50 to-green-50"
