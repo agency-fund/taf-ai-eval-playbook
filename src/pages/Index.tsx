@@ -38,7 +38,7 @@ const Index = () => {
       <Alert className="rounded-none border-x-0 border-t-0 bg-amber-50 border-amber-200 dark:bg-amber-950 dark:border-amber-800">
         <AlertTriangle className="h-4 w-4 text-amber-600 dark:text-amber-400" />
         <AlertDescription className="text-amber-800 dark:text-amber-200">
-          This is a living playbook that we will grow with input from global development, tech, and academic partners. Please share your thoughts or self-nominate as a potential contributor <a href="https://forms.gle/6VnJTEpE4M5iuaiz5" target="_blank" rel="noopener noreferrer" className="text-taf-blue underline font-bold hover:text-taf-blue/80 dark:hover:text-taf-blue transition-colors">here</a>.
+          This is a living playbook that we will grow with input from development, tech, and academic partners. Please share your thoughts or self-nominate as a potential contributor <a href="https://forms.gle/6VnJTEpE4M5iuaiz5" target="_blank" rel="noopener noreferrer" className="text-taf-blue underline font-bold hover:text-taf-blue/80 dark:hover:text-taf-blue transition-colors">here</a>.
         </AlertDescription>
       </Alert>
       
