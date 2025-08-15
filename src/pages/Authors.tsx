@@ -68,6 +68,8 @@ const Authors = () => {
               src="/lovable-uploads/b9f4f807-9529-43f8-9b6a-515216823f99.png" 
               alt="Agency Fund team at Nairobi AI4GD Sprint" 
               className="w-full rounded-lg shadow-lg"
+              loading="eager"
+              fetchPriority="high"
             />
             <p className="text-sm text-gray-600 mt-2 text-center">
               The Agency Fund June 2025 Nairobi AI4GD Sprint

@@ -99,6 +99,8 @@ const Introduction = () => {
                 src="/four-level-diagram.png" 
                 alt="AI Evaluation Four-Level Framework Diagram" 
                 className="w-full h-auto rounded-lg"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>
