@@ -161,13 +161,13 @@ const Authors = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-[#003087] hover:bg-[#003087]/90">
               <a 
-                href="https://github.com/agency-fund/taf-ai-eval-playbook" 
+                href="https://github.com/agency-fund/taf-ai-eval-playbook/issues" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
                 <Github className="w-5 h-5" />
-                Contribute via GitHub
+                Submit an Issue on Github
               </a>
             </Button>
             <Button asChild size="lg" className="bg-[#003087] hover:bg-[#003087]/90">
@@ -178,7 +178,18 @@ const Authors = () => {
                 className="flex items-center gap-2"
               >
                 <FileText className="w-5 h-5" />
-                Contribute via Google Form
+                Leave Feedback
+              </a>
+            </Button>
+            <Button asChild size="lg" className="bg-[#003087] hover:bg-[#003087]/90">
+              <a 
+                href="https://forms.gle/dCEjrgFnh4jrWqQm8" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <FileText className="w-5 h-5" />
+                Submit Case Study
               </a>
             </Button>
           </div>

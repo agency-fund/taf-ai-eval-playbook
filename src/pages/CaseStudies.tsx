@@ -247,8 +247,14 @@ const CaseStudies = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button variant="secondary" className="bg-taf-blue hover:bg-taf-blue/90 text-white">
-              Submit Case Study
+            <Button asChild variant="secondary" className="bg-taf-blue hover:bg-taf-blue/90 text-white">
+              <a 
+                href="https://forms.gle/dCEjrgFnh4jrWqQm8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Submit Case Study
+              </a>
             </Button>
           </CardContent>
         </Card>
