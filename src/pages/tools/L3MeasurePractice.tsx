@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronRight, BookOpen, Users, Target, MessageSquare, Heart, Eye, FileText } from 'lucide-react';
 
 const L3MeasurePractice: React.FC = () => {
@@ -374,11 +375,15 @@ const L3MeasurePractice: React.FC = () => {
 
       {/* Navigation Footer */}
       <div className="flex justify-between mt-12">
-        <Button variant="outline" className="border-taf-blue text-taf-blue hover:bg-taf-blue hover:text-white">
-          ← Back to L3: Measuring Agency
+        <Button asChild variant="outline" className="border-taf-blue text-taf-blue hover:bg-taf-blue hover:text-white">
+          <Link to="/tools/user-evaluation-introduction">
+            ← Back to L3: Measuring Agency
+          </Link>
         </Button>
-        <Button className="bg-taf-blue hover:bg-taf-blue/90 text-white">
-          Next: Implementation Guide →
+        <Button asChild className="bg-taf-blue hover:bg-taf-blue/90 text-white">
+          <Link to="/tools/ab-experiments">
+            L2-L3: A/B Experiments →
+          </Link>
         </Button>
       </div>
     </div>

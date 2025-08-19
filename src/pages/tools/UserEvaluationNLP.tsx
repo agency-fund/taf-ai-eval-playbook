@@ -907,8 +907,8 @@ if __name__ == "__main__":
             </Link>
           </Button>
           <Button asChild className="bg-taf-blue hover:bg-taf-blue/90 text-white">
-            <Link to="/level4">
-              Next: Level 4 - Impact Evaluation
+            <Link to="/tools/l3-measure-practice">
+              Next: L3 - Measuring Behavior
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </Button>
