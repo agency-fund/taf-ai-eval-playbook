@@ -141,30 +141,19 @@ const Level2 = () => {
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Evaluation method</h2>
         <div className="prose prose-lg max-w-none text-black mb-8">
-          <p>For details, please see</p>
+          <p><strong>For details, please stay tuned as we will publish two additionalplaybooks soon:</strong></p>
+          <br />
           <ul className="space-y-2">
             <li>
-              <a 
-                href="https://docs.google.com/document/d/1_i1LjHIA3MHBCez1gxvSqZohN9zkwjG09h5L2k4BryQ/edit?tab=t.0#heading=h.wdgt1uho9q75" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2"
-              >
-                AI4GD A/B Testing Playbook
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              <span className="text-black">
+                AI4GD A/B Testing Playbook (will be published soon)
+              </span>
               <span className="text-sm text-black"> by Elia Gandolfi</span>
             </li>
             <li>
-              <a 
-                href="https://docs.google.com/document/u/0/d/18OFMLI70IZLQuwhuxTwZXrDhw6Z-kpT-QUqZZJugEZ4/edit" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2"
-              >
-                AI4GD User Funnel and Metrics Playbook
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              <span className="text-black">
+                AI4GD User Funnel and Metrics Playbook (will be published soon)
+              </span>
               <span className="text-sm text-black"> by Robert On & Temina Madon</span>
             </li>
           </ul>
