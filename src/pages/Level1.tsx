@@ -446,7 +446,14 @@ const Level1 = () => {
               head-to-head comparison
             </ExternalLink>{" "}
             of LLM evaluation frameworks conducted by Comet. For instance, if you are building a RAG chatbot, 
-            the following RAGAS metrics would be the most immediately relevant generalized metrics.
+            <strong> the following RAGAS metrics would be the most immediately relevant generalized metrics.</strong>
+          </p>
+          <p>
+            We also refer the readers to {" "}
+            <ExternalLink href="https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/observability">
+              a list of evaluators
+            </ExternalLink>{" "}
+            by Microsoft Azure that measure the <strong>quality, safety, and reliability of AI responses</strong>.
           </p>
           <p>
             <em>Reference:{" "}
