@@ -32,7 +32,7 @@ const Level3 = () => {
         </div>
         <h1 className="text-4xl font-bold mb-6">Level 3: User Evaluation</h1>
         <p className="text-xl text-black leading-relaxed max-w-3xl">
-          Assessment of how users interact with and benefit from the AI-enabled product. This level focuses on 
+          Assessment of how users change psychologically and behaviorally through using the AI product. This level focuses on 
           understanding the cognitive, affective, and behavioral changes that result from using the AI system.
         </p>
       </div>

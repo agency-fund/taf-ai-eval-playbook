@@ -33,7 +33,7 @@ const Level2 = () => {
         <h1 className="text-4xl font-bold mb-6">Level 2: Product Evaluation</h1>
         <p className="text-xl text-black leading-relaxed max-w-3xl">
           Assessment of the AI system integrated into the product context. This level focuses on how well 
-          the AI-enabled product facilitates meaningful interactions and solves user problems.
+          the AI product facilitates meaningful interactions and solves user problems.
         </p>
       </div>
 
