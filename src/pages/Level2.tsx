@@ -141,7 +141,7 @@ const Level2 = () => {
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-8">Evaluation method</h2>
         <div className="prose prose-lg max-w-none text-black mb-8">
-          <p><strong>For details, please stay tuned as we will publish two additionalplaybooks soon:</strong></p>
+          <p><strong>For details, please stay tuned as we will publish two additional playbooks soon:</strong></p>
           <br />
           <ul className="space-y-2">
             <li>
