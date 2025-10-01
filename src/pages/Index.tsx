@@ -79,7 +79,7 @@ const Index = () => {
                   This playbook is created by <a href="https://www.agency.fund/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors underline">the Agency Fund</a>. 
                   <br />
                   <br />
-                  A downloadable version is available <a href="https://drive.google.com/file/d/1s1CV2_nW2ch59A6vvbIvLy_d8P3cI7zv/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors underline">here</a>.
+                  A downloadable version is available <a href="https://drive.google.com/file/d/1ATXehjkd3nsMr_IutIGHFrNgA26urqDI/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors underline">here</a>.
                   <br />
                   <br />
                   If you have any questions or feedback, please contact the authors {" "}
