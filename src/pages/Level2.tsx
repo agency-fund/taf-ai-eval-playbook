@@ -151,9 +151,15 @@ const Level2 = () => {
               <span className="text-sm text-black"> by Elia Gandolfi</span>
             </li>
             <li>
-              <span className="text-black">
-                AI4GD User Funnel and Metrics Playbook (will be published soon)
-              </span>
+              <a 
+                href="https://drive.google.com/file/d/1V9OKYFgThrtUOrGjh8nrTKaFXCPtYIpA/view?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-taf-blue hover:text-taf-blue/80 underline flex items-center gap-2"
+              >
+                AI4GD User Funnel and Metrics Playbook
+                <ExternalLink className="w-4 h-4" />
+              </a>
               <span className="text-sm text-black"> by Robert On & Temina Madon</span>
             </li>
           </ul>
