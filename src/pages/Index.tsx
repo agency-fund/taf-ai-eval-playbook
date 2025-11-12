@@ -93,6 +93,30 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-16 bg-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4">How to Evaluate AI Tools in the Social Sector</h2>
+              <p className="text-lg text-black max-w-2xl mx-auto">
+                Watch our video introduction to the Living Playbook
+              </p>
+            </div>
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-lg shadow-card"
+                src="https://www.youtube.com/embed/Xn59LD1ZAzA"
+                title="How to Evaluate AI Tools in the Social Sector (The Living Playbook)"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quote Section */}
       <section className="relative py-16 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 border-y border-cyan-500/20">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 via-blue-400/5 to-purple-400/5" />
